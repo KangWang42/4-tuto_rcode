@@ -89,6 +89,6 @@ mlr3verse包，张敬信大佬可能这两年就会出书介绍
 
 ## 阶段6 其他
 
-(rweekly论坛)[https://rweekly.org/]
+[rweekly论坛](https://rweekly.org/)
 
-(tidyverse博客)[https://www.tidyverse.org/blog/]
+[tidyverse博客](https://www.tidyverse.org/blog/)

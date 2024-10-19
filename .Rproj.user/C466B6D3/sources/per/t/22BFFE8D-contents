@@ -1,0 +1,22 @@
+---
+title: "科研学帮帮"
+author: "wang"
+date: "2024.10.19"
+description: 这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book.
+documentclass: book
+classoption: oneside
+biblio-style: apa
+bibliography: mybib.bib
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 简介 {-}
+欢迎参观博客：https://wk8686.top/
+我的主页：https://intro.wk8686.top/
+
+
+

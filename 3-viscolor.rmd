@@ -1,0 +1,87 @@
+# R语言配色教程
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##library(tidyverse) # Wickham的数据整理的整套工具
+pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要放在最后
+```
+
+```{r}
+library(bruceR)
+library(ggplot2)
+data(iris)
+head(iris, 10)
+```
+
+## 使用RColorBrewer包设置颜色
+```{r}
+library(RColorBrewer)
+```
+
+
+
+### 查看配色盘，选择3颜色，区分色
+```{r}
+display.brewer.all(3, type = 'div')
+```
+
+
+### ggplot2建立柱状图可视化
+```{r}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sepal Length by Species", x = "Species", y = "Sepal Length") +
+  theme_minimal()+
+  scale_fill_brewer(palette = "Spectral")
+
+```
+
+
+
+
+
+## 使用ggsci包设置颜色
+```{r}
+library(ggsci)
+```
+
+
+### 柳叶刀配色
+
+```{r}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sepal Length by Species", x = "Species", y = "Sepal Length") +
+  theme_minimal()+
+  scale_fill_lancet()
+```
+
+
+## 使用MetBrewer包设置颜色
+
+```{r}
+library(MetBrewer)
+```
+
+
+## 查看配色盘，选择3颜色，区分色
+```{r}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sepal Length by Species", x = "Species", y = "Sepal Length") +
+  theme_minimal()+
+  scale_fill_manual(values = met.brewer("Austria"))
+
+```
+
+
+
+```{r}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sepal Length by Species", x = "Species", y = "Sepal Length") +
+  theme_minimal()+
+  scale_fill_manual(values = met.brewer("Degas"))
+```
+
+

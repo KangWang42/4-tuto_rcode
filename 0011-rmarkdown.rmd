@@ -1,0 +1,7 @@
+# rmarkdown教程-初学r语言推荐
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##library(tidyverse) # Wickham的数据整理的整套工具
+pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要放在最后
+```

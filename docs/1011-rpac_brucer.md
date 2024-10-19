@@ -1,4 +1,4 @@
-# r包推荐-bruceR-r包里的瑞士军刀
+# R包推荐-bruceR-r包里的瑞士军刀
 
 
 
@@ -28,7 +28,6 @@ CRAN直接安装
 
 或者 github库安装
 
-# 设置下方的快不运行
 
 ``` r
 install.packages("devtools")

@@ -1,4 +1,4 @@
-# R语言教程！compareGroups神包制作描述性表一 {#compare}
+# R包推荐-compareGroups-描述性表一快速生成 {#compare}
 
 
 

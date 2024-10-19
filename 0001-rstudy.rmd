@@ -18,6 +18,7 @@ pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要
    2. 我目前用的是positron会出一期专门介绍，但是因为还没正式版，有需要的同学可以去看看[更新进展](https://github.com/posit-dev/positron/releases)
 3. 了解软件的基本窗口和操作
    1. ![](https://vip.123pan.cn/1813062489//7%20pic/202410192013471.png)
+
 ## 阶段2：学习baseR
 
 ### 推荐资料

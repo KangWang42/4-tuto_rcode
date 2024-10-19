@@ -1,0 +1,111 @@
+# r包推荐-bruceR-r包里的瑞士军刀
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##library(tidyverse) # Wickham的数据整理的整套工具
+pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要放在最后
+```
+
+## r包介绍
+
+[使用教程](https://zhuanlan.zhihu.com/p/281150493)
+
+作者在日常工作中集各常用包于大成，凝结出了bruceR，很多内容都是专门为科研而生，减少了很多工作
+
+可以实现以下功能！星标一看！安装即用
+
+- 设置路径
+- 数据打印和三线表制作
+- 数据编码
+- 数据框的横向计算
+- 一致性检验
+- 探索性因子分析
+- 验证性因子分析
+- 描述统计
+- 统计结果summary
+- 结构方程模型
+- 等等等
+
+## r包安装
+
+CRAN直接安装
+
+或者 github库安装
+
+# 设置下方的快不运行
+```{r , eval = FALSE}
+install.packages("devtools")
+devtools::install_github("psychbruce/bruceR", dep=TRUE, force=TRUE)
+```
+
+## 基础使用
+
+
+```{r, results='hide'}
+#install.packages("bruceR")
+library("bruceR")
+```
+
+### set_wd:设置工作路径
+
+快速将当前r文档路径设为工作路径
+
+```{r, eval = FALSE}
+set_wd()
+```
+
+### import:一个函数导入或导出各种数据
+
+import函数支持但不限于几乎常用数据库的导入
+- 文本格式 txt, .csv, .csv2, .tsv, .psv 
+- Excel (.xls, .xlsx)
+- SPSS (.sav)
+- Stata (.dta)
+- R objects (.rda, .rdata, .RData)
+- R serialized objects (.rds)
+- Clipboard（on Windows and Mac OS）
+
+### print_table：快速生成三线表
+
+```{r}
+print_table(npk)
+
+#设置导出到doc中
+#print_table(npk, file="")
+```
+
+### model_summary：常用模型结果summary
+
+bruceR的model_summary可以对常见的线性非线性，生存分析，结构方程模型等整洁化结果输出。快速生成美观的结果，通过file参数导出到doc文件里
+
+```{r}
+head(airquality, 5)
+
+airquality %>% 
+  lm(Temp ~ Month + Day + Wind + Solar.R,data=.)%>% 
+  model_summary()
+
+
+```
+
+### RECODE:recode重新编码
+
+示例用的是datatable包，这个比较难暂时可以不用管
+
+```{r}
+d = data.table(var=c(NA, 0, 1, 2, 3, 4, 5, 6))
+d
+
+d[, `:=`(
+  var.new = RECODE(var, "lo:1=0; c(2,3)=1; 4=2; 5:hi=3; else=999")
+)]
+d
+```
+
+
+
+## 其它函数
+
+作者应该是把日常能汇总的都汇总到了一起，函数太多了，方法面面都会用到
+
+建议大家可以去作者 包寒吴霜 的知乎主页里学习一番，对r语言的提高大有裨益

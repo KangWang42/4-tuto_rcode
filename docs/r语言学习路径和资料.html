@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 R语言配色教程 | 科研学帮帮</title>
+  <title>1 R语言学习路径和资料 | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 R语言配色教程 | 科研学帮帮" />
+  <meta property="og:title" content="1 R语言学习路径和资料 | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 R语言配色教程 | 科研学帮帮" />
+  <meta name="twitter:title" content="1 R语言学习路径和资料 | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="compare.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="r语言教程-官方管道符和magrittr管道符区别概览.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -236,105 +236,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r语言配色教程" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> R语言配色教程<a href="r语言配色教程.html#r语言配色教程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="r语言配色教程.html#cb72-1" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span></code></pre></div>
-<pre><code>## 
-## bruceR (v2024.6)
-## Broadly Useful Convenient and Efficient R functions
-## 
-## Packages also loaded:
-## ✔ data.table ✔ emmeans
-## ✔ dplyr      ✔ lmerTest
-## ✔ tidyr      ✔ effectsize
-## ✔ stringr    ✔ performance
-## ✔ ggplot2    ✔ interactions
-## 
-## Main functions of `bruceR`:
-## cc()             Describe()  TTEST()
-## add()            Freq()      MANOVA()
-## .mean()          Corr()      EMMEANS()
-## set.wd()         Alpha()     PROCESS()
-## import()         EFA()       model_summary()
-## print_table()    CFA()       lavaan_summary()
-## 
-## For full functionality, please install all dependencies:
-## install.packages(&quot;bruceR&quot;, dep=TRUE)
-## 
-## Online documentation:
-## https://psychbruce.github.io/bruceR
-## 
-## To use this package in publications, please cite:
-## Bao, H.-W.-S. (2024). bruceR: Broadly useful convenient and efficient R functions (Version 2024.6) [Computer software]. https://CRAN.R-project.org/package=bruceR</code></pre>
-<pre><code>## 
-## These packages are dependencies of `bruceR` but not installed:
-## - pacman, ggtext, see, vars, phia, BayesFactor, GPArotation
-## 
-## ***** Install all dependencies *****
-## install.packages(&quot;bruceR&quot;, dep=TRUE)</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="r语言配色教程.html#cb75-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb75-2"><a href="r语言配色教程.html#cb75-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb75-3"><a href="r语言配色教程.html#cb75-3" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1           5.1         3.5          1.4         0.2  setosa
-## 2           4.9         3.0          1.4         0.2  setosa
-## 3           4.7         3.2          1.3         0.2  setosa
-## 4           4.6         3.1          1.5         0.2  setosa
-## 5           5.0         3.6          1.4         0.2  setosa
-## 6           5.4         3.9          1.7         0.4  setosa
-## 7           4.6         3.4          1.4         0.3  setosa
-## 8           5.0         3.4          1.5         0.2  setosa
-## 9           4.4         2.9          1.4         0.2  setosa
-## 10          4.9         3.1          1.5         0.1  setosa</code></pre>
-<div id="使用rcolorbrewer包设置颜色" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> 使用RColorBrewer包设置颜色<a href="r语言配色教程.html#使用rcolorbrewer包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="r语言配色教程.html#cb77-1" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
-<div id="查看配色盘选择3颜色区分色" class="section level3 hasAnchor" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> 查看配色盘，选择3颜色，区分色<a href="r语言配色教程.html#查看配色盘选择3颜色区分色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="r语言配色教程.html#cb78-1" tabindex="-1"></a><span class="fu">display.brewer.all</span>(<span class="dv">3</span>, <span class="at">type =</span> <span class="st">&#39;div&#39;</span>)</span></code></pre></div>
-<p><img src="4-viscolor_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div id="r语言学习路径和资料" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> R语言学习路径和资料<a href="r语言学习路径和资料.html#r语言学习路径和资料" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="声明" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 声明<a href="r语言学习路径和资料.html#声明" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>内容仅为个人学习的经验，并且并不详细。只为方向性引导，大家学习的时候要多在网络上查找资料</p>
 </div>
-<div id="ggplot2建立柱状图可视化" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> ggplot2建立柱状图可视化<a href="r语言配色教程.html#ggplot2建立柱状图可视化" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="r语言配色教程.html#cb79-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb79-2"><a href="r语言配色教程.html#cb79-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb79-3"><a href="r语言配色教程.html#cb79-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
-<span id="cb79-4"><a href="r语言配色教程.html#cb79-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb79-5"><a href="r语言配色教程.html#cb79-5" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Spectral&quot;</span>)</span></code></pre></div>
-<p><img src="4-viscolor_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="阶段1下载好r并使用" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 阶段1：下载好r并使用<a href="r语言学习路径和资料.html#阶段1下载好r并使用" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>先安装最新的<a href="https://www.r-project.org/">R</a></li>
+<li>再安装IDE
+<ol style="list-style-type: decimal">
+<li>最常用的IDE就是<a href="https://posit.co/downloads/">Rstudio</a></li>
+<li>我目前用的是positron会出一期专门介绍，但是因为还没正式版，有需要的同学可以去看看<a href="https://github.com/posit-dev/positron/releases">更新进展</a></li>
+</ol></li>
+<li>了解软件的基本窗口和操作
+<ol style="list-style-type: decimal">
+<li><img src="https://vip.123pan.cn/1813062489//7%20pic/202410192013471.png" />
+## 阶段2：学习baseR</li>
+</ol></li>
+</ol>
+<div id="推荐资料" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> 推荐资料<a href="r语言学习路径和资料.html#推荐资料" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://book.douban.com/subject/36420926/">链接</a>：公认R语言学习最好的书，学习起来清晰通俗，学习路线极其明确</p>
+</div>
+<div id="学习路线" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> 学习路线<a href="r语言学习路径和资料.html#学习路线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>基础语法：懂得基础的语法知识，安装包，导入包，设定工作路径，使用函数，数据导出</li>
+<li><strong>数据结构</strong>：画重点，各个数据结构务必要务必了解。向量还是数据框还是列表，都了解后才能get到后续的列表嵌套数据框和数据框嵌套列表</li>
+<li>数据处理：主要处理的对象是数据框，操作包括但不限于变量recode，变量筛选，数据框长宽转换，新建变量，重复值处理</li>
+<li>数据可视化：可放单独一块学习，<strong>前期不用学习</strong></li>
+<li>统计分析：可做什么去学什么，<strong>前期不用学</strong></li>
+<li>机器学习（深度学习）：同上</li>
+</ol>
 </div>
 </div>
-<div id="使用ggsci包设置颜色" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> 使用ggsci包设置颜色<a href="r语言配色教程.html#使用ggsci包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="r语言配色教程.html#cb80-1" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span></code></pre></div>
-<div id="柳叶刀配色" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> 柳叶刀配色<a href="r语言配色教程.html#柳叶刀配色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="r语言配色教程.html#cb81-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb81-2"><a href="r语言配色教程.html#cb81-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb81-3"><a href="r语言配色教程.html#cb81-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
-<span id="cb81-4"><a href="r语言配色教程.html#cb81-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb81-5"><a href="r语言配色教程.html#cb81-5" tabindex="-1"></a>  <span class="fu">scale_fill_lancet</span>()</span></code></pre></div>
-<p><img src="4-viscolor_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="阶段3开始学习tidyverse" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> 阶段3：开始学习tidyverse<a href="r语言学习路径和资料.html#阶段3开始学习tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="推荐资料-1" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> 推荐资料<a href="r语言学习路径和资料.html#推荐资料-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://book.douban.com/subject/36171369/">R语言编程</a>:最好的tidyverse入门书，确实讲的通俗易懂，作者在知乎上有账号，关注不亏</p>
+<p><a href="https://book.douban.com/subject/30277904/">R数据科学</a>：Hadley Wickham（tidyverse的作者）写的书，讲的很详细，建议细细细细过一遍，获益匪浅</p>
+</div>
+<div id="学习路径" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> 学习路径<a href="r语言学习路径和资料.html#学习路径" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>直接参考加载包的时候的导入函数，一个个学</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="r语言学习路径和资料.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<ol style="list-style-type: decimal">
+<li>学习数据导入(<strong>readr</strong>)</li>
+<li>学习新的数据结构（<strong>tibble</strong>：datafram优化版）</li>
+<li>学习数据处理，变量筛选等(<strong>dplyr</strong>)</li>
+<li>学习字符变量的处理(<strong>stringr</strong>)</li>
+<li>学习因子变量的处理(<strong>forcats</strong>)</li>
+<li>学习数据可视化(<strong>ggplot2</strong>)</li>
+<li><strong>学习函数式循环（purrr）务必要学</strong></li>
+</ol>
 </div>
 </div>
-<div id="使用metbrewer包设置颜色" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> 使用MetBrewer包设置颜色<a href="r语言配色教程.html#使用metbrewer包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="r语言配色教程.html#cb82-1" tabindex="-1"></a><span class="fu">library</span>(MetBrewer)</span></code></pre></div>
+<div id="阶段4学习可视化" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 阶段4：学习可视化<a href="r语言学习路径和资料.html#阶段4学习可视化" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="学习资料" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> 学习资料<a href="r语言学习路径和资料.html#学习资料" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000019332693&amp;d=49173A13F1A674EE50CACCE072F13B33&amp;fenlei=18170403">R数据可视化手册 第2版</a>：系统的看一遍</p>
+<p>各大知乎csdn微信公众号关键词搜索：都是宝藏呀</p>
+<p>或者来我的<a href="https://file.wk8686.top/?2%20%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/R">云盘</a>看一看</p>
 </div>
-<div id="查看配色盘选择3颜色区分色-1" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> 查看配色盘，选择3颜色，区分色<a href="r语言配色教程.html#查看配色盘选择3颜色区分色-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="r语言配色教程.html#cb83-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb83-2"><a href="r语言配色教程.html#cb83-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb83-3"><a href="r语言配色教程.html#cb83-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
-<span id="cb83-4"><a href="r语言配色教程.html#cb83-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb83-5"><a href="r语言配色教程.html#cb83-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Austria&quot;</span>))</span></code></pre></div>
-<p><img src="4-viscolor_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="r语言配色教程.html#cb84-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb84-2"><a href="r语言配色教程.html#cb84-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb84-3"><a href="r语言配色教程.html#cb84-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
-<span id="cb84-4"><a href="r语言配色教程.html#cb84-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb84-5"><a href="r语言配色教程.html#cb84-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Degas&quot;</span>))</span></code></pre></div>
-<p><img src="4-viscolor_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="阶段5-统计分析" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> 阶段5 统计分析<a href="r语言学习路径和资料.html#阶段5-统计分析" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>推荐一个公众号：R语言实战</p>
+<p>平时什么统计分析不会全是知乎教我</p>
+</div>
+<div id="阶段5-机器学习等" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> 阶段5 机器学习等<a href="r语言学习路径和资料.html#阶段5-机器学习等" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>mlr3verse包，张敬信大佬可能这两年就会出书介绍</p>
+</div>
+<div id="阶段6-其他" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> 阶段6 其他<a href="r语言学习路径和资料.html#阶段6-其他" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>(rweekly论坛)[<a href="https://rweekly.org/" class="uri">https://rweekly.org/</a>]</p>
+<p>(tidyverse博客)[<a href="https://www.tidyverse.org/blog/" class="uri">https://www.tidyverse.org/blog/</a>]</p>
 
 </div>
 </div>
@@ -343,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="compare.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r语言教程-官方管道符和magrittr管道符区别概览.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

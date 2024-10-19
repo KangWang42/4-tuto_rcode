@@ -1,10 +1,6 @@
 # R语言教程-官方管道符和magrittr管道符区别概览
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-##library(tidyverse) # Wickham的数据整理的整套工具
-pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要放在最后
-```
+
 
 
 > 第73期
@@ -53,94 +49,187 @@ pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要
 
 ### 官方管道符使用需要有括号
 
-```{r}
+
+``` r
 library(magrittr)
 ```
 
-```{r error=TRUE}
+
+``` r
 1:3 |> sum
 ```
 
-```{r}
+```
+## Error: The pipe operator requires a function call as RHS (<text>:1:8)
+```
+
+
+``` r
 1:3 |> sum()
 ```
 
-```{r}
+```
+## [1] 6
+```
+
+
+``` r
 1:3 |> approxfun(1:3, 4:6)()
 ```
 
-```{r}
+```
+## [1] 4 5 6
+```
+
+
+``` r
 1:3 %>% sum
+```
+
+```
+## [1] 6
+```
+
+``` r
 1:3 %>% sum()
 ```
 
-```{r error=TRUE}
+```
+## [1] 6
+```
+
+
+``` r
 1:3 %>% approxfun(1:3, 4:6) 
 ```
 
-```{r}
+```
+## Error in if (is.na(method)) stop("invalid interpolation method"): the condition has length > 1
+```
+
+
+``` r
 1:3 %>% approxfun(1:3, 4:6)()
+```
+
+```
+## [1] 4 5 6
 ```
 
 ### 官方管道符一些函数无法调用，可使用::调用或加括号调用
 
-```{r error=TRUE}
-1:3 |> `+`(4)
 
+``` r
+1:3 |> `+`(4)
 ```
 
-```{r}
+```
+## Error: function '+' not supported in RHS call of a pipe (<text>:1:8)
+```
+
+
+``` r
 1:3 |> (`+`)(4)
 ```
 
-```{r}
+```
+## [1] 5 6 7
+```
+
+
+``` r
 1:3 |> base::`+`(4)
+```
+
+```
+## [1] 5 6 7
 ```
 
 ### 官方管道符的占位符一定需要加上参数名
 
-```{r error=TRUE}
+
+``` r
 2 |> setdiff(1:3, _)
 ```
 
-```{r}
+```
+## Error: pipe placeholder can only be used as a named argument (<text>:1:6)
+```
+
+
+``` r
 2 |> setdiff(1:3, y = _)
+```
+
+```
+## [1] 1 3
 ```
 
 ### 可变参数函数使用官方管道符
 
 可变参数函数是那些能够接受可变数量的参数的函数，需要添加\`.\`做参数名
 
-```{r error=TRUE}
+
+``` r
 "b" |>  paste("a", _, "c")
 ```
 
-```{r}
+```
+## Error: pipe placeholder can only be used as a named argument (<text>:1:9)
+```
+
+
+``` r
 "b" |>  paste("a", . = _, "c")
+```
+
+```
+## [1] "a b c"
 ```
 
 ### 官方管道符的参数占位符只能调用一次
 
-```{r}
+
+``` r
 1:3 |> setNames(nm = _)
 ```
 
-```{r error=TRUE}
+```
+## 1 2 3 
+## 1 2 3
+```
+
+
+``` r
 1:3 |> setNames(object = _, nm = _)
+```
+
+```
+## Error: pipe placeholder may only appear once (<text>:1:8)
 ```
 
 ### 官方管道符不支持嵌套调用
 
-```{r error=TRUE}
-1:3 |> sum(sqrt(x=_))
 
+``` r
+1:3 |> sum(sqrt(x=_))
 ```
 
-```{r}
+```
+## Error: invalid use of pipe placeholder (<text>:1:0)
+```
+
+
+``` r
 1:3 |> (\(.) sum(sqrt(.)))()
+```
+
+```
+## [1] 4.146264
+```
+
+``` r
 #[1] 4.146264
-
-
 ```
 
 ### 提取调用
@@ -153,8 +242,16 @@ library(magrittr)
 
 %\>%支持直接创建新函数，官方管道符不支持
 
-```{r}
+
+``` r
 top6 <- . %>% sort() %>% tail()
 top6(c(1:10,10:1))
+```
+
+```
+## [1]  8  8  9  9 10 10
+```
+
+``` r
 #[1]  8  8  9  9 10 10
 ```

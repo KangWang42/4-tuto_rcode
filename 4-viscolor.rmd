@@ -137,8 +137,30 @@ ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
   scale_fill_lancet()
 ```
 
+## 其它实用r包
 
-## 使用MetBrewer包设置颜色
+### viridis: Colorblind-Friendly Color Maps for R
+
+#### 介绍
+
+官方仓库:[CRAN: Package viridis (r-project.org)](https://cran.r-project.org/web/packages/viridis/)
+
+教程:[Introduction to the viridis color maps (r-project.org)](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+
+多用于连续渐变色
+
+#### 使用效果
+
+色盘
+
+![](https://vip.123pan.cn/1813062489//7%20pic/202410190953713.png)
+
+使用方案参考
+
+![](https://vip.123pan.cn/1813062489//7%20pic/202410190953450.png)
+
+
+### 使用MetBrewer包设置颜色
 
 #### r包介绍
 
@@ -151,7 +173,7 @@ library(MetBrewer)
 ```
 
 
-## 查看配色盘，选择3颜色，区分色
+#### 查看配色盘，选择3颜色，区分色
 ```{r}
 ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
   geom_bar(stat = "identity") +

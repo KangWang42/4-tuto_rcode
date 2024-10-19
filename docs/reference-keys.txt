@@ -43,6 +43,10 @@ ggplot2建立柱状图可视化
 r包介绍-1
 配色方案
 柳叶刀配色
+其它实用r包
+viridis-colorblind-friendly-color-maps-for-r
+介绍
+使用效果
 使用metbrewer包设置颜色
 r包介绍-2
 查看配色盘选择3颜色区分色-1

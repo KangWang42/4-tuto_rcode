@@ -306,18 +306,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.5.2</span> Code evaluation-设置块是否运行<a href="rmarkdown教程-初学r语言推荐.html#code-evaluation-设置块是否运行" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="eval参数-示例evalf" class="section level4 hasAnchor" number="2.5.2.1">
 <h4><span class="header-section-number">2.5.2.1</span> eval参数 示例：“eval=F”<a href="rmarkdown教程-初学r语言推荐.html#eval参数-示例evalf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><strong>可设置不运行代码,注意这里不运行代码，同时代码也不会在输出文档里显示</strong></p>
+<p><strong>可设置不运行代码,注意这里不运行代码</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rmarkdown教程-初学r语言推荐.html#cb3-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;这是运行结果&#39;</span>)</span></code></pre></div>
 </div>
 <div id="include参数-示例includef" class="section level4 hasAnchor" number="2.5.2.2">
 <h4><span class="header-section-number">2.5.2.2</span> include参数 示例：“include=F”<a href="rmarkdown教程-初学r语言推荐.html#include参数-示例includef" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><strong>可设置执行代码，但是在结果输出里隐藏</strong></p>
+<p><strong>可设置执行代码，但是在结果输出里隐藏，这里include是会带着代码一起隐藏了</strong></p>
 </div>
 </div>
 <div id="results参数设置结果输出" class="section level3 hasAnchor" number="2.5.3">
 <h3><span class="header-section-number">2.5.3</span> Results参数,设置结果输出<a href="rmarkdown教程-初学r语言推荐.html#results参数设置结果输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="collapse参数-为t表示代码和结果一起输出" class="section level4 hasAnchor" number="2.5.3.1">
 <h4><span class="header-section-number">2.5.3.1</span> collapse参数 ,为T表示代码和结果一起输出<a href="rmarkdown教程-初学r语言推荐.html#collapse参数-为t表示代码和结果一起输出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>下方设置为F效果</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rmarkdown教程-初学r语言推荐.html#cb4-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;这是运行结果&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;这是运行结果&quot;</code></pre>
 </div>
@@ -332,6 +333,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.5.5</span> error、warning、message为同一类参数，当代码中有警告或者错误信息时是否展示，如果为F时即不展示。<a href="rmarkdown教程-初学r语言推荐.html#errorwarningmessage为同一类参数当代码中有警告或者错误信息时是否展示如果为f时即不展示" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="rmarkdown教程-初学r语言推荐.html#cb8-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;这是运行结果&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;这是运行结果&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="rmarkdown教程-初学r语言推荐.html#cb10-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;这是设置message=F的运行结果&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;这是设置message=F的运行结果&quot;</code></pre>
 </div>
 </div>
 <div id="更多教程" class="section level2 hasAnchor" number="2.6">

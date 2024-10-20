@@ -1,4 +1,4 @@
-# R可视化教程-R语言配色教程
+# (可视化教程)R可视化教程-R语言配色教程{-}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -17,7 +17,7 @@ pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要
 
 ### 加载数据
 
-```{r}
+```{r message=F}
 library(bruceR)
 library(ggplot2)
 data(iris)

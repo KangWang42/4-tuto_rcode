@@ -1,4 +1,4 @@
-# R包推荐-bruceR-r包里的瑞士军刀
+# (实用R包教程)R包推荐-bruceR-r包里的瑞士军刀{-}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

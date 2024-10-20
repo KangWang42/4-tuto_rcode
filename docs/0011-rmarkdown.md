@@ -1,4 +1,4 @@
-# rmarkdown教程-初学r语言推荐
+# (基础教程)rmarkdown教程-初学r语言推荐{-}
 
 
 
@@ -35,6 +35,11 @@ rmarkdown主要用于**逐段运行代码并展示结果，生成演示文档，
 
 ![](https://vip.123pan.cn/1813062489//7%20pic/202410200856148.png)
 
+## rmarkdown编译
+
+代码完成后即可点击rstudio的“knit”按钮，即可编译，编译后会生成一个html文件，在html文件中可以看到代码的运行结果，同时也可以导出为pdf、word等格式的文档，导出的文档可以在github上免费发布，也可以在rstudio上免费发布
+
+![](https://vip.123pan.cn/1813062489//7%20pic/202410200950363.png)
 
 ## rmarkdown的块设置
 

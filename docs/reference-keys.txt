@@ -1,4 +1,3 @@
-r语言学习路径和资料
 声明
 阶段1下载好r并使用
 阶段2学习baser
@@ -12,11 +11,11 @@ r语言学习路径和资料
 阶段5-统计分析
 阶段5-机器学习等
 阶段6-其他
-rmarkdown教程-初学r语言推荐
 rmarkdown介绍
 rmarkdown使用
 rmarkdown界面
 rticles包-rmarkdown模板
+rmarkdown编译
 rmarkdown的块设置
 如何添加块设置
 code-evaluation-设置块是否运行
@@ -27,7 +26,6 @@ collapse参数-为t表示代码和结果一起输出
 echo参数输出文档是否显示代码
 errorwarningmessage为同一类参数当代码中有警告或者错误信息时是否展示如果为f时即不展示
 更多教程
-r包推荐-brucer-r包里的瑞士军刀
 r包介绍
 r包安装
 基础使用
@@ -37,7 +35,6 @@ print_table快速生成三线表
 model_summary常用模型结果summary
 recoderecode重新编码
 其它函数
-compare
 r包介绍-1
 r包安装-1
 r包参数
@@ -55,7 +52,6 @@ r包参数
 同时显示总人群的描述
 结果导出
 快速可视化
-r可视化教程-r语言配色教程
 基础工作
 加载数据
 使用r默认配色方案

@@ -19,39 +19,6 @@
 
 ``` r
 library(bruceR)
-```
-
-```
-## 
-## bruceR (v2024.6)
-## Broadly Useful Convenient and Efficient R functions
-## 
-## Packages also loaded:
-## ✔ data.table	✔ emmeans
-## ✔ dplyr     	✔ lmerTest
-## ✔ tidyr     	✔ effectsize
-## ✔ stringr   	✔ performance
-## ✔ ggplot2   	✔ interactions
-## 
-## Main functions of `bruceR`:
-## cc()          	Describe() 	TTEST()
-## add()         	Freq()     	MANOVA()
-## .mean()       	Corr()     	EMMEANS()
-## set.wd()      	Alpha()    	PROCESS()
-## import()      	EFA()      	model_summary()
-## print_table() 	CFA()      	lavaan_summary()
-## 
-## For full functionality, please install all dependencies:
-## install.packages("bruceR", dep=TRUE)
-## 
-## Online documentation:
-## https://psychbruce.github.io/bruceR
-## 
-## To use this package in publications, please cite:
-## Bao, H.-W.-S. (2024). bruceR: Broadly useful convenient and efficient R functions (Version 2024.6) [Computer software]. https://CRAN.R-project.org/package=bruceR
-```
-
-``` r
 library(ggplot2)
 data(iris)
 head(iris, 10)

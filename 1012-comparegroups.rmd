@@ -1,4 +1,4 @@
-# (实用R包教程)R包推荐-compareGroups-描述性表一快速生成 {-}
+# R包推荐-compareGroups-描述性表一快速生成
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

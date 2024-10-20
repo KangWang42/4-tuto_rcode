@@ -1,4 +1,4 @@
-# (基础教程)rmarkdown教程-初学r语言推荐{-}
+# rmarkdown教程-初学r语言推荐
 
 
 

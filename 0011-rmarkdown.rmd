@@ -57,7 +57,7 @@ rmd的块设置共有7种，**Code evaluation、Results、Code Decoration、Chun
 
 #### eval参数  示例：“eval=F”
 
-**可设置不运行代码,注意这里不运行代码，同时代码也不会在输出文档里显示**
+**可设置不运行代码,注意这里不运行代码**
 
 ```{r, eval=F}
 print('这是运行结果')
@@ -66,7 +66,7 @@ print('这是运行结果')
 
 #### include参数 示例：“include=F”
 
-**可设置执行代码，但是在结果输出里隐藏**
+**可设置执行代码，但是在结果输出里隐藏，这里include是会带着代码一起隐藏了**
 
 ```{r, include=F}
 print('这是运行结果')
@@ -76,7 +76,9 @@ print('这是运行结果')
 
 #### collapse参数 ,为T表示代码和结果一起输出
 
-```{r, collapse参数=T}
+下方设置为F效果
+
+```{r, collapse参数=F}
 print('这是运行结果')
 ```
 
@@ -96,7 +98,9 @@ print('这是运行结果')
 print('这是运行结果')
 ```
 
-
+```{r, message=F}
+print('这是设置message=F的运行结果')
+```
 
 ## 更多教程
 

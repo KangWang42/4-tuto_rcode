@@ -5,7 +5,7 @@ bookdown::gitbook:
     download: ["pdf"]
     bookdown::html_book:
   keep_tex: false
-  collapse: subsection
+  collapse: section
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

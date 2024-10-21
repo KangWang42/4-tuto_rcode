@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 scitb-快速生成基线表一 | 科研学帮帮</title>
+  <meta name="description" content="这是科研学棒棒的r语言教程." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="这是科研学棒棒的r语言教程." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  
+  <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
+  
+
+<meta name="author" content="wang" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r包推荐-comparegroups-描述性表一快速生成.html"/>
+<link rel="next" href="r可视化教程-r语言配色教程.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="part"><span><b>I r基础教程</b></span></li>
+<li class="chapter" data-level="1" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html"><i class="fa fa-check"></i><b>1</b> R语言学习路径和资料</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#声明"><i class="fa fa-check"></i><b>1.1</b> 声明</a></li>
+<li class="chapter" data-level="1.2" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段1下载好r并使用"><i class="fa fa-check"></i><b>1.2</b> 阶段1：下载好r并使用</a></li>
+<li class="chapter" data-level="1.3" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段2学习baser"><i class="fa fa-check"></i><b>1.3</b> 阶段2：学习baseR</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#推荐资料"><i class="fa fa-check"></i><b>1.3.1</b> 推荐资料</a></li>
+<li class="chapter" data-level="1.3.2" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#学习路线"><i class="fa fa-check"></i><b>1.3.2</b> 学习路线</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段3开始学习tidyverse"><i class="fa fa-check"></i><b>1.4</b> 阶段3：开始学习tidyverse</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#推荐资料-1"><i class="fa fa-check"></i><b>1.4.1</b> 推荐资料</a></li>
+<li class="chapter" data-level="1.4.2" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#学习路径"><i class="fa fa-check"></i><b>1.4.2</b> 学习路径</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段4学习可视化"><i class="fa fa-check"></i><b>1.5</b> 阶段4：学习可视化</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#学习资料"><i class="fa fa-check"></i><b>1.5.1</b> 学习资料</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段5-统计分析"><i class="fa fa-check"></i><b>1.6</b> 阶段5 统计分析</a></li>
+<li class="chapter" data-level="1.7" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段5-机器学习等"><i class="fa fa-check"></i><b>1.7</b> 阶段5 机器学习等</a></li>
+<li class="chapter" data-level="1.8" data-path="r语言学习路径和资料.html"><a href="r语言学习路径和资料.html#阶段6-其他"><i class="fa fa-check"></i><b>1.8</b> 阶段6 其他</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html"><i class="fa fa-check"></i><b>2</b> rmarkdown教程-初学r语言推荐</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rmarkdown介绍"><i class="fa fa-check"></i><b>2.1</b> rmarkdown介绍</a></li>
+<li class="chapter" data-level="2.2" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rmarkdown使用"><i class="fa fa-check"></i><b>2.2</b> rmarkdown使用</a></li>
+<li class="chapter" data-level="2.3" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rmarkdown界面"><i class="fa fa-check"></i><b>2.3</b> rmarkdown界面</a></li>
+<li class="chapter" data-level="2.4" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rticles包-rmarkdown模板"><i class="fa fa-check"></i><b>2.4</b> rticles包-rmarkdown模板</a></li>
+<li class="chapter" data-level="2.5" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rmarkdown编译"><i class="fa fa-check"></i><b>2.5</b> rmarkdown编译</a></li>
+<li class="chapter" data-level="2.6" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#rmarkdown的块设置"><i class="fa fa-check"></i><b>2.6</b> rmarkdown的块设置</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#如何添加块设置"><i class="fa fa-check"></i><b>2.6.1</b> 如何添加块设置</a></li>
+<li class="chapter" data-level="2.6.2" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#code-evaluation-设置块是否运行"><i class="fa fa-check"></i><b>2.6.2</b> Code evaluation-设置块是否运行</a></li>
+<li class="chapter" data-level="2.6.3" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#results参数设置结果输出"><i class="fa fa-check"></i><b>2.6.3</b> Results参数,设置结果输出</a></li>
+<li class="chapter" data-level="2.6.4" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#echo参数输出文档是否显示代码"><i class="fa fa-check"></i><b>2.6.4</b> echo参数，输出文档是否显示代码</a></li>
+<li class="chapter" data-level="2.6.5" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#errorwarningmessage为同一类参数当代码中有警告或者错误信息时是否展示如果为f时即不展示"><i class="fa fa-check"></i><b>2.6.5</b> error、warning、message为同一类参数，当代码中有警告或者错误信息时是否展示，如果为F时即不展示。</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="rmarkdown教程-初学r语言推荐.html"><a href="rmarkdown教程-初学r语言推荐.html#更多教程"><i class="fa fa-check"></i><b>2.7</b> 更多教程</a></li>
+</ul></li>
+<li class="part"><span><b>II 实用R包推荐</b></span></li>
+<li class="chapter" data-level="3" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html"><i class="fa fa-check"></i><b>3</b> R包推荐-bruceR-r包里的瑞士军刀</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#r包介绍"><i class="fa fa-check"></i><b>3.1</b> r包介绍</a></li>
+<li class="chapter" data-level="3.2" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#r包安装"><i class="fa fa-check"></i><b>3.2</b> r包安装</a></li>
+<li class="chapter" data-level="3.3" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#基础使用"><i class="fa fa-check"></i><b>3.3</b> 基础使用</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#set_wd设置工作路径"><i class="fa fa-check"></i><b>3.3.1</b> set_wd:设置工作路径</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#import一个函数导入或导出各种数据"><i class="fa fa-check"></i><b>3.3.2</b> import:一个函数导入或导出各种数据</a></li>
+<li class="chapter" data-level="3.3.3" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#print_table快速生成三线表"><i class="fa fa-check"></i><b>3.3.3</b> print_table：快速生成三线表</a></li>
+<li class="chapter" data-level="3.3.4" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#model_summary常用模型结果summary"><i class="fa fa-check"></i><b>3.3.4</b> model_summary：常用模型结果summary</a></li>
+<li class="chapter" data-level="3.3.5" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#recoderecode重新编码"><i class="fa fa-check"></i><b>3.3.5</b> RECODE:recode重新编码</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="r包推荐-brucer-r包里的瑞士军刀.html"><a href="r包推荐-brucer-r包里的瑞士军刀.html#其它函数"><i class="fa fa-check"></i><b>3.4</b> 其它函数</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html"><i class="fa fa-check"></i><b>4</b> R包推荐-compareGroups-描述性表一快速生成</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#r包介绍-1"><i class="fa fa-check"></i><b>4.1</b> R包介绍</a></li>
+<li class="chapter" data-level="4.2" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#r包安装-1"><i class="fa fa-check"></i><b>4.2</b> R包安装</a></li>
+<li class="chapter" data-level="4.3" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#r包参数"><i class="fa fa-check"></i><b>4.3</b> R包参数</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#查看数据"><i class="fa fa-check"></i><b>4.3.1</b> <strong>查看数据</strong></a></li>
+<li class="chapter" data-level="4.3.2" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#生成描述性统计表"><i class="fa fa-check"></i><b>4.3.2</b> <strong>生成描述性统计表</strong></a></li>
+<li class="chapter" data-level="4.3.3" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#设置分组变量"><i class="fa fa-check"></i><b>4.3.3</b> <strong>设置分组变量</strong></a></li>
+<li class="chapter" data-level="4.3.4" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#删除某些变量不显示"><i class="fa fa-check"></i><b>4.3.4</b> <strong>删除某些变量不显示</strong></a></li>
+<li class="chapter" data-level="4.3.5" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#亚组描述"><i class="fa fa-check"></i><b>4.3.5</b> <strong>亚组描述</strong></a></li>
+<li class="chapter" data-level="4.3.6" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#自定义设置分组检验方法"><i class="fa fa-check"></i><b>4.3.6</b> <strong>自定义设置分组检验方法</strong></a></li>
+<li class="chapter" data-level="4.3.7" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#不显示标签label值"><i class="fa fa-check"></i><b>4.3.7</b> <strong>不显示标签label值</strong></a></li>
+<li class="chapter" data-level="4.3.8" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#设置计量资料用四分位法描述"><i class="fa fa-check"></i><b>4.3.8</b> <strong>设置计量资料用四分位法描述</strong></a></li>
+<li class="chapter" data-level="4.3.9" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#生成or和hr值"><i class="fa fa-check"></i><b>4.3.9</b> <strong>生成OR和HR值</strong></a></li>
+<li class="chapter" data-level="4.3.10" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#不显示对照组的描述信息"><i class="fa fa-check"></i><b>4.3.10</b> <strong>不显示对照组的描述信息</strong></a></li>
+<li class="chapter" data-level="4.3.11" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#同时显示总人群的描述"><i class="fa fa-check"></i><b>4.3.11</b> <strong>同时显示总人群的描述</strong></a></li>
+<li class="chapter" data-level="4.3.12" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#结果导出"><i class="fa fa-check"></i><b>4.3.12</b> 结果导出</a></li>
+<li class="chapter" data-level="4.3.13" data-path="r包推荐-comparegroups-描述性表一快速生成.html"><a href="r包推荐-comparegroups-描述性表一快速生成.html#快速可视化"><i class="fa fa-check"></i><b>4.3.13</b> <strong>快速可视化</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html"><i class="fa fa-check"></i><b>5</b> scitb-快速生成基线表一</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#r包介绍-2"><i class="fa fa-check"></i><b>5.1</b> R包介绍</a></li>
+<li class="chapter" data-level="5.2" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#r包安装-2"><i class="fa fa-check"></i><b>5.2</b> R包安装</a></li>
+<li class="chapter" data-level="5.3" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#r包使用"><i class="fa fa-check"></i><b>5.3</b> R包使用</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#导入示例数据"><i class="fa fa-check"></i><b>5.3.1</b> 导入示例数据</a></li>
+<li class="chapter" data-level="5.3.2" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#生成描述性表1"><i class="fa fa-check"></i><b>5.3.2</b> 生成描述性表1</a></li>
+<li class="chapter" data-level="5.3.3" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#连续变量快速分层描述"><i class="fa fa-check"></i><b>5.3.3</b> 连续变量快速分层描述</a></li>
+<li class="chapter" data-level="5.3.4" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#保存结果"><i class="fa fa-check"></i><b>5.3.4</b> 保存结果</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="scitb-快速生成基线表一.html"><a href="scitb-快速生成基线表一.html#总结"><i class="fa fa-check"></i><b>5.4</b> 总结</a></li>
+</ul></li>
+<li class="part"><span><b>III R可视化教程</b></span></li>
+<li class="chapter" data-level="6" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html"><i class="fa fa-check"></i><b>6</b> R可视化教程-R语言配色教程</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#基础工作"><i class="fa fa-check"></i><b>6.1</b> 基础工作</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#加载数据"><i class="fa fa-check"></i><b>6.1.1</b> 加载数据</a></li>
+<li class="chapter" data-level="6.1.2" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#使用r默认配色方案"><i class="fa fa-check"></i><b>6.1.2</b> 使用r默认配色方案</a></li>
+<li class="chapter" data-level="6.1.3" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#ggplot2手动调色"><i class="fa fa-check"></i><b>6.1.3</b> ggplot2手动调色</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#使用rcolorbrewer包设置颜色"><i class="fa fa-check"></i><b>6.2</b> 使用RColorBrewer包设置颜色</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#rcolorbrew介绍"><i class="fa fa-check"></i><b>6.2.1</b> Rcolorbrew介绍</a></li>
+<li class="chapter" data-level="6.2.2" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#查看配色盘选择3颜色区分色"><i class="fa fa-check"></i><b>6.2.2</b> 查看配色盘，选择3颜色，区分色</a></li>
+<li class="chapter" data-level="6.2.3" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#ggplot2建立柱状图可视化"><i class="fa fa-check"></i><b>6.2.3</b> ggplot2建立柱状图可视化</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#使用ggsci包设置颜色"><i class="fa fa-check"></i><b>6.3</b> 使用ggsci包设置颜色</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#r包介绍-3"><i class="fa fa-check"></i><b>6.3.1</b> R包介绍</a></li>
+<li class="chapter" data-level="6.3.2" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#配色方案"><i class="fa fa-check"></i><b>6.3.2</b> 配色方案</a></li>
+<li class="chapter" data-level="6.3.3" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#柳叶刀配色"><i class="fa fa-check"></i><b>6.3.3</b> 柳叶刀配色</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#其它实用r包"><i class="fa fa-check"></i><b>6.4</b> 其它实用r包</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#viridis-colorblind-friendly-color-maps-for-r"><i class="fa fa-check"></i><b>6.4.1</b> viridis: Colorblind-Friendly Color Maps for R</a></li>
+<li class="chapter" data-level="6.4.2" data-path="r可视化教程-r语言配色教程.html"><a href="r可视化教程-r语言配色教程.html#使用metbrewer包设置颜色"><i class="fa fa-check"></i><b>6.4.2</b> 使用MetBrewer包设置颜色</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">科研学帮帮</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="scitb-快速生成基线表一" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> scitb-快速生成基线表一<a href="scitb-快速生成基线表一.html#scitb-快速生成基线表一" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r包介绍-2" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> R包介绍<a href="scitb-快速生成基线表一.html#r包介绍-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>scitb是一个专门用于基线表开发的包，相较于tableone scitb具有更好使用，导出方便，快速设置的优点</p>
+<p><a href="https://cran.r-project.org/web//packages/scitb/index.html">CRAN库</a></p>
+<p><a href="%5BURL_ADDRESS%5D(https://mp.weixin.qq.com/s?__biz=MzI1NjM3NTE1NQ==&amp;mid=2247489581&amp;idx=1&amp;sn=de498ce7eaf3a3084efebddc568c7068&amp;chksm=ea26f831dd5171272e58c707dac3242a8695d1413dfe5a5c8df926fa32c96728637290b14a6d&amp;scene=21#wechat_redirect)">作者教程</a></p>
+</div>
+<div id="r包安装-2" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> R包安装<a href="scitb-快速生成基线表一.html#r包安装-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="scitb-快速生成基线表一.html#cb53-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;scitb&quot;</span>)</span></code></pre></div>
+</div>
+<div id="r包使用" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> R包使用<a href="scitb-快速生成基线表一.html#r包使用" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="导入示例数据" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> 导入示例数据<a href="scitb-快速生成基线表一.html#导入示例数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>导入数据prematurity，：low 是否是小于2500g早产低体重儿，age 母亲的年龄，lwt 末次月经体重，race 种族，smoke孕期抽烟，ptl 早产史（计数），ht 有高血压病史，ui 子宫过敏，ftv 早孕时看医生的次数bwt 新生儿体重数值</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="scitb-快速生成基线表一.html#cb54-1" tabindex="-1"></a><span class="fu">library</span>(scitb)</span>
+<span id="cb54-2"><a href="scitb-快速生成基线表一.html#cb54-2" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span></code></pre></div>
+<pre><code>## 
+## bruceR (v2024.6)
+## Broadly Useful Convenient and Efficient R functions
+## 
+## Packages also loaded:
+## ✔ data.table ✔ emmeans
+## ✔ dplyr      ✔ lmerTest
+## ✔ tidyr      ✔ effectsize
+## ✔ stringr    ✔ performance
+## ✔ ggplot2    ✔ interactions
+## 
+## Main functions of `bruceR`:
+## cc()             Describe()  TTEST()
+## add()            Freq()      MANOVA()
+## .mean()          Corr()      EMMEANS()
+## set.wd()         Alpha()     PROCESS()
+## import()         EFA()       model_summary()
+## print_table()    CFA()       lavaan_summary()
+## 
+## For full functionality, please install all dependencies:
+## install.packages(&quot;bruceR&quot;, dep=TRUE)
+## 
+## Online documentation:
+## https://psychbruce.github.io/bruceR
+## 
+## To use this package in publications, please cite:
+## Bao, H.-W.-S. (2024). bruceR: Broadly useful convenient and efficient R functions (Version 2024.6) [Computer software]. https://CRAN.R-project.org/package=bruceR</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="scitb-快速生成基线表一.html#cb56-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> prematurity</span>
+<span id="cb56-2"><a href="scitb-快速生成基线表一.html#cb56-2" tabindex="-1"></a><span class="fu">head</span>(data,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##   id low age lwt  race     smoke ptl ht ui ftv  bwt
+## 1 85   0  19 182 black nonsmoker   0  0  1   0 2523
+## 2 86   0  33 155 other nonsmoker   0  0  0   3 2551
+## 3 87   0  20 105 white    smoker   0  0  0   1 2557
+## 4 88   0  21 108 white    smoker   0  0  1   2 2594
+## 5 89   0  18 107 white    smoker   0  0  1   0 2600</code></pre>
+</div>
+<div id="生成描述性表1" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 生成描述性表1<a href="scitb-快速生成基线表一.html#生成描述性表1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="首先定义变量" class="section level4 hasAnchor" number="5.3.2.1">
+<h4><span class="header-section-number">5.3.2.1</span> 首先定义变量<a href="scitb-快速生成基线表一.html#首先定义变量" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>为什么这里要定义变量，而不在基线表函数里直接引入字符向量，这是为了有良好的编程习惯。先从构建函数框架开始，最后函数调用，后续无论是修改变量还是增删变量都会很清晰</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="scitb-快速生成基线表一.html#cb58-1" tabindex="-1"></a>allVars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>,<span class="st">&quot;bwt&quot;</span>)</span>
+<span id="cb58-2"><a href="scitb-快速生成基线表一.html#cb58-2" tabindex="-1"></a>fvars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>)</span>
+<span id="cb58-3"><a href="scitb-快速生成基线表一.html#cb58-3" tabindex="-1"></a>strata<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;bwt&quot;</span>)</span></code></pre></div>
+</div>
+<div id="生成基线表" class="section level4 hasAnchor" number="5.3.2.2">
+<h4><span class="header-section-number">5.3.2.2</span> 生成基线表<a href="scitb-快速生成基线表一.html#生成基线表" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="scitb-快速生成基线表一.html#cb59-1" tabindex="-1"></a>data_neat <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
+<span id="cb59-2"><a href="scitb-快速生成基线表一.html#cb59-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb59-3"><a href="scitb-快速生成基线表一.html#cb59-3" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">as.factor</span>(race),</span>
+<span id="cb59-4"><a href="scitb-快速生成基线表一.html#cb59-4" tabindex="-1"></a>    <span class="at">smoke =</span> <span class="fu">as.factor</span>(smoke)</span>
+<span id="cb59-5"><a href="scitb-快速生成基线表一.html#cb59-5" tabindex="-1"></a>  )</span>
+<span id="cb59-6"><a href="scitb-快速生成基线表一.html#cb59-6" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="scitb-快速生成基线表一.html#cb59-7" tabindex="-1"></a>tab0<span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat)</span></code></pre></div>
+<pre><code>##       Min 33.33333% 66.66667%       Max 
+##   709.000  2598.000  3283.667  4990.000</code></pre>
+<pre><code>## Strata is treated as a continuous variable.</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="scitb-快速生成基线表一.html#cb62-1" tabindex="-1"></a>tab0</span></code></pre></div>
+<pre><code>##       Characteristic G.0                      G.1                     
+## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
+## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
+## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
+## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
+## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
+##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
+## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
+##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
+##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
+##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
+## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
+##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
+##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
+## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
+##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
+##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
+##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
+## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
+##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
+## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
+##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
+## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
+##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
+##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
+##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
+##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
+##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
+##       G.2                      p value 
+## scinn &quot;63&quot;                     &quot;&quot;      
+## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
+## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
+## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
+## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
+##       &quot;63 (100.00%)&quot;           &quot; &quot;     
+##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.060&quot; 
+##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
+##       &quot;16 (25.40%)&quot;            &quot; &quot;     
+##       &quot;41 (65.08%)&quot;            &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.037&quot; 
+##       &quot;45 (71.43%)&quot;            &quot; &quot;     
+##       &quot;18 (28.57%)&quot;            &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.012&quot; 
+##       &quot;56 (88.89%)&quot;            &quot; &quot;     
+##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
+##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
+##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.154&quot; 
+##       &quot;60 (95.24%)&quot;            &quot; &quot;     
+##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.005&quot; 
+##       &quot;60 (95.24%)&quot;            &quot; &quot;     
+##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.283&quot; 
+##       &quot;31 (49.21%)&quot;            &quot; &quot;     
+##       &quot;20 (31.75%)&quot;            &quot; &quot;     
+##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
+##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
+##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
+##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
+</div>
+<div id="设置有非正态资料" class="section level4 hasAnchor" number="5.3.2.3">
+<h4><span class="header-section-number">5.3.2.3</span> 设置有非正态资料<a href="scitb-快速生成基线表一.html#设置有非正态资料" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>设置非正态后可以看到lwt变量是用百分位数进行描述，后边的pvalue也调用非参检验</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="scitb-快速生成基线表一.html#cb64-1" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat, <span class="at">nonnormal=</span><span class="fu">c</span>(<span class="st">&quot;lwt&quot;</span>))</span></code></pre></div>
+<pre><code>##       Min 33.33333% 66.66667%       Max 
+##   709.000  2598.000  3283.667  4990.000</code></pre>
+<pre><code>## Strata is treated as a continuous variable.</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="scitb-快速生成基线表一.html#cb67-1" tabindex="-1"></a>tab2</span></code></pre></div>
+<pre><code>##       Characteristic G.0                      G.1                     
+## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
+## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
+## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
+## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
+## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
+##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
+## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
+##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
+##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
+##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
+## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
+##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
+##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
+## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
+##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
+##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
+##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
+## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
+##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
+## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
+##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
+## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
+##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
+##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
+##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
+##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
+##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
+##       G.2                      p value 
+## scinn &quot;63&quot;                     &quot;&quot;      
+## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
+## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
+## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
+## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
+##       &quot;63 (100.00%)&quot;           &quot; &quot;     
+##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.060&quot; 
+##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
+##       &quot;16 (25.40%)&quot;            &quot; &quot;     
+##       &quot;41 (65.08%)&quot;            &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.037&quot; 
+##       &quot;45 (71.43%)&quot;            &quot; &quot;     
+##       &quot;18 (28.57%)&quot;            &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.012&quot; 
+##       &quot;56 (88.89%)&quot;            &quot; &quot;     
+##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
+##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
+##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.154&quot; 
+##       &quot;60 (95.24%)&quot;            &quot; &quot;     
+##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.005&quot; 
+##       &quot;60 (95.24%)&quot;            &quot; &quot;     
+##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
+## d2    &quot; &quot;                      &quot;0.283&quot; 
+##       &quot;31 (49.21%)&quot;            &quot; &quot;     
+##       &quot;20 (31.75%)&quot;            &quot; &quot;     
+##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
+##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
+##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
+##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
+</div>
+</div>
+<div id="连续变量快速分层描述" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 连续变量快速分层描述<a href="scitb-快速生成基线表一.html#连续变量快速分层描述" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>输出1可以看出年龄的自动分层记录，表明从14到20到25到45进行了分层</p>
+<p>如果想要生成其它分层数，设置参数 num = n</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="scitb-快速生成基线表一.html#cb69-1" tabindex="-1"></a><span class="co"># allvar删不删除年龄都可以</span></span>
+<span id="cb69-2"><a href="scitb-快速生成基线表一.html#cb69-2" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="scitb-快速生成基线表一.html#cb69-3" tabindex="-1"></a>allVars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;race&quot;</span>, <span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;smoke&quot;</span>, <span class="st">&quot;ptl&quot;</span>, <span class="st">&quot;ht&quot;</span>, <span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>, <span class="st">&quot;bwt&quot;</span>)</span>
+<span id="cb69-4"><a href="scitb-快速生成基线表一.html#cb69-4" tabindex="-1"></a>fvars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;race&quot;</span>)</span>
+<span id="cb69-5"><a href="scitb-快速生成基线表一.html#cb69-5" tabindex="-1"></a>strata3 <span class="ot">&lt;-</span> <span class="st">&quot;age&quot;</span></span>
+<span id="cb69-6"><a href="scitb-快速生成基线表一.html#cb69-6" tabindex="-1"></a></span>
+<span id="cb69-7"><a href="scitb-快速生成基线表一.html#cb69-7" tabindex="-1"></a>tab3 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars3,<span class="at">fvars=</span>fvars3,<span class="at">strata=</span>strata3,<span class="at">data=</span>data_neat)</span></code></pre></div>
+<pre><code>##       Min 33.33333% 66.66667%       Max 
+##        14        20        25        45</code></pre>
+<pre><code>## Strata is treated as a continuous variable.</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="scitb-快速生成基线表一.html#cb72-1" tabindex="-1"></a>tab3</span></code></pre></div>
+<pre><code>##       Characteristic G.0                      G.1                     
+## scinn &quot;N&quot;            &quot;51&quot;                     &quot;69&quot;                    
+## d1    &quot;lwt&quot;          &quot;119.00 (106.00-135.00)&quot; &quot;121.00 (110.00-132.00)&quot;
+## d1    &quot;ptl&quot;          &quot;0.00 (0.00-0.00)&quot;       &quot;0.00 (0.00-0.00)&quot;      
+## d1    &quot;ftv&quot;          &quot;0.00 (0.00-1.00)&quot;       &quot;0.00 (0.00-1.00)&quot;      
+## d1    &quot;bwt&quot;          &quot;2974.08±612.51&quot;         &quot;2921.42±697.85&quot;        
+## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
+##       &quot;nonsmoker&quot;    &quot;28 (54.90%)&quot;            &quot;44 (63.77%)&quot;           
+##       &quot;smoker&quot;       &quot;23 (45.10%)&quot;            &quot;25 (36.23%)&quot;           
+## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;48 (94.12%)&quot;            &quot;64 (92.75%)&quot;           
+##       &quot;1&quot;            &quot; 3 (5.88%)&quot;             &quot; 5 (7.25%)&quot;            
+## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
+##       &quot;0&quot;            &quot;43 (84.31%)&quot;            &quot;58 (84.06%)&quot;           
+##       &quot;1&quot;            &quot; 8 (15.69%)&quot;            &quot;11 (15.94%)&quot;           
+## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
+##       &quot;black&quot;        &quot;10 (19.61%)&quot;            &quot;10 (14.49%)&quot;           
+##       &quot;other&quot;        &quot;18 (35.29%)&quot;            &quot;27 (39.13%)&quot;           
+##       &quot;white&quot;        &quot;23 (45.10%)&quot;            &quot;32 (46.38%)&quot;           
+##       G.2                      p value
+## scinn &quot;69&quot;                     &quot;&quot;     
+## d1    &quot;130.00 (115.00-153.00)&quot; &quot;0.086&quot;
+## d1    &quot;0.00 (0.00-0.00)&quot;       &quot;0.171&quot;
+## d1    &quot;1.00 (0.00-2.00)&quot;       &quot;0.011&quot;
+## d1    &quot;2945.13±839.82&quot;         &quot;0.927&quot;
+## d2    &quot; &quot;                      &quot;0.587&quot;
+##       &quot;43 (62.32%)&quot;            &quot; &quot;    
+##       &quot;26 (37.68%)&quot;            &quot; &quot;    
+## d2    &quot; &quot;                      &quot;0.929&quot;
+##       &quot;65 (94.20%)&quot;            &quot; &quot;    
+##       &quot; 4 (5.80%)&quot;             &quot; &quot;    
+## d2    &quot; &quot;                      &quot;0.873&quot;
+##       &quot;60 (86.96%)&quot;            &quot; &quot;    
+##       &quot; 9 (13.04%)&quot;            &quot; &quot;    
+## d2    &quot; &quot;                      &quot;0.320&quot;
+##       &quot; 6 (8.70%)&quot;             &quot; &quot;    
+##       &quot;22 (31.88%)&quot;            &quot; &quot;    
+##       &quot;41 (59.42%)&quot;            &quot; &quot;</code></pre>
+</div>
+<div id="保存结果" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> 保存结果<a href="scitb-快速生成基线表一.html#保存结果" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="scitb-快速生成基线表一.html#cb74-1" tabindex="-1"></a><span class="fu">write.csv</span>(tab0,<span class="at">file=</span> <span class="st">&quot;01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">data.csv&quot;</span>,<span class="at">row.names =</span> F, </span>
+<span id="cb74-2"><a href="scitb-快速生成基线表一.html#cb74-2" tabindex="-1"></a>    <span class="at">fileEncoding =</span> <span class="st">&quot;gbk&quot;</span>)</span></code></pre></div>
+<p>保存出来是下图，复制到word改改就能用</p>
+<div class="float">
+<img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410211052806.png" alt="图" />
+<div class="figcaption">图</div>
+</div>
+</div>
+</div>
+<div id="总结" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> 总结<a href="scitb-快速生成基线表一.html#总结" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>使用体验：自定义度，结果展示等不如comparegroups，但是胜在参数简单，在期刊没那么高要求和平时展示可以用</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r包推荐-comparegroups-描述性表一快速生成.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r可视化教程-r语言配色教程.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"bookdown::html_book": null
+});
+});
+</script>
+
+</body>
+
+</html>

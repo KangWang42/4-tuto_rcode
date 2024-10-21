@@ -650,16 +650,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="结果导出" class="section level3 hasAnchor" number="4.3.12">
 <h3><span class="header-section-number">4.3.12</span> 结果导出<a href="r包推荐-comparegroups-描述性表一快速生成.html#结果导出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>可导出各种格式,export2xls, export2latex, export2pdf, export2csv, export2md, export2word</p>
-<p><code>{r eval = F} #直接导出到docx中，其它函数语法差不多 export2word(tab_0,file="1 data_summary.docx")</code></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb51-1" tabindex="-1"></a><span class="fu">export2word</span>(tab_0,<span class="at">file=</span><span class="st">&quot;1 data_summary.docx&quot;</span>)</span></code></pre></div>
 </div>
 <div id="快速可视化" class="section level3 hasAnchor" number="4.3.13">
 <h3><span class="header-section-number">4.3.13</span> <strong>快速可视化</strong><a href="r包推荐-comparegroups-描述性表一快速生成.html#快速可视化" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>使用plot函数进行可视化，设置file和type参数进行保存例如</p>
 <p>plot(res[c(1,2)], file=“./figures/univar/”, type=“png”)</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb51-1" tabindex="-1"></a>tab0 <span class="ot">&lt;-</span> <span class="fu">descrTable</span>(<span class="st">`</span><span class="at">sex</span><span class="st">`</span><span class="sc">~</span> .<span class="sc">-</span>id<span class="sc">-</span>year, <span class="at">data =</span> regicor)</span>
-<span id="cb51-2"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb51-2" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb51-3" tabindex="-1"></a><span class="fu">plot</span>(tab0)</span></code></pre></div>
-<p><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-2.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-3.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-4.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-5.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-6.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-7.png" width="672" /></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb52-1" tabindex="-1"></a>tab0 <span class="ot">&lt;-</span> <span class="fu">descrTable</span>(<span class="st">`</span><span class="at">sex</span><span class="st">`</span><span class="sc">~</span> .<span class="sc">-</span>id<span class="sc">-</span>year, <span class="at">data =</span> regicor)</span>
+<span id="cb52-2"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="r包推荐-comparegroups-描述性表一快速生成.html#cb52-3" tabindex="-1"></a><span class="fu">plot</span>(tab0)</span></code></pre></div>
+<p><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-1.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-2.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-3.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-4.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-5.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-6.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-7.png" width="672" /></p>
 
 </div>
 </div>

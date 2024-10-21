@@ -485,7 +485,8 @@ descrTable(`sex`~ .-id-year, data = regicor,show.all = TRUE)
 
 可导出各种格式,export2xls, export2latex, export2pdf, export2csv, export2md, export2word
 
-```{r eval = F} #直接导出到docx中，其它函数语法差不多
+
+``` r
 export2word(tab_0,file="1 data_summary.docx")
 ```
 
@@ -502,5 +503,5 @@ tab0 <- descrTable(`sex`~ .-id-year, data = regicor)
 plot(tab0)
 ```
 
-<img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-2.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-3.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-4.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-5.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-6.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-16-7.png" width="672" />
+<img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-1.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-2.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-3.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-4.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-5.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-6.png" width="672" /><img src="1012-comparegroups_files/figure-html/unnamed-chunk-17-7.png" width="672" />
 

@@ -106,7 +106,7 @@ write.csv(tab0,file= "01-attch\\10\\data.csv",row.names = F,
 
 保存出来是下图，复制到word改改就能用
 
-![图](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410211052806.png)
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410211052806.png)
 
 ## 总结
 

@@ -28,7 +28,7 @@ collapse参数-为t表示代码和结果一起输出
 echo参数输出文档是否显示代码
 errorwarningmessage为同一类参数当代码中有警告或者错误信息时是否展示如果为f时即不展示
 更多教程
-r包推荐-brucer-r包里的瑞士军刀
+brucer-r包里的瑞士军刀
 r包介绍
 r包安装
 基础使用
@@ -38,7 +38,7 @@ print_table快速生成三线表
 model_summary常用模型结果summary
 recoderecode重新编码
 其它函数
-r包推荐-comparegroups-描述性表一快速生成
+comparegroups-描述性表一快速生成
 r包介绍-1
 r包安装-1
 r包参数
@@ -68,9 +68,20 @@ r包使用
 连续变量快速分层描述
 保存结果
 总结
+purrr-函数式编程彻底摆脱for循环
+r包介绍-3
+r包安装-3
+语法
+举个栗子
+加载数据
+使用tidyver和purrr来划分数据分别做回归
+常规方法来做这个模型
+多变量索引循环
+嵌套循环
+更多
 r可视化教程-r语言配色教程
 基础工作
-加载数据
+加载数据-1
 使用r默认配色方案
 ggplot2手动调色
 使用rcolorbrewer包设置颜色
@@ -78,7 +89,7 @@ rcolorbrew介绍
 查看配色盘选择3颜色区分色
 ggplot2建立柱状图可视化
 使用ggsci包设置颜色
-r包介绍-3
+r包介绍-4
 配色方案
 柳叶刀配色
 其它实用r包
@@ -86,5 +97,5 @@ viridis-colorblind-friendly-color-maps-for-r
 介绍
 使用效果
 使用metbrewer包设置颜色
-r包介绍-4
+r包介绍-5
 查看配色盘选择3颜色区分色-1

@@ -164,8 +164,8 @@ descrTable(`sex`~ .-id-year, data = regicor,show.all = TRUE)
 
 可导出各种格式,export2xls, export2latex, export2pdf, export2csv, export2md, export2word
 
-```{r} #直接导出到docx中，其它函数语法差不多}
-#export2word(tab_0,file="1 data_summary.docx")
+```{r eval = F} #直接导出到docx中，其它函数语法差不多
+export2word(tab_0,file="1 data_summary.docx")
 ```
 
 ### **快速可视化**

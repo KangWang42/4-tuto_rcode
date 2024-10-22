@@ -74,7 +74,7 @@ r包安装-3
 语法
 举个栗子
 加载数据
-使用tidyver和purrr来划分数据分别做回归
+使用tidyverse结构和purrr来划分数据分别做回归
 常规方法来做这个模型
 多变量索引循环
 嵌套循环
@@ -99,3 +99,12 @@ viridis-colorblind-friendly-color-maps-for-r
 使用metbrewer包设置颜色
 r包介绍-5
 查看配色盘选择3颜色区分色-1
+r语言批量导入数据
+批量导入文件夹下的所有数据文件
+第一步提取文件名
+第二步批量导入
+接下来美化一下
+批量导入excel下的多个sheet
+第一步提取sheet名
+第二步批量导入-1
+尾语

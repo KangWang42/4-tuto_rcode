@@ -47,7 +47,7 @@ data <- mtcars
 head(data, 5)
 ```
 
-### 使用tidyver和purrr来划分数据分别做回归
+### 使用tidyverse结构和purrr来划分数据分别做回归
 
 我们现在想根据cyl对数据框进行划分，在分出来的数据框中做回归，然后把回归结果放到一个数字向量里
 

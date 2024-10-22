@@ -1,0 +1,104 @@
+# (PART) R实用操作合集 {-}
+
+# R语言批量导入数据
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##library(tidyverse) # Wickham的数据整理的整套工具
+pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要放在最后
+```
+
+## 批量导入文件夹下的所有数据文件
+
+
+以公开数据库CHRALS为例
+
+在文件夹下有10个dta文件，文件名各不一致。如何将所有文件导入一个列表中？
+
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220949048.webp)
+### 载入包
+
+```{r message=F}
+library(bruceR)
+library(purrr)
+rm(list = ls())
+
+```
+
+### 第一步:提取文件名
+
+```{r}
+files <- 
+    fs::dir_ls("D:\\0 zotero笔记\\06-其它\\3 公众号\\1 blogpost-r\\01-attch\\10\\CHARLS", 
+                   recurse = TRUE,
+                    glob = "*.dta")
+
+print(files)
+
+```
+
+### 第二步:批量导入
+
+```{r}
+data_list <- files |> 
+    map(\(filename)
+    {import(file=filename)})
+
+summary(data_list)
+
+```
+
+可以看到已经导入成功啦
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220957711.webp)
+
+### 接下来美化一下
+
+
+```{r}
+data_list_neat <- set_names(
+    data_list,
+    files |> 
+        map(\(str)
+        {str_remove(str, 
+        "D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/")})
+)
+```
+
+可以看到列表每个元素名也规范了
+
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410221002367.webp)
+
+## 批量导入excel下的多个sheet
+
+现在我们有一个excel文件，其中有多个sheet，如何一次性导入到列表里呢
+
+### 第一步:提取sheet名
+
+```{r}
+
+sheet_names <- readxl::excel_sheets(
+    "D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx"
+)
+
+sheet_names
+```
+
+### 第二步:批量导入
+```{r}
+data_list <- 
+    sheet_names |>
+    map(\(var)
+        {import(
+        file='D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx',
+        sheet = var) 
+    }) |> 
+    set_names(sheet_names)
+
+str(data_list)
+
+```
+
+## 尾语
+
+本期主要使用了bruceR包和purrr包，基本可以满足日常数据导入的所有需求。

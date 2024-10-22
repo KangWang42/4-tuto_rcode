@@ -17,6 +17,7 @@ pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要
 在文件夹下有10个dta文件，文件名各不一致。如何将所有文件导入一个列表中？
 
 ![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220949048.webp)
+
 ### 载入包
 
 ```{r message=F}
@@ -45,11 +46,9 @@ data_list <- files |>
     map(\(filename)
     {import(file=filename)})
 
-summary(data_list)
-
 ```
 
-可以看到已经导入成功啦
+可以看到已经导入成功
 ![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220957711.webp)
 
 ### 接下来美化一下
@@ -72,6 +71,7 @@ data_list_neat <- set_names(
 ## 批量导入excel下的多个sheet
 
 现在我们有一个excel文件，其中有多个sheet，如何一次性导入到列表里呢
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410221031909.webp)
 
 ### 第一步:提取sheet名
 

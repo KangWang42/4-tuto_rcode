@@ -13,6 +13,7 @@
 在文件夹下有10个dta文件，文件名各不一致。如何将所有文件导入一个列表中？
 
 ![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220949048.webp)
+
 ### 载入包
 
 
@@ -54,47 +55,9 @@ print(files)
 data_list <- files |> 
     map(\(filename)
     {import(file=filename)})
-
-summary(data_list)
 ```
 
-```
-##                                                                                                    Length
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/COVID_Module.dta                   100  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Demographic_Background.dta          42  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Exit_Module.dta                   1129  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Family_Information.dta             789  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Health_Status_and_Functioning.dta  936  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Household_Income.dta               855  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Individual_Income.dta              210  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Sample_Infor.dta                     8  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Weights.dta                          8  
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Work_Retirement.dta                160  
-##                                                                                                    Class     
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/COVID_Module.dta                  data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Demographic_Background.dta        data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Exit_Module.dta                   data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Family_Information.dta            data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Health_Status_and_Functioning.dta data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Household_Income.dta              data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Individual_Income.dta             data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Sample_Infor.dta                  data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Weights.dta                       data.frame
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Work_Retirement.dta               data.frame
-##                                                                                                    Mode
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/COVID_Module.dta                  list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Demographic_Background.dta        list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Exit_Module.dta                   list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Family_Information.dta            list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Health_Status_and_Functioning.dta list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Household_Income.dta              list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Individual_Income.dta             list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Sample_Infor.dta                  list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Weights.dta                       list
-## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Work_Retirement.dta               list
-```
-
-可以看到已经导入成功啦
+可以看到已经导入成功
 ![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220957711.webp)
 
 ### 接下来美化一下
@@ -118,6 +81,7 @@ data_list_neat <- set_names(
 ## 批量导入excel下的多个sheet
 
 现在我们有一个excel文件，其中有多个sheet，如何一次性导入到列表里呢
+![](https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410221031909.webp)
 
 ### 第一步:提取sheet名
 

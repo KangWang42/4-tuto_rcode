@@ -77,7 +77,14 @@ print('这是运行结果')
 print('这是运行结果')
 ```
 
-### Results参数,设置结果输出
+#### Results参数,设置结果输出
+
+
+```{r, results = 'hide'}
+print("这是设置 result = 'hide'的运行结果,虽然运行了，但是不显示")
+```
+
+
 
 #### collapse参数 ,为T表示代码和结果一起输出
 
@@ -102,11 +109,6 @@ print('这是运行结果')
 ```{r, message=T}
 print('这是运行结果')
 ```
-
-```{r, results = 'hide'}
-print("这是设置 result = 'hide'的运行结果,虽然运行了，但是不显示")
-```
-
 
 ## 更多教程
 

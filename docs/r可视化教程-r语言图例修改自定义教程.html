@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 R语言学习路径和资料 | 科研学帮帮</title>
+  <title>9 R可视化教程-R语言图例修改自定义教程 | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 R语言学习路径和资料 | 科研学帮帮" />
+  <meta property="og:title" content="9 R可视化教程-R语言图例修改自定义教程 | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 R语言学习路径和资料 | 科研学帮帮" />
+  <meta name="twitter:title" content="9 R可视化教程-R语言图例修改自定义教程 | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="rmarkdown教程-初学r语言推荐.html"/>
+<link rel="prev" href="r可视化教程-patchwork拒绝psr内实现多图拼接.html"/>
+<link rel="next" href="r语言批量导入数据.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -351,109 +351,163 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r语言学习路径和资料" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> R语言学习路径和资料<a href="r语言学习路径和资料.html#r语言学习路径和资料" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="声明" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> 声明<a href="r语言学习路径和资料.html#声明" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>内容仅为个人学习的经验，并且并不详细。只为方向性引导，大家学习的时候要多在网络上查找资料</p>
+<div id="r可视化教程-r语言图例修改自定义教程" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> R可视化教程-R语言图例修改自定义教程<a href="r可视化教程-r语言图例修改自定义教程.html#r可视化教程-r语言图例修改自定义教程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="图例样式修改介绍" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> 图例样式修改介绍<a href="r可视化教程-r语言图例修改自定义教程.html#图例样式修改介绍" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>ggplot2中的图例样式修改（图例间距，位置修改等）一直是大部分用户的心头痛，因为它的修改方法实在太多了，而且很难记住。多种参数方法看起来杂乱无章，<strong>但是在24年2月更新的ggplot2 2.3.5之后，ggplot2的图例修改方法终于有了一个统一的标准</strong>。接下来我们一起学习一下吧</p>
+<p>在ggplot2更新后有且仅有一种方式修改图例样式，那就是使用theme()参数 。<strong>theme()函数有新的参数来控制图例的外观，这使得全局控制图例的外观变得更容易</strong>。例如： <code>theme(legend.frame)</code>替换 <code>guide_colourbar(frame.colour, frame.linewidth, frame.linetype)</code> 和 theme(legend.axis.line)替换 <code>guide_bins(axis, axis.colour, axis.linewidth, axis.arrow)</code> 。（如果有其它方法就是还没弃置，建议不要用了）</p>
 </div>
-<div id="阶段1下载好r并使用" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> 阶段1：下载好r并使用<a href="r语言学习路径和资料.html#阶段1下载好r并使用" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>先安装最新的<a href="https://www.r-project.org/">R</a></li>
-<li>再安装IDE
-<ol style="list-style-type: decimal">
-<li>最常用的IDE就是<a href="https://posit.co/downloads/">Rstudio</a></li>
-<li>我目前用的是positron会出一期专门介绍，但是因为还没正式版，有需要的同学可以去看看<a href="https://github.com/posit-dev/positron/releases">更新进展</a></li>
-</ol></li>
-<li>了解软件的基本窗口和操作
-<ol style="list-style-type: decimal">
-<li><img src="https://vip.123pan.cn/1813062489//7%20pic/202410192013471.png" /></li>
-</ol></li>
-</ol>
+<div id="本期主要内容来源" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> 本期主要内容来源<a href="r可视化教程-r语言图例修改自定义教程.html#本期主要内容来源" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/">更新说明</a></p>
+<p><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html">guide_legend教程</a></p>
 </div>
-<div id="阶段2学习baser" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> 阶段2：学习baseR<a href="r语言学习路径和资料.html#阶段2学习baser" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="推荐资料" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> 推荐资料<a href="r语言学习路径和资料.html#推荐资料" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://book.douban.com/subject/36420926/">链接</a>：公认R语言学习最好的书，学习起来清晰通俗，学习路线极其明确</p>
+<div id="加载包" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> 加载包<a href="r可视化教程-r语言图例修改自定义教程.html#加载包" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb116-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 </div>
-<div id="学习路线" class="section level3 hasAnchor" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> 学习路线<a href="r语言学习路径和资料.html#学习路线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li>基础语法：懂得基础的语法知识，安装包，导入包，设定工作路径，使用函数，数据导出</li>
-<li><strong>数据结构</strong>：画重点，各个数据结构务必要务必了解。向量还是数据框还是列表，都了解后才能get到后续的列表嵌套数据框和数据框嵌套列表</li>
-<li>数据处理：主要处理的对象是数据框，操作包括但不限于变量recode，变量筛选，数据框长宽转换，新建变量，重复值处理</li>
-<li>数据可视化：可放单独一块学习，<strong>前期不用学习</strong></li>
-<li>统计分析：可做什么去学什么，<strong>前期不用学</strong></li>
-<li>机器学习（深度学习）：同上</li>
-</ol>
+<div id="图例行为" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> 图例行为<a href="r可视化教程-r语言图例修改自定义教程.html#图例行为" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="guide_legend系列" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> guide_legend系列<a href="r可视化教程-r语言图例修改自定义教程.html#guide_legend系列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ggplot2 中的图例包含名为guide_legend()，还包括guide_colourbar() 、 guide_coloursteps()和guide_bins()基本参数都一致，设置图例的类型 。</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-1" tabindex="-1"></a><span class="fu">guide_legend</span>(</span>
+<span id="cb117-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-2" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">waiver</span>(),</span>
+<span id="cb117-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-3" tabindex="-1"></a>  <span class="at">theme =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-4" tabindex="-1"></a>  <span class="at">position =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-5" tabindex="-1"></a>  <span class="at">direction =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-6" tabindex="-1"></a>  <span class="at">override.aes =</span> <span class="fu">list</span>(),</span>
+<span id="cb117-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-7" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-8" tabindex="-1"></a>  <span class="at">ncol =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-9" tabindex="-1"></a>  <span class="at">reverse =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb117-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-10" tabindex="-1"></a>  <span class="at">order =</span> <span class="dv">0</span>,</span>
+<span id="cb117-11"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-11" tabindex="-1"></a>  ...</span>
+<span id="cb117-12"><a href="r可视化教程-r语言图例修改自定义教程.html#cb117-12" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="更新后加了什么" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> 更新后加了什么<a href="r可视化教程-r语言图例修改自定义教程.html#更新后加了什么" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>下方代码展示了如何设置某单独映射的图例样式和全局样式的区别。如果要单独设置某映射的图例样式，只需将其添加到<code>guides()</code> 。如果要设置全局样式，只需将其添加到<code>theme()</code> 。最终的参数形式就是<code>theme(legend.XXX = element_XXX())</code> 。</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-1" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">shape =</span> <span class="fu">factor</span>(cyl), <span class="at">colour =</span> cty)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb118-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-3" tabindex="-1"></a>  <span class="co"># 设置单独映射的图例</span></span>
+<span id="cb118-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-4" tabindex="-1"></a>  <span class="fu">guides</span>(</span>
+<span id="cb118-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-5" tabindex="-1"></a>    <span class="at">shape  =</span> <span class="fu">guide_legend</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>))),</span>
+<span id="cb118-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-6" tabindex="-1"></a>    <span class="at">colour =</span> <span class="fu">guide_colorbar</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">legend.frame =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)))</span>
+<span id="cb118-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb118-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-8" tabindex="-1"></a>  <span class="co"># 设置全局图例的样式</span></span>
+<span id="cb118-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-9" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb118-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-10" tabindex="-1"></a>    <span class="at">legend.title.position =</span> <span class="st">&quot;left&quot;</span>,</span>
+<span id="cb118-11"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-11" tabindex="-1"></a>    <span class="co"># Title justification is controlled by hjust/vjust in the element</span></span>
+<span id="cb118-12"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-12" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb118-13"><a href="r可视化教程-r语言图例修改自定义教程.html#cb118-13" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="图例是否显示" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> 图例是否显示<a href="r可视化教程-r语言图例修改自定义教程.html#图例是否显示" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>唯一不放在theme里的参数就是<code>legend.show</code> 。您可以在图层中设置show.legend = TRUE选项。和以前一样， show.legend参数仍然可以以特定于美学的方式设置。将其设置为TRUE表示“始终显示”， FALSE表示“从不显示”， NA表示“如果找到则显示”。查看下方示例，在设置了plot的showlegend里在图例中强制显示了点和线。</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
+<span id="cb119-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-2" tabindex="-1"></a> <span class="fu">scale_alpha_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>))</span>
+<span id="cb119-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-3" tabindex="-1"></a></span>
+<span id="cb119-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-4" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb119-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-5" tabindex="-1"></a> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;points&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;points&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb119-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-6" tabindex="-1"></a> <span class="fu">geom_line</span>(</span>
+<span id="cb119-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-7" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;line&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;line&quot;</span>),</span>
+<span id="cb119-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-8" tabindex="-1"></a>   <span class="at">stat =</span> <span class="st">&quot;smooth&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span></span>
+<span id="cb119-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb119-9" tabindex="-1"></a> )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-1" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb120-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-2" tabindex="-1"></a> <span class="fu">geom_point</span>(</span>
+<span id="cb120-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-3" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;points&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb120-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-4" tabindex="-1"></a>   <span class="at">show.legend =</span> <span class="cn">TRUE</span> <span class="co"># always show</span></span>
+<span id="cb120-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-5" tabindex="-1"></a> ) <span class="sc">+</span></span>
+<span id="cb120-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-6" tabindex="-1"></a> <span class="fu">geom_line</span>(</span>
+<span id="cb120-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-7" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;line&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;line&quot;</span>),</span>
+<span id="cb120-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-8" tabindex="-1"></a>   <span class="at">stat =</span> <span class="st">&quot;smooth&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb120-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-9" tabindex="-1"></a>   <span class="at">show.legend =</span> <span class="fu">c</span>(<span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">alpha =</span> <span class="cn">TRUE</span>) <span class="co"># always show in alpha</span></span>
+<span id="cb120-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb120-10" tabindex="-1"></a> )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+</div>
+<div id="图例位置" class="section level3 hasAnchor" number="9.4.4">
+<h3><span class="header-section-number">9.4.4</span> 图例位置<a href="r可视化教程-r语言图例修改自定义教程.html#图例位置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>图例位置不再仅限于图的一侧。通过设置guides的position参数，你可以定制哪些参考线出现在绘图中的位置。没有设置位置的参考线（例如下面的“drv”形状图例）遵循全局主题的legend.position设置。</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, </span>
+<span id="cb121-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-2" tabindex="-1"></a>    <span class="fu">aes</span>(displ, hwy, <span class="at">shape =</span> drv, <span class="at">colour =</span> cty, <span class="at">size =</span> year)) <span class="sc">+</span></span>
+<span id="cb121-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> cyl))<span class="sc">+</span></span>
+<span id="cb121-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;left&quot;</span>) <span class="sc">+</span></span>
+<span id="cb121-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-5" tabindex="-1"></a>  <span class="fu">guides</span>(</span>
+<span id="cb121-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-6" tabindex="-1"></a>    <span class="at">colour =</span> <span class="fu">guide_colourbar</span>(<span class="at">position =</span> <span class="st">&quot;right&quot;</span>),</span>
+<span id="cb121-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-7" tabindex="-1"></a>    <span class="at">size   =</span> <span class="fu">guide_legend</span>(<span class="at">position =</span> <span class="st">&quot;top&quot;</span>),</span>
+<span id="cb121-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-8" tabindex="-1"></a>    <span class="at">alpha  =</span> <span class="fu">guide_legend</span>(<span class="at">position =</span> <span class="st">&quot;inside&quot;</span>)</span>
+<span id="cb121-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-9" tabindex="-1"></a>  ) </span>
+<span id="cb121-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb121-10" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="图例的对齐" class="section level4 hasAnchor" number="9.4.4.1">
+<h4><span class="header-section-number">9.4.4.1</span> 图例的对齐<a href="r可视化教程-r语言图例修改自定义教程.html#图例的对齐" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>图例的对齐可以通过使用theme的<code>legend.justification.{position}</code>参数来控制。此外，通过设置legend.location参数，可以将顶部和底部参考线与绘图而不是面板对齐。默认情况下，当<code>plot.title.position = "plot"</code>时，左侧图例已经对齐。因此，对于<code>legend.location</code>设置，顶部和底部参考线优先。</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-1" tabindex="-1"></a>p <span class="sc">+</span> </span>
+<span id="cb122-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-2" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Plot-aligned title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb122-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-3" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb122-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-4" tabindex="-1"></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="co"># turned off for alignment</span></span>
+<span id="cb122-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-5" tabindex="-1"></a>    <span class="at">legend.justification.top =</span> <span class="st">&quot;left&quot;</span>,</span>
+<span id="cb122-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-6" tabindex="-1"></a>    <span class="at">legend.justification.left =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb122-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-7" tabindex="-1"></a>    <span class="at">legend.justification.bottom =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb122-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-8" tabindex="-1"></a>    <span class="at">legend.justification.inside =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb122-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-9" tabindex="-1"></a>    <span class="at">legend.location =</span> <span class="st">&quot;plot&quot;</span>,</span>
+<span id="cb122-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-10" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
+<span id="cb122-11"><a href="r可视化教程-r语言图例修改自定义教程.html#cb122-11" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 </div>
-<div id="阶段3开始学习tidyverse" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> 阶段3：开始学习tidyverse<a href="r语言学习路径和资料.html#阶段3开始学习tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="推荐资料-1" class="section level3 hasAnchor" number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> 推荐资料<a href="r语言学习路径和资料.html#推荐资料-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://book.douban.com/subject/36171369/">R语言编程</a>:最好的tidyverse入门书，确实讲的通俗易懂，作者在知乎上有账号，关注不亏</p>
-<p><a href="https://book.douban.com/subject/30277904/">R数据科学</a>：Hadley Wickham（tidyverse的作者）写的书，讲的很详细，建议细细细细过一遍，获益匪浅</p>
+<div id="图例的间距" class="section level3 hasAnchor" number="9.4.5">
+<h3><span class="header-section-number">9.4.5</span> 图例的间距<a href="r可视化教程-r语言图例修改自定义教程.html#图例的间距" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>我们先观看一下下方的图，表示图例的组成和间距的含义</p>
+<div class="float">
+<img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410250942867.webp" alt="图例图示" />
+<div class="figcaption">图例图示</div>
 </div>
-<div id="学习路径" class="section level3 hasAnchor" number="1.4.2">
-<h3><span class="header-section-number">1.4.2</span> 学习路径<a href="r语言学习路径和资料.html#学习路径" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>直接参考加载包的时候的导入函数，一个个学</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="r语言学习路径和资料.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.2     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<ol style="list-style-type: decimal">
-<li>学习数据导入(<strong>readr</strong>)</li>
-<li>学习新的数据结构（<strong>tibble</strong>：datafram优化版）</li>
-<li>学习数据处理，变量筛选等(<strong>dplyr</strong>)</li>
-<li>学习字符变量的处理(<strong>stringr</strong>)</li>
-<li>学习因子变量的处理(<strong>forcats</strong>)</li>
-<li>学习数据可视化(<strong>ggplot2</strong>)</li>
-<li><strong>学习函数式循环（purrr）务必要学</strong></li>
-</ol>
+<p>当标题和键没有明确的边距时，会根据文本或标题位置自动添加适当的边距。但是，如果您覆盖边距，它们将按你的设置来走。</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-1" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">colour =</span> class)) <span class="sc">+</span></span>
+<span id="cb123-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb123-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-3" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">ncol =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb123-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-4" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb123-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-5" tabindex="-1"></a>    <span class="at">legend.key.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb123-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-6" tabindex="-1"></a>    <span class="at">legend.key.spacing.y =</span> <span class="fu">unit</span>(<span class="dv">20</span>, <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb123-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-7" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">0</span>)),</span>
+<span id="cb123-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-8" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">20</span>))</span>
+<span id="cb123-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb123-9" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
-</div>
-<div id="阶段4学习可视化" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> 阶段4：学习可视化<a href="r语言学习路径和资料.html#阶段4学习可视化" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="学习资料" class="section level3 hasAnchor" number="1.5.1">
-<h3><span class="header-section-number">1.5.1</span> 学习资料<a href="r语言学习路径和资料.html#学习资料" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000019332693&amp;d=49173A13F1A674EE50CACCE072F13B33&amp;fenlei=18170403">R数据可视化手册 第2版</a>：系统的看一遍</p>
-<p>各大知乎csdn微信公众号关键词搜索：都是宝藏呀</p>
-<p>或者来我的<a href="https://file.wk8686.top/?2%20%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/R">云盘</a>看一看</p>
-</div>
-</div>
-<div id="阶段5-统计分析" class="section level2 hasAnchor" number="1.6">
-<h2><span class="header-section-number">1.6</span> 阶段5 统计分析<a href="r语言学习路径和资料.html#阶段5-统计分析" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>推荐一个公众号：R语言实战</p>
-<p>平时什么统计分析不会全是知乎教我</p>
-</div>
-<div id="阶段5-机器学习等" class="section level2 hasAnchor" number="1.7">
-<h2><span class="header-section-number">1.7</span> 阶段5 机器学习等<a href="r语言学习路径和资料.html#阶段5-机器学习等" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>mlr3verse包，张敬信大佬可能这两年就会出书介绍</p>
-</div>
-<div id="阶段6-其他" class="section level2 hasAnchor" number="1.8">
-<h2><span class="header-section-number">1.8</span> 阶段6 其他<a href="r语言学习路径和资料.html#阶段6-其他" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://rweekly.org/">rweekly论坛</a></p>
-<p><a href="https://www.tidyverse.org/blog/">tidyverse博客</a></p>
+<div id="添加特殊图例" class="section level3 hasAnchor" number="9.4.6">
+<h3><span class="header-section-number">9.4.6</span> 添加特殊图例<a href="r可视化教程-r语言图例修改自定义教程.html#添加特殊图例" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>guide_custom()</code> 。它可用于将任何图形对象（grob）添加到绘图中，例如<code>annotation_custom()</code> 。但有一些区别：它的位置就像图例一样，并添加了标题和页边距。从某种意义上说，本图例是“特殊的”，因为它是唯一不直接反映比例的指南。缺点是它无法从图中读取属性，但优点是它非常灵活。</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.2</span>, <span class="fl">1.5</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="dv">1</span>, <span class="fl">1.15</span>, <span class="dv">2</span>, <span class="fl">1.15</span>, <span class="dv">1</span>, <span class="fl">0.85</span>, <span class="dv">0</span>, <span class="fl">0.85</span>)</span>
+<span id="cb124-2"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">1.2</span>, <span class="fl">1.5</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">1.15</span>, <span class="dv">1</span>, <span class="fl">0.85</span>, <span class="dv">0</span>, <span class="fl">0.85</span>, <span class="dv">1</span>, <span class="fl">1.15</span>)</span>
+<span id="cb124-3"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-3" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-4" tabindex="-1"></a>compass_rose <span class="ot">&lt;-</span> grid<span class="sc">::</span><span class="fu">polygonGrob</span>(</span>
+<span id="cb124-5"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-5" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">unit</span>(x, <span class="st">&quot;cm&quot;</span>), <span class="at">y =</span> <span class="fu">unit</span>(y, <span class="st">&quot;cm&quot;</span>), <span class="at">id.lengths =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>),</span>
+<span id="cb124-6"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-6" tabindex="-1"></a>  <span class="at">gp =</span> grid<span class="sc">::</span><span class="fu">gpar</span>(<span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey25&quot;</span>), <span class="at">col =</span> <span class="cn">NA</span>)</span>
+<span id="cb124-7"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-7" tabindex="-1"></a>)</span>
+<span id="cb124-8"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-8" tabindex="-1"></a></span>
+<span id="cb124-9"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-9" tabindex="-1"></a>nc <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">&quot;shape/nc.shp&quot;</span>, <span class="at">package =</span> <span class="st">&quot;sf&quot;</span>), <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb124-10"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-10" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb124-11"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-11" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> AREA)) <span class="sc">+</span></span>
+<span id="cb124-12"><a href="r可视化教程-r语言图例修改自定义教程.html#cb124-12" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">custom =</span> <span class="fu">guide_custom</span>(compass_rose, <span class="at">title =</span> <span class="st">&quot;compass&quot;</span>))</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
 </div>
 </div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rmarkdown教程-初学r语言推荐.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r可视化教程-patchwork拒绝psr内实现多图拼接.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r语言批量导入数据.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

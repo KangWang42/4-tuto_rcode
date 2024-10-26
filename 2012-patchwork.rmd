@@ -1,4 +1,4 @@
-# R可视化教程-patchwork：拒绝ps，R内实现多图拼接
+# patchwork：拒绝ps，R内实现多图拼接
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

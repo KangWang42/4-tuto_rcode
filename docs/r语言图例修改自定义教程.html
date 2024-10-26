@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 scitb-快速生成基线表一 | 科研学帮帮</title>
+  <title>9 R语言图例修改自定义教程 | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  <meta property="og:title" content="9 R语言图例修改自定义教程 | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  <meta name="twitter:title" content="9 R语言图例修改自定义教程 | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="comparegroups-描述性表一快速生成.html"/>
-<link rel="next" href="purrr-函数式编程彻底摆脱for循环.html"/>
+<link rel="prev" href="patchwork拒绝psr内实现多图拼接.html"/>
+<link rel="next" href="r语言桑基图绘制.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -362,292 +362,151 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="scitb-快速生成基线表一" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> scitb-快速生成基线表一<a href="scitb-快速生成基线表一.html#scitb-快速生成基线表一" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r包介绍-2" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> R包介绍<a href="scitb-快速生成基线表一.html#r包介绍-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>scitb是一个专门用于基线表开发的包，相较于tableone scitb具有更好使用，导出方便，快速设置的优点</p>
-<p><a href="https://cran.r-project.org/web//packages/scitb/index.html">CRAN库</a></p>
-<p><a href="%5BURL_ADDRESS%5D(https://mp.weixin.qq.com/s?__biz=MzI1NjM3NTE1NQ==&amp;mid=2247489581&amp;idx=1&amp;sn=de498ce7eaf3a3084efebddc568c7068&amp;chksm=ea26f831dd5171272e58c707dac3242a8695d1413dfe5a5c8df926fa32c96728637290b14a6d&amp;scene=21#wechat_redirect)">作者教程</a></p>
+<div id="r语言图例修改自定义教程" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> R语言图例修改自定义教程<a href="r语言图例修改自定义教程.html#r语言图例修改自定义教程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="图例样式修改介绍" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> 图例样式修改介绍<a href="r语言图例修改自定义教程.html#图例样式修改介绍" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>ggplot2中的图例样式修改（图例间距，位置修改等）一直是大部分用户的心头痛，因为它的修改方法实在太多了，而且很难记住。多种参数方法看起来杂乱无章，<strong>但是在24年2月更新的ggplot2 2.3.5之后，ggplot2的图例修改方法终于有了一个统一的标准</strong>。接下来我们一起学习一下吧</p>
+<p>在ggplot2更新后有且仅有一种方式修改图例样式，那就是使用theme()参数 。<strong>theme()函数有新的参数来控制图例的外观，这使得全局控制图例的外观变得更容易</strong>。例如： <code>theme(legend.frame)</code>替换 <code>guide_colourbar(frame.colour, frame.linewidth, frame.linetype)</code> 和 theme(legend.axis.line)替换 <code>guide_bins(axis, axis.colour, axis.linewidth, axis.arrow)</code> 。（如果有其它方法就是还没弃置，建议不要用了）</p>
 </div>
-<div id="r包安装-2" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> R包安装<a href="scitb-快速生成基线表一.html#r包安装-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="scitb-快速生成基线表一.html#cb53-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;scitb&quot;</span>)</span></code></pre></div>
+<div id="本期主要内容来源" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> 本期主要内容来源<a href="r语言图例修改自定义教程.html#本期主要内容来源" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/">更新说明</a></p>
+<p><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html">guide_legend教程</a></p>
 </div>
-<div id="r包使用" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> R包使用<a href="scitb-快速生成基线表一.html#r包使用" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="导入示例数据" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> 导入示例数据<a href="scitb-快速生成基线表一.html#导入示例数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>导入数据prematurity，：low 是否是小于2500g早产低体重儿，age 母亲的年龄，lwt 末次月经体重，race 种族，smoke孕期抽烟，ptl 早产史（计数），ht 有高血压病史，ui 子宫过敏，ftv 早孕时看医生的次数bwt 新生儿体重数值</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="scitb-快速生成基线表一.html#cb54-1" tabindex="-1"></a><span class="fu">library</span>(scitb)</span>
-<span id="cb54-2"><a href="scitb-快速生成基线表一.html#cb54-2" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span></code></pre></div>
-<pre><code>## 
-## bruceR (v2024.6)
-## Broadly Useful Convenient and Efficient R functions
-## 
-## Packages also loaded:
-## ✔ data.table ✔ emmeans
-## ✔ dplyr      ✔ lmerTest
-## ✔ tidyr      ✔ effectsize
-## ✔ stringr    ✔ performance
-## ✔ ggplot2    ✔ interactions
-## 
-## Main functions of `bruceR`:
-## cc()             Describe()  TTEST()
-## add()            Freq()      MANOVA()
-## .mean()          Corr()      EMMEANS()
-## set.wd()         Alpha()     PROCESS()
-## import()         EFA()       model_summary()
-## print_table()    CFA()       lavaan_summary()
-## 
-## For full functionality, please install all dependencies:
-## install.packages(&quot;bruceR&quot;, dep=TRUE)
-## 
-## Online documentation:
-## https://psychbruce.github.io/bruceR
-## 
-## To use this package in publications, please cite:
-## Bao, H.-W.-S. (2024). bruceR: Broadly useful convenient and efficient R functions (Version 2024.6) [Computer software]. https://CRAN.R-project.org/package=bruceR</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="scitb-快速生成基线表一.html#cb56-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> prematurity</span>
-<span id="cb56-2"><a href="scitb-快速生成基线表一.html#cb56-2" tabindex="-1"></a><span class="fu">head</span>(data,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##   id low age lwt  race     smoke ptl ht ui ftv  bwt
-## 1 85   0  19 182 black nonsmoker   0  0  1   0 2523
-## 2 86   0  33 155 other nonsmoker   0  0  0   3 2551
-## 3 87   0  20 105 white    smoker   0  0  0   1 2557
-## 4 88   0  21 108 white    smoker   0  0  1   2 2594
-## 5 89   0  18 107 white    smoker   0  0  1   0 2600</code></pre>
+<div id="加载包" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> 加载包<a href="r语言图例修改自定义教程.html#加载包" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="r语言图例修改自定义教程.html#cb116-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 </div>
-<div id="生成描述性表1" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> 生成描述性表1<a href="scitb-快速生成基线表一.html#生成描述性表1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="首先定义变量" class="section level4 hasAnchor" number="5.3.2.1">
-<h4><span class="header-section-number">5.3.2.1</span> 首先定义变量<a href="scitb-快速生成基线表一.html#首先定义变量" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>为什么这里要定义变量，而不在基线表函数里直接引入字符向量，这是为了有良好的编程习惯。先从构建函数框架开始，最后函数调用，后续无论是修改变量还是增删变量都会很清晰</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="scitb-快速生成基线表一.html#cb58-1" tabindex="-1"></a>allVars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>,<span class="st">&quot;bwt&quot;</span>)</span>
-<span id="cb58-2"><a href="scitb-快速生成基线表一.html#cb58-2" tabindex="-1"></a>fvars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>)</span>
-<span id="cb58-3"><a href="scitb-快速生成基线表一.html#cb58-3" tabindex="-1"></a>strata<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;bwt&quot;</span>)</span></code></pre></div>
+<div id="图例行为" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> 图例行为<a href="r语言图例修改自定义教程.html#图例行为" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="guide_legend系列" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> guide_legend系列<a href="r语言图例修改自定义教程.html#guide_legend系列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ggplot2 中的图例包含名为guide_legend()，还包括guide_colourbar() 、 guide_coloursteps()和guide_bins()基本参数都一致，设置图例的类型 。</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="r语言图例修改自定义教程.html#cb117-1" tabindex="-1"></a><span class="fu">guide_legend</span>(</span>
+<span id="cb117-2"><a href="r语言图例修改自定义教程.html#cb117-2" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">waiver</span>(),</span>
+<span id="cb117-3"><a href="r语言图例修改自定义教程.html#cb117-3" tabindex="-1"></a>  <span class="at">theme =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-4"><a href="r语言图例修改自定义教程.html#cb117-4" tabindex="-1"></a>  <span class="at">position =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-5"><a href="r语言图例修改自定义教程.html#cb117-5" tabindex="-1"></a>  <span class="at">direction =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-6"><a href="r语言图例修改自定义教程.html#cb117-6" tabindex="-1"></a>  <span class="at">override.aes =</span> <span class="fu">list</span>(),</span>
+<span id="cb117-7"><a href="r语言图例修改自定义教程.html#cb117-7" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-8"><a href="r语言图例修改自定义教程.html#cb117-8" tabindex="-1"></a>  <span class="at">ncol =</span> <span class="cn">NULL</span>,</span>
+<span id="cb117-9"><a href="r语言图例修改自定义教程.html#cb117-9" tabindex="-1"></a>  <span class="at">reverse =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb117-10"><a href="r语言图例修改自定义教程.html#cb117-10" tabindex="-1"></a>  <span class="at">order =</span> <span class="dv">0</span>,</span>
+<span id="cb117-11"><a href="r语言图例修改自定义教程.html#cb117-11" tabindex="-1"></a>  ...</span>
+<span id="cb117-12"><a href="r语言图例修改自定义教程.html#cb117-12" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="生成基线表" class="section level4 hasAnchor" number="5.3.2.2">
-<h4><span class="header-section-number">5.3.2.2</span> 生成基线表<a href="scitb-快速生成基线表一.html#生成基线表" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="scitb-快速生成基线表一.html#cb59-1" tabindex="-1"></a>data_neat <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
-<span id="cb59-2"><a href="scitb-快速生成基线表一.html#cb59-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb59-3"><a href="scitb-快速生成基线表一.html#cb59-3" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">as.factor</span>(race),</span>
-<span id="cb59-4"><a href="scitb-快速生成基线表一.html#cb59-4" tabindex="-1"></a>    <span class="at">smoke =</span> <span class="fu">as.factor</span>(smoke)</span>
-<span id="cb59-5"><a href="scitb-快速生成基线表一.html#cb59-5" tabindex="-1"></a>  )</span>
-<span id="cb59-6"><a href="scitb-快速生成基线表一.html#cb59-6" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="scitb-快速生成基线表一.html#cb59-7" tabindex="-1"></a>tab0<span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat)</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##   709.000  2598.000  3283.667  4990.000</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="scitb-快速生成基线表一.html#cb62-1" tabindex="-1"></a>tab0</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
-## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
-## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
-## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
-## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
-##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
-##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
-##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
-##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
-## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
-##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
-##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
-## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
-##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
-##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
-##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
-##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-##       G.2                      p value 
-## scinn &quot;63&quot;                     &quot;&quot;      
-## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
-## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
-## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
-## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
-##       &quot;63 (100.00%)&quot;           &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.060&quot; 
-##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
-##       &quot;16 (25.40%)&quot;            &quot; &quot;     
-##       &quot;41 (65.08%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.037&quot; 
-##       &quot;45 (71.43%)&quot;            &quot; &quot;     
-##       &quot;18 (28.57%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.012&quot; 
-##       &quot;56 (88.89%)&quot;            &quot; &quot;     
-##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.154&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.005&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.283&quot; 
-##       &quot;31 (49.21%)&quot;            &quot; &quot;     
-##       &quot;20 (31.75%)&quot;            &quot; &quot;     
-##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
+<div id="更新后加了什么" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> 更新后加了什么<a href="r语言图例修改自定义教程.html#更新后加了什么" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>下方代码展示了如何设置某单独映射的图例样式和全局样式的区别。如果要单独设置某映射的图例样式，只需将其添加到<code>guides()</code> 。如果要设置全局样式，只需将其添加到<code>theme()</code> 。最终的参数形式就是<code>theme(legend.XXX = element_XXX())</code> 。</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="r语言图例修改自定义教程.html#cb118-1" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">shape =</span> <span class="fu">factor</span>(cyl), <span class="at">colour =</span> cty)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="r语言图例修改自定义教程.html#cb118-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb118-3"><a href="r语言图例修改自定义教程.html#cb118-3" tabindex="-1"></a>  <span class="co"># 设置单独映射的图例</span></span>
+<span id="cb118-4"><a href="r语言图例修改自定义教程.html#cb118-4" tabindex="-1"></a>  <span class="fu">guides</span>(</span>
+<span id="cb118-5"><a href="r语言图例修改自定义教程.html#cb118-5" tabindex="-1"></a>    <span class="at">shape  =</span> <span class="fu">guide_legend</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>))),</span>
+<span id="cb118-6"><a href="r语言图例修改自定义教程.html#cb118-6" tabindex="-1"></a>    <span class="at">colour =</span> <span class="fu">guide_colorbar</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">legend.frame =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)))</span>
+<span id="cb118-7"><a href="r语言图例修改自定义教程.html#cb118-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb118-8"><a href="r语言图例修改自定义教程.html#cb118-8" tabindex="-1"></a>  <span class="co"># 设置全局图例的样式</span></span>
+<span id="cb118-9"><a href="r语言图例修改自定义教程.html#cb118-9" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb118-10"><a href="r语言图例修改自定义教程.html#cb118-10" tabindex="-1"></a>    <span class="at">legend.title.position =</span> <span class="st">&quot;left&quot;</span>,</span>
+<span id="cb118-11"><a href="r语言图例修改自定义教程.html#cb118-11" tabindex="-1"></a>    <span class="co"># Title justification is controlled by hjust/vjust in the element</span></span>
+<span id="cb118-12"><a href="r语言图例修改自定义教程.html#cb118-12" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb118-13"><a href="r语言图例修改自定义教程.html#cb118-13" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="设置有非正态资料" class="section level4 hasAnchor" number="5.3.2.3">
-<h4><span class="header-section-number">5.3.2.3</span> 设置有非正态资料<a href="scitb-快速生成基线表一.html#设置有非正态资料" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>设置非正态后可以看到lwt变量是用百分位数进行描述，后边的pvalue也调用非参检验</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="scitb-快速生成基线表一.html#cb64-1" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat, <span class="at">nonnormal=</span><span class="fu">c</span>(<span class="st">&quot;lwt&quot;</span>))</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##   709.000  2598.000  3283.667  4990.000</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="scitb-快速生成基线表一.html#cb67-1" tabindex="-1"></a>tab2</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
-## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
-## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
-## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
-## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
-##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
-##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
-##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
-##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
-## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
-##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
-##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
-## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
-##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
-##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
-##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
-##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-##       G.2                      p value 
-## scinn &quot;63&quot;                     &quot;&quot;      
-## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
-## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
-## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
-## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
-##       &quot;63 (100.00%)&quot;           &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.060&quot; 
-##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
-##       &quot;16 (25.40%)&quot;            &quot; &quot;     
-##       &quot;41 (65.08%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.037&quot; 
-##       &quot;45 (71.43%)&quot;            &quot; &quot;     
-##       &quot;18 (28.57%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.012&quot; 
-##       &quot;56 (88.89%)&quot;            &quot; &quot;     
-##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.154&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.005&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.283&quot; 
-##       &quot;31 (49.21%)&quot;            &quot; &quot;     
-##       &quot;20 (31.75%)&quot;            &quot; &quot;     
-##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
+<div id="图例是否显示" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> 图例是否显示<a href="r语言图例修改自定义教程.html#图例是否显示" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>唯一不放在theme里的参数就是<code>legend.show</code> 。您可以在图层中设置show.legend = TRUE选项。和以前一样， show.legend参数仍然可以以特定于美学的方式设置。将其设置为TRUE表示“始终显示”， FALSE表示“从不显示”， NA表示“如果找到则显示”。查看下方示例，在设置了plot的showlegend里在图例中强制显示了点和线。</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="r语言图例修改自定义教程.html#cb119-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
+<span id="cb119-2"><a href="r语言图例修改自定义教程.html#cb119-2" tabindex="-1"></a> <span class="fu">scale_alpha_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>))</span>
+<span id="cb119-3"><a href="r语言图例修改自定义教程.html#cb119-3" tabindex="-1"></a></span>
+<span id="cb119-4"><a href="r语言图例修改自定义教程.html#cb119-4" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb119-5"><a href="r语言图例修改自定义教程.html#cb119-5" tabindex="-1"></a> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;points&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;points&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb119-6"><a href="r语言图例修改自定义教程.html#cb119-6" tabindex="-1"></a> <span class="fu">geom_line</span>(</span>
+<span id="cb119-7"><a href="r语言图例修改自定义教程.html#cb119-7" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;line&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;line&quot;</span>),</span>
+<span id="cb119-8"><a href="r语言图例修改自定义教程.html#cb119-8" tabindex="-1"></a>   <span class="at">stat =</span> <span class="st">&quot;smooth&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span></span>
+<span id="cb119-9"><a href="r语言图例修改自定义教程.html#cb119-9" tabindex="-1"></a> )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="r语言图例修改自定义教程.html#cb120-1" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb120-2"><a href="r语言图例修改自定义教程.html#cb120-2" tabindex="-1"></a> <span class="fu">geom_point</span>(</span>
+<span id="cb120-3"><a href="r语言图例修改自定义教程.html#cb120-3" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;points&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb120-4"><a href="r语言图例修改自定义教程.html#cb120-4" tabindex="-1"></a>   <span class="at">show.legend =</span> <span class="cn">TRUE</span> <span class="co"># always show</span></span>
+<span id="cb120-5"><a href="r语言图例修改自定义教程.html#cb120-5" tabindex="-1"></a> ) <span class="sc">+</span></span>
+<span id="cb120-6"><a href="r语言图例修改自定义教程.html#cb120-6" tabindex="-1"></a> <span class="fu">geom_line</span>(</span>
+<span id="cb120-7"><a href="r语言图例修改自定义教程.html#cb120-7" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;line&quot;</span>, <span class="at">alpha =</span> <span class="st">&quot;line&quot;</span>),</span>
+<span id="cb120-8"><a href="r语言图例修改自定义教程.html#cb120-8" tabindex="-1"></a>   <span class="at">stat =</span> <span class="st">&quot;smooth&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb120-9"><a href="r语言图例修改自定义教程.html#cb120-9" tabindex="-1"></a>   <span class="at">show.legend =</span> <span class="fu">c</span>(<span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">alpha =</span> <span class="cn">TRUE</span>) <span class="co"># always show in alpha</span></span>
+<span id="cb120-10"><a href="r语言图例修改自定义教程.html#cb120-10" tabindex="-1"></a> )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+</div>
+<div id="图例位置" class="section level3 hasAnchor" number="9.4.4">
+<h3><span class="header-section-number">9.4.4</span> 图例位置<a href="r语言图例修改自定义教程.html#图例位置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>图例位置不再仅限于图的一侧。通过设置guides的position参数，你可以定制哪些参考线出现在绘图中的位置。没有设置位置的参考线（例如下面的“drv”形状图例）遵循全局主题的legend.position设置。</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="r语言图例修改自定义教程.html#cb121-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, </span>
+<span id="cb121-2"><a href="r语言图例修改自定义教程.html#cb121-2" tabindex="-1"></a>    <span class="fu">aes</span>(displ, hwy, <span class="at">shape =</span> drv, <span class="at">colour =</span> cty, <span class="at">size =</span> year)) <span class="sc">+</span></span>
+<span id="cb121-3"><a href="r语言图例修改自定义教程.html#cb121-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> cyl))<span class="sc">+</span></span>
+<span id="cb121-4"><a href="r语言图例修改自定义教程.html#cb121-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;left&quot;</span>) <span class="sc">+</span></span>
+<span id="cb121-5"><a href="r语言图例修改自定义教程.html#cb121-5" tabindex="-1"></a>  <span class="fu">guides</span>(</span>
+<span id="cb121-6"><a href="r语言图例修改自定义教程.html#cb121-6" tabindex="-1"></a>    <span class="at">colour =</span> <span class="fu">guide_colourbar</span>(<span class="at">position =</span> <span class="st">&quot;right&quot;</span>),</span>
+<span id="cb121-7"><a href="r语言图例修改自定义教程.html#cb121-7" tabindex="-1"></a>    <span class="at">size   =</span> <span class="fu">guide_legend</span>(<span class="at">position =</span> <span class="st">&quot;top&quot;</span>),</span>
+<span id="cb121-8"><a href="r语言图例修改自定义教程.html#cb121-8" tabindex="-1"></a>    <span class="at">alpha  =</span> <span class="fu">guide_legend</span>(<span class="at">position =</span> <span class="st">&quot;inside&quot;</span>)</span>
+<span id="cb121-9"><a href="r语言图例修改自定义教程.html#cb121-9" tabindex="-1"></a>  ) </span>
+<span id="cb121-10"><a href="r语言图例修改自定义教程.html#cb121-10" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="图例的对齐" class="section level4 hasAnchor" number="9.4.4.1">
+<h4><span class="header-section-number">9.4.4.1</span> 图例的对齐<a href="r语言图例修改自定义教程.html#图例的对齐" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>图例的对齐可以通过使用theme的<code>legend.justification.{position}</code>参数来控制。此外，通过设置legend.location参数，可以将顶部和底部参考线与绘图而不是面板对齐。默认情况下，当<code>plot.title.position = "plot"</code>时，左侧图例已经对齐。因此，对于<code>legend.location</code>设置，顶部和底部参考线优先。</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="r语言图例修改自定义教程.html#cb122-1" tabindex="-1"></a>p <span class="sc">+</span> </span>
+<span id="cb122-2"><a href="r语言图例修改自定义教程.html#cb122-2" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Plot-aligned title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb122-3"><a href="r语言图例修改自定义教程.html#cb122-3" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb122-4"><a href="r语言图例修改自定义教程.html#cb122-4" tabindex="-1"></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="co"># turned off for alignment</span></span>
+<span id="cb122-5"><a href="r语言图例修改自定义教程.html#cb122-5" tabindex="-1"></a>    <span class="at">legend.justification.top =</span> <span class="st">&quot;left&quot;</span>,</span>
+<span id="cb122-6"><a href="r语言图例修改自定义教程.html#cb122-6" tabindex="-1"></a>    <span class="at">legend.justification.left =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb122-7"><a href="r语言图例修改自定义教程.html#cb122-7" tabindex="-1"></a>    <span class="at">legend.justification.bottom =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb122-8"><a href="r语言图例修改自定义教程.html#cb122-8" tabindex="-1"></a>    <span class="at">legend.justification.inside =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb122-9"><a href="r语言图例修改自定义教程.html#cb122-9" tabindex="-1"></a>    <span class="at">legend.location =</span> <span class="st">&quot;plot&quot;</span>,</span>
+<span id="cb122-10"><a href="r语言图例修改自定义教程.html#cb122-10" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
+<span id="cb122-11"><a href="r语言图例修改自定义教程.html#cb122-11" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 </div>
-<div id="连续变量快速分层描述" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> 连续变量快速分层描述<a href="scitb-快速生成基线表一.html#连续变量快速分层描述" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>输出1可以看出年龄的自动分层记录，表明从14到20到25到45进行了分层</p>
-<p>如果想要生成其它分层数，设置参数 num = n</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="scitb-快速生成基线表一.html#cb69-1" tabindex="-1"></a><span class="co"># allvar删不删除年龄都可以</span></span>
-<span id="cb69-2"><a href="scitb-快速生成基线表一.html#cb69-2" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="scitb-快速生成基线表一.html#cb69-3" tabindex="-1"></a>allVars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;race&quot;</span>, <span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;smoke&quot;</span>, <span class="st">&quot;ptl&quot;</span>, <span class="st">&quot;ht&quot;</span>, <span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>, <span class="st">&quot;bwt&quot;</span>)</span>
-<span id="cb69-4"><a href="scitb-快速生成基线表一.html#cb69-4" tabindex="-1"></a>fvars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;race&quot;</span>)</span>
-<span id="cb69-5"><a href="scitb-快速生成基线表一.html#cb69-5" tabindex="-1"></a>strata3 <span class="ot">&lt;-</span> <span class="st">&quot;age&quot;</span></span>
-<span id="cb69-6"><a href="scitb-快速生成基线表一.html#cb69-6" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="scitb-快速生成基线表一.html#cb69-7" tabindex="-1"></a>tab3 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars3,<span class="at">fvars=</span>fvars3,<span class="at">strata=</span>strata3,<span class="at">data=</span>data_neat)</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##        14        20        25        45</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="scitb-快速生成基线表一.html#cb72-1" tabindex="-1"></a>tab3</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;51&quot;                     &quot;69&quot;                    
-## d1    &quot;lwt&quot;          &quot;119.00 (106.00-135.00)&quot; &quot;121.00 (110.00-132.00)&quot;
-## d1    &quot;ptl&quot;          &quot;0.00 (0.00-0.00)&quot;       &quot;0.00 (0.00-0.00)&quot;      
-## d1    &quot;ftv&quot;          &quot;0.00 (0.00-1.00)&quot;       &quot;0.00 (0.00-1.00)&quot;      
-## d1    &quot;bwt&quot;          &quot;2974.08±612.51&quot;         &quot;2921.42±697.85&quot;        
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;28 (54.90%)&quot;            &quot;44 (63.77%)&quot;           
-##       &quot;smoker&quot;       &quot;23 (45.10%)&quot;            &quot;25 (36.23%)&quot;           
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;48 (94.12%)&quot;            &quot;64 (92.75%)&quot;           
-##       &quot;1&quot;            &quot; 3 (5.88%)&quot;             &quot; 5 (7.25%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;43 (84.31%)&quot;            &quot;58 (84.06%)&quot;           
-##       &quot;1&quot;            &quot; 8 (15.69%)&quot;            &quot;11 (15.94%)&quot;           
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;10 (19.61%)&quot;            &quot;10 (14.49%)&quot;           
-##       &quot;other&quot;        &quot;18 (35.29%)&quot;            &quot;27 (39.13%)&quot;           
-##       &quot;white&quot;        &quot;23 (45.10%)&quot;            &quot;32 (46.38%)&quot;           
-##       G.2                      p value
-## scinn &quot;69&quot;                     &quot;&quot;     
-## d1    &quot;130.00 (115.00-153.00)&quot; &quot;0.086&quot;
-## d1    &quot;0.00 (0.00-0.00)&quot;       &quot;0.171&quot;
-## d1    &quot;1.00 (0.00-2.00)&quot;       &quot;0.011&quot;
-## d1    &quot;2945.13±839.82&quot;         &quot;0.927&quot;
-## d2    &quot; &quot;                      &quot;0.587&quot;
-##       &quot;43 (62.32%)&quot;            &quot; &quot;    
-##       &quot;26 (37.68%)&quot;            &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.929&quot;
-##       &quot;65 (94.20%)&quot;            &quot; &quot;    
-##       &quot; 4 (5.80%)&quot;             &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.873&quot;
-##       &quot;60 (86.96%)&quot;            &quot; &quot;    
-##       &quot; 9 (13.04%)&quot;            &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.320&quot;
-##       &quot; 6 (8.70%)&quot;             &quot; &quot;    
-##       &quot;22 (31.88%)&quot;            &quot; &quot;    
-##       &quot;41 (59.42%)&quot;            &quot; &quot;</code></pre>
+<div id="图例的间距" class="section level3 hasAnchor" number="9.4.5">
+<h3><span class="header-section-number">9.4.5</span> 图例的间距<a href="r语言图例修改自定义教程.html#图例的间距" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>我们先观看一下下方的图，表示图例的组成和间距的含义</p>
+<div class="float">
+<img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410250942867.webp" alt="图例图示" />
+<div class="figcaption">图例图示</div>
 </div>
-<div id="保存结果" class="section level3 hasAnchor" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> 保存结果<a href="scitb-快速生成基线表一.html#保存结果" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="scitb-快速生成基线表一.html#cb74-1" tabindex="-1"></a><span class="fu">write.csv</span>(tab0,<span class="at">file=</span> <span class="st">&quot;01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">data.csv&quot;</span>,<span class="at">row.names =</span> F, </span>
-<span id="cb74-2"><a href="scitb-快速生成基线表一.html#cb74-2" tabindex="-1"></a>    <span class="at">fileEncoding =</span> <span class="st">&quot;gbk&quot;</span>)</span></code></pre></div>
-<p>保存出来是下图，复制到word改改就能用</p>
-<p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410211052806.png" /></p>
+<p>当标题和键没有明确的边距时，会根据文本或标题位置自动添加适当的边距。但是，如果您覆盖边距，它们将按你的设置来走。</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="r语言图例修改自定义教程.html#cb123-1" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">colour =</span> class)) <span class="sc">+</span></span>
+<span id="cb123-2"><a href="r语言图例修改自定义教程.html#cb123-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb123-3"><a href="r语言图例修改自定义教程.html#cb123-3" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">ncol =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb123-4"><a href="r语言图例修改自定义教程.html#cb123-4" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb123-5"><a href="r语言图例修改自定义教程.html#cb123-5" tabindex="-1"></a>    <span class="at">legend.key.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb123-6"><a href="r语言图例修改自定义教程.html#cb123-6" tabindex="-1"></a>    <span class="at">legend.key.spacing.y =</span> <span class="fu">unit</span>(<span class="dv">20</span>, <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb123-7"><a href="r语言图例修改自定义教程.html#cb123-7" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">0</span>)),</span>
+<span id="cb123-8"><a href="r语言图例修改自定义教程.html#cb123-8" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">20</span>))</span>
+<span id="cb123-9"><a href="r语言图例修改自定义教程.html#cb123-9" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
-</div>
-<div id="总结" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> 总结<a href="scitb-快速生成基线表一.html#总结" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>使用体验：自定义度，结果展示等不如comparegroups，但是胜在参数简单，在期刊没那么高要求和平时展示可以用</p>
+<div id="添加特殊图例" class="section level3 hasAnchor" number="9.4.6">
+<h3><span class="header-section-number">9.4.6</span> 添加特殊图例<a href="r语言图例修改自定义教程.html#添加特殊图例" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>guide_custom()</code> 。它可用于将任何图形对象（grob）添加到绘图中，例如<code>annotation_custom()</code> 。但有一些区别：它的位置就像图例一样，并添加了标题和页边距。从某种意义上说，本图例是“特殊的”，因为它是唯一不直接反映比例的指南。缺点是它无法从图中读取属性，但优点是它非常灵活。</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="r语言图例修改自定义教程.html#cb124-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.2</span>, <span class="fl">1.5</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="dv">1</span>, <span class="fl">1.15</span>, <span class="dv">2</span>, <span class="fl">1.15</span>, <span class="dv">1</span>, <span class="fl">0.85</span>, <span class="dv">0</span>, <span class="fl">0.85</span>)</span>
+<span id="cb124-2"><a href="r语言图例修改自定义教程.html#cb124-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">1.2</span>, <span class="fl">1.5</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">1.15</span>, <span class="dv">1</span>, <span class="fl">0.85</span>, <span class="dv">0</span>, <span class="fl">0.85</span>, <span class="dv">1</span>, <span class="fl">1.15</span>)</span>
+<span id="cb124-3"><a href="r语言图例修改自定义教程.html#cb124-3" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="r语言图例修改自定义教程.html#cb124-4" tabindex="-1"></a>compass_rose <span class="ot">&lt;-</span> grid<span class="sc">::</span><span class="fu">polygonGrob</span>(</span>
+<span id="cb124-5"><a href="r语言图例修改自定义教程.html#cb124-5" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">unit</span>(x, <span class="st">&quot;cm&quot;</span>), <span class="at">y =</span> <span class="fu">unit</span>(y, <span class="st">&quot;cm&quot;</span>), <span class="at">id.lengths =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>),</span>
+<span id="cb124-6"><a href="r语言图例修改自定义教程.html#cb124-6" tabindex="-1"></a>  <span class="at">gp =</span> grid<span class="sc">::</span><span class="fu">gpar</span>(<span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey25&quot;</span>), <span class="at">col =</span> <span class="cn">NA</span>)</span>
+<span id="cb124-7"><a href="r语言图例修改自定义教程.html#cb124-7" tabindex="-1"></a>)</span>
+<span id="cb124-8"><a href="r语言图例修改自定义教程.html#cb124-8" tabindex="-1"></a></span>
+<span id="cb124-9"><a href="r语言图例修改自定义教程.html#cb124-9" tabindex="-1"></a>nc <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">&quot;shape/nc.shp&quot;</span>, <span class="at">package =</span> <span class="st">&quot;sf&quot;</span>), <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb124-10"><a href="r语言图例修改自定义教程.html#cb124-10" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb124-11"><a href="r语言图例修改自定义教程.html#cb124-11" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> AREA)) <span class="sc">+</span></span>
+<span id="cb124-12"><a href="r语言图例修改自定义教程.html#cb124-12" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">custom =</span> <span class="fu">guide_custom</span>(compass_rose, <span class="at">title =</span> <span class="st">&quot;compass&quot;</span>))</span></code></pre></div>
+<p><img src="2013-legend_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -655,8 +514,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="comparegroups-描述性表一快速生成.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="purrr-函数式编程彻底摆脱for循环.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="patchwork拒绝psr内实现多图拼接.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r语言桑基图绘制.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

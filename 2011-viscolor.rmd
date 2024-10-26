@@ -1,7 +1,7 @@
 # (PART) R可视化教程 {-}
 
 
-# R可视化教程-R语言配色教程
+# R语言配色教程
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

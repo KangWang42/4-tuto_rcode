@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 scitb-快速生成基线表一 | 科研学帮帮</title>
+  <title>7 R语言配色教程 | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  <meta property="og:title" content="7 R语言配色教程 | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 scitb-快速生成基线表一 | 科研学帮帮" />
+  <meta name="twitter:title" content="7 R语言配色教程 | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="comparegroups-描述性表一快速生成.html"/>
-<link rel="next" href="purrr-函数式编程彻底摆脱for循环.html"/>
+<link rel="prev" href="purrr-函数式编程彻底摆脱for循环.html"/>
+<link rel="next" href="patchwork拒绝psr内实现多图拼接.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -362,292 +362,314 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="scitb-快速生成基线表一" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> scitb-快速生成基线表一<a href="scitb-快速生成基线表一.html#scitb-快速生成基线表一" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r包介绍-2" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> R包介绍<a href="scitb-快速生成基线表一.html#r包介绍-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>scitb是一个专门用于基线表开发的包，相较于tableone scitb具有更好使用，导出方便，快速设置的优点</p>
-<p><a href="https://cran.r-project.org/web//packages/scitb/index.html">CRAN库</a></p>
-<p><a href="%5BURL_ADDRESS%5D(https://mp.weixin.qq.com/s?__biz=MzI1NjM3NTE1NQ==&amp;mid=2247489581&amp;idx=1&amp;sn=de498ce7eaf3a3084efebddc568c7068&amp;chksm=ea26f831dd5171272e58c707dac3242a8695d1413dfe5a5c8df926fa32c96728637290b14a6d&amp;scene=21#wechat_redirect)">作者教程</a></p>
+<div id="r语言配色教程" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> R语言配色教程<a href="r语言配色教程.html#r语言配色教程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>第98期 R语言教程 科研绘图配色常用R包</p>
+<p>在r语言，ggplot2绘图过程中最重要的一部分就是配色的选择。优秀的配色要充分考虑到颜色的区分度，期刊要求，冷暖特点等</p>
+<p>本期介绍如何调整r语言中的配色，使整个图片美观优雅</p>
+</blockquote>
+<div id="基础工作" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> 基础工作<a href="r语言配色教程.html#基础工作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="加载数据-1" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> 加载数据<a href="r语言配色教程.html#加载数据-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="r语言配色教程.html#cb91-1" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span>
+<span id="cb91-2"><a href="r语言配色教程.html#cb91-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb91-3"><a href="r语言配色教程.html#cb91-3" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb91-4"><a href="r语言配色教程.html#cb91-4" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 2           4.9         3.0          1.4         0.2  setosa
+## 3           4.7         3.2          1.3         0.2  setosa
+## 4           4.6         3.1          1.5         0.2  setosa
+## 5           5.0         3.6          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 7           4.6         3.4          1.4         0.3  setosa
+## 8           5.0         3.4          1.5         0.2  setosa
+## 9           4.4         2.9          1.4         0.2  setosa
+## 10          4.9         3.1          1.5         0.1  setosa</code></pre>
 </div>
-<div id="r包安装-2" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> R包安装<a href="scitb-快速生成基线表一.html#r包安装-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="scitb-快速生成基线表一.html#cb53-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;scitb&quot;</span>)</span></code></pre></div>
+<div id="使用r默认配色方案" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> 使用r默认配色方案<a href="r语言配色教程.html#使用r默认配色方案" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="r语言配色教程.html#cb93-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb93-2"><a href="r语言配色教程.html#cb93-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb93-3"><a href="r语言配色教程.html#cb93-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb93-4"><a href="r语言配色教程.html#cb93-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
-<div id="r包使用" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> R包使用<a href="scitb-快速生成基线表一.html#r包使用" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="导入示例数据" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> 导入示例数据<a href="scitb-快速生成基线表一.html#导入示例数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>导入数据prematurity，：low 是否是小于2500g早产低体重儿，age 母亲的年龄，lwt 末次月经体重，race 种族，smoke孕期抽烟，ptl 早产史（计数），ht 有高血压病史，ui 子宫过敏，ftv 早孕时看医生的次数bwt 新生儿体重数值</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="scitb-快速生成基线表一.html#cb54-1" tabindex="-1"></a><span class="fu">library</span>(scitb)</span>
-<span id="cb54-2"><a href="scitb-快速生成基线表一.html#cb54-2" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span></code></pre></div>
-<pre><code>## 
-## bruceR (v2024.6)
-## Broadly Useful Convenient and Efficient R functions
-## 
-## Packages also loaded:
-## ✔ data.table ✔ emmeans
-## ✔ dplyr      ✔ lmerTest
-## ✔ tidyr      ✔ effectsize
-## ✔ stringr    ✔ performance
-## ✔ ggplot2    ✔ interactions
-## 
-## Main functions of `bruceR`:
-## cc()             Describe()  TTEST()
-## add()            Freq()      MANOVA()
-## .mean()          Corr()      EMMEANS()
-## set.wd()         Alpha()     PROCESS()
-## import()         EFA()       model_summary()
-## print_table()    CFA()       lavaan_summary()
-## 
-## For full functionality, please install all dependencies:
-## install.packages(&quot;bruceR&quot;, dep=TRUE)
-## 
-## Online documentation:
-## https://psychbruce.github.io/bruceR
-## 
-## To use this package in publications, please cite:
-## Bao, H.-W.-S. (2024). bruceR: Broadly useful convenient and efficient R functions (Version 2024.6) [Computer software]. https://CRAN.R-project.org/package=bruceR</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="scitb-快速生成基线表一.html#cb56-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> prematurity</span>
-<span id="cb56-2"><a href="scitb-快速生成基线表一.html#cb56-2" tabindex="-1"></a><span class="fu">head</span>(data,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##   id low age lwt  race     smoke ptl ht ui ftv  bwt
-## 1 85   0  19 182 black nonsmoker   0  0  1   0 2523
-## 2 86   0  33 155 other nonsmoker   0  0  0   3 2551
-## 3 87   0  20 105 white    smoker   0  0  0   1 2557
-## 4 88   0  21 108 white    smoker   0  0  1   2 2594
-## 5 89   0  18 107 white    smoker   0  0  1   0 2600</code></pre>
-</div>
-<div id="生成描述性表1" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> 生成描述性表1<a href="scitb-快速生成基线表一.html#生成描述性表1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="首先定义变量" class="section level4 hasAnchor" number="5.3.2.1">
-<h4><span class="header-section-number">5.3.2.1</span> 首先定义变量<a href="scitb-快速生成基线表一.html#首先定义变量" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>为什么这里要定义变量，而不在基线表函数里直接引入字符向量，这是为了有良好的编程习惯。先从构建函数框架开始，最后函数调用，后续无论是修改变量还是增删变量都会很清晰</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="scitb-快速生成基线表一.html#cb58-1" tabindex="-1"></a>allVars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>,<span class="st">&quot;bwt&quot;</span>)</span>
-<span id="cb58-2"><a href="scitb-快速生成基线表一.html#cb58-2" tabindex="-1"></a>fvars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;race&quot;</span>,<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ptl&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>)</span>
-<span id="cb58-3"><a href="scitb-快速生成基线表一.html#cb58-3" tabindex="-1"></a>strata<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;bwt&quot;</span>)</span></code></pre></div>
-</div>
-<div id="生成基线表" class="section level4 hasAnchor" number="5.3.2.2">
-<h4><span class="header-section-number">5.3.2.2</span> 生成基线表<a href="scitb-快速生成基线表一.html#生成基线表" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="scitb-快速生成基线表一.html#cb59-1" tabindex="-1"></a>data_neat <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
-<span id="cb59-2"><a href="scitb-快速生成基线表一.html#cb59-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb59-3"><a href="scitb-快速生成基线表一.html#cb59-3" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">as.factor</span>(race),</span>
-<span id="cb59-4"><a href="scitb-快速生成基线表一.html#cb59-4" tabindex="-1"></a>    <span class="at">smoke =</span> <span class="fu">as.factor</span>(smoke)</span>
-<span id="cb59-5"><a href="scitb-快速生成基线表一.html#cb59-5" tabindex="-1"></a>  )</span>
-<span id="cb59-6"><a href="scitb-快速生成基线表一.html#cb59-6" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="scitb-快速生成基线表一.html#cb59-7" tabindex="-1"></a>tab0<span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat)</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##   709.000  2598.000  3283.667  4990.000</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="scitb-快速生成基线表一.html#cb62-1" tabindex="-1"></a>tab0</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
-## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
-## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
-## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
-## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
-##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
-##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
-##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
-##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
-## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
-##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
-##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
-## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
-##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
-##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
-##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
-##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-##       G.2                      p value 
-## scinn &quot;63&quot;                     &quot;&quot;      
-## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
-## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
-## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
-## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
-##       &quot;63 (100.00%)&quot;           &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.060&quot; 
-##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
-##       &quot;16 (25.40%)&quot;            &quot; &quot;     
-##       &quot;41 (65.08%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.037&quot; 
-##       &quot;45 (71.43%)&quot;            &quot; &quot;     
-##       &quot;18 (28.57%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.012&quot; 
-##       &quot;56 (88.89%)&quot;            &quot; &quot;     
-##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.154&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.005&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.283&quot; 
-##       &quot;31 (49.21%)&quot;            &quot; &quot;     
-##       &quot;20 (31.75%)&quot;            &quot; &quot;     
-##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
-</div>
-<div id="设置有非正态资料" class="section level4 hasAnchor" number="5.3.2.3">
-<h4><span class="header-section-number">5.3.2.3</span> 设置有非正态资料<a href="scitb-快速生成基线表一.html#设置有非正态资料" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>设置非正态后可以看到lwt变量是用百分位数进行描述，后边的pvalue也调用非参检验</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="scitb-快速生成基线表一.html#cb64-1" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars,<span class="at">fvars=</span>fvars,<span class="at">strata=</span>strata,<span class="at">data=</span>data_neat, <span class="at">nonnormal=</span><span class="fu">c</span>(<span class="st">&quot;lwt&quot;</span>))</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##   709.000  2598.000  3283.667  4990.000</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="scitb-快速生成基线表一.html#cb67-1" tabindex="-1"></a>tab2</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;63&quot;                     &quot;63&quot;                    
-## d1    &quot;age&quot;          &quot;22.00 (19.50-25.00)&quot;    &quot;23.00 (19.00-28.00)&quot;   
-## d1    &quot;lwt&quot;          &quot;120.00 (105.00-131.00)&quot; &quot;120.00 (109.50-132.50)&quot;
-## d1    &quot;bwt&quot;          &quot;2126.24±394.60&quot;         &quot;2969.94±190.20&quot;        
-## d2    &quot;low&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot; 4 (6.35%)&quot;             &quot;63 (100.00%)&quot;          
-##       &quot;1&quot;            &quot;59 (93.65%)&quot;            &quot; 0 (0.00%)&quot;            
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;12 (19.05%)&quot;            &quot; 8 (12.70%)&quot;           
-##       &quot;other&quot;        &quot;26 (41.27%)&quot;            &quot;25 (39.68%)&quot;           
-##       &quot;white&quot;        &quot;25 (39.68%)&quot;            &quot;30 (47.62%)&quot;           
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;31 (49.21%)&quot;            &quot;39 (61.90%)&quot;           
-##       &quot;smoker&quot;       &quot;32 (50.79%)&quot;            &quot;24 (38.10%)&quot;           
-## d2    &quot;ptl&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;45 (71.43%)&quot;            &quot;58 (92.06%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 4 (6.35%)&quot;            
-##       &quot;2&quot;            &quot; 2 (3.17%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;3&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;56 (88.89%)&quot;            &quot;61 (96.83%)&quot;           
-##       &quot;1&quot;            &quot; 7 (11.11%)&quot;            &quot; 2 (3.17%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;47 (74.60%)&quot;            &quot;54 (85.71%)&quot;           
-##       &quot;1&quot;            &quot;16 (25.40%)&quot;            &quot; 9 (14.29%)&quot;           
-## d2    &quot;ftv&quot;          &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;37 (58.73%)&quot;            &quot;32 (50.79%)&quot;           
-##       &quot;1&quot;            &quot;12 (19.05%)&quot;            &quot;15 (23.81%)&quot;           
-##       &quot;2&quot;            &quot; 8 (12.70%)&quot;            &quot;13 (20.63%)&quot;           
-##       &quot;3&quot;            &quot; 5 (7.94%)&quot;             &quot; 2 (3.17%)&quot;            
-##       &quot;4&quot;            &quot; 1 (1.59%)&quot;             &quot; 1 (1.59%)&quot;            
-##       &quot;6&quot;            &quot; 0 (0.00%)&quot;             &quot; 0 (0.00%)&quot;            
-##       G.2                      p value 
-## scinn &quot;63&quot;                     &quot;&quot;      
-## d1    &quot;23.00 (19.50-28.00)&quot;    &quot;0.483&quot; 
-## d1    &quot;131.00 (120.00-156.00)&quot; &quot;&lt;0.001&quot;
-## d1    &quot;3736.68±317.76&quot;         &quot;&lt;0.001&quot;
-## d2    &quot; &quot;                      &quot;&lt;0.001&quot;
-##       &quot;63 (100.00%)&quot;           &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.060&quot; 
-##       &quot; 6 (9.52%)&quot;             &quot; &quot;     
-##       &quot;16 (25.40%)&quot;            &quot; &quot;     
-##       &quot;41 (65.08%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.037&quot; 
-##       &quot;45 (71.43%)&quot;            &quot; &quot;     
-##       &quot;18 (28.57%)&quot;            &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.012&quot; 
-##       &quot;56 (88.89%)&quot;            &quot; &quot;     
-##       &quot; 4 (6.35%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.154&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.005&quot; 
-##       &quot;60 (95.24%)&quot;            &quot; &quot;     
-##       &quot; 3 (4.76%)&quot;             &quot; &quot;     
-## d2    &quot; &quot;                      &quot;0.283&quot; 
-##       &quot;31 (49.21%)&quot;            &quot; &quot;     
-##       &quot;20 (31.75%)&quot;            &quot; &quot;     
-##       &quot; 9 (14.29%)&quot;            &quot; &quot;     
-##       &quot; 0 (0.00%)&quot;             &quot; &quot;     
-##       &quot; 2 (3.17%)&quot;             &quot; &quot;     
-##       &quot; 1 (1.59%)&quot;             &quot; &quot;</code></pre>
+<div id="ggplot2手动调色" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> ggplot2手动调色<a href="r语言配色教程.html#ggplot2手动调色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="r语言配色教程.html#cb94-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb94-2"><a href="r语言配色教程.html#cb94-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb94-3"><a href="r语言配色教程.html#cb94-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb94-4"><a href="r语言配色教程.html#cb94-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb94-5"><a href="r语言配色教程.html#cb94-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;grey&quot;</span>, <span class="st">&quot;brown&quot;</span>))</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 </div>
-<div id="连续变量快速分层描述" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> 连续变量快速分层描述<a href="scitb-快速生成基线表一.html#连续变量快速分层描述" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>输出1可以看出年龄的自动分层记录，表明从14到20到25到45进行了分层</p>
-<p>如果想要生成其它分层数，设置参数 num = n</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="scitb-快速生成基线表一.html#cb69-1" tabindex="-1"></a><span class="co"># allvar删不删除年龄都可以</span></span>
-<span id="cb69-2"><a href="scitb-快速生成基线表一.html#cb69-2" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="scitb-快速生成基线表一.html#cb69-3" tabindex="-1"></a>allVars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;race&quot;</span>, <span class="st">&quot;lwt&quot;</span>,<span class="st">&quot;smoke&quot;</span>, <span class="st">&quot;ptl&quot;</span>, <span class="st">&quot;ht&quot;</span>, <span class="st">&quot;ui&quot;</span>,<span class="st">&quot;ftv&quot;</span>, <span class="st">&quot;bwt&quot;</span>)</span>
-<span id="cb69-4"><a href="scitb-快速生成基线表一.html#cb69-4" tabindex="-1"></a>fvars3 <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;smoke&quot;</span>,<span class="st">&quot;ht&quot;</span>,<span class="st">&quot;ui&quot;</span>,<span class="st">&quot;race&quot;</span>)</span>
-<span id="cb69-5"><a href="scitb-快速生成基线表一.html#cb69-5" tabindex="-1"></a>strata3 <span class="ot">&lt;-</span> <span class="st">&quot;age&quot;</span></span>
-<span id="cb69-6"><a href="scitb-快速生成基线表一.html#cb69-6" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="scitb-快速生成基线表一.html#cb69-7" tabindex="-1"></a>tab3 <span class="ot">&lt;-</span><span class="fu">scitb1</span>(<span class="at">vars=</span>allVars3,<span class="at">fvars=</span>fvars3,<span class="at">strata=</span>strata3,<span class="at">data=</span>data_neat)</span></code></pre></div>
-<pre><code>##       Min 33.33333% 66.66667%       Max 
-##        14        20        25        45</code></pre>
-<pre><code>## Strata is treated as a continuous variable.</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="scitb-快速生成基线表一.html#cb72-1" tabindex="-1"></a>tab3</span></code></pre></div>
-<pre><code>##       Characteristic G.0                      G.1                     
-## scinn &quot;N&quot;            &quot;51&quot;                     &quot;69&quot;                    
-## d1    &quot;lwt&quot;          &quot;119.00 (106.00-135.00)&quot; &quot;121.00 (110.00-132.00)&quot;
-## d1    &quot;ptl&quot;          &quot;0.00 (0.00-0.00)&quot;       &quot;0.00 (0.00-0.00)&quot;      
-## d1    &quot;ftv&quot;          &quot;0.00 (0.00-1.00)&quot;       &quot;0.00 (0.00-1.00)&quot;      
-## d1    &quot;bwt&quot;          &quot;2974.08±612.51&quot;         &quot;2921.42±697.85&quot;        
-## d2    &quot;smoke&quot;        &quot; &quot;                      &quot; &quot;                     
-##       &quot;nonsmoker&quot;    &quot;28 (54.90%)&quot;            &quot;44 (63.77%)&quot;           
-##       &quot;smoker&quot;       &quot;23 (45.10%)&quot;            &quot;25 (36.23%)&quot;           
-## d2    &quot;ht&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;48 (94.12%)&quot;            &quot;64 (92.75%)&quot;           
-##       &quot;1&quot;            &quot; 3 (5.88%)&quot;             &quot; 5 (7.25%)&quot;            
-## d2    &quot;ui&quot;           &quot; &quot;                      &quot; &quot;                     
-##       &quot;0&quot;            &quot;43 (84.31%)&quot;            &quot;58 (84.06%)&quot;           
-##       &quot;1&quot;            &quot; 8 (15.69%)&quot;            &quot;11 (15.94%)&quot;           
-## d2    &quot;race&quot;         &quot; &quot;                      &quot; &quot;                     
-##       &quot;black&quot;        &quot;10 (19.61%)&quot;            &quot;10 (14.49%)&quot;           
-##       &quot;other&quot;        &quot;18 (35.29%)&quot;            &quot;27 (39.13%)&quot;           
-##       &quot;white&quot;        &quot;23 (45.10%)&quot;            &quot;32 (46.38%)&quot;           
-##       G.2                      p value
-## scinn &quot;69&quot;                     &quot;&quot;     
-## d1    &quot;130.00 (115.00-153.00)&quot; &quot;0.086&quot;
-## d1    &quot;0.00 (0.00-0.00)&quot;       &quot;0.171&quot;
-## d1    &quot;1.00 (0.00-2.00)&quot;       &quot;0.011&quot;
-## d1    &quot;2945.13±839.82&quot;         &quot;0.927&quot;
-## d2    &quot; &quot;                      &quot;0.587&quot;
-##       &quot;43 (62.32%)&quot;            &quot; &quot;    
-##       &quot;26 (37.68%)&quot;            &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.929&quot;
-##       &quot;65 (94.20%)&quot;            &quot; &quot;    
-##       &quot; 4 (5.80%)&quot;             &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.873&quot;
-##       &quot;60 (86.96%)&quot;            &quot; &quot;    
-##       &quot; 9 (13.04%)&quot;            &quot; &quot;    
-## d2    &quot; &quot;                      &quot;0.320&quot;
-##       &quot; 6 (8.70%)&quot;             &quot; &quot;    
-##       &quot;22 (31.88%)&quot;            &quot; &quot;    
-##       &quot;41 (59.42%)&quot;            &quot; &quot;</code></pre>
+<div id="使用rcolorbrewer包设置颜色" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> 使用RColorBrewer包设置颜色<a href="r语言配色教程.html#使用rcolorbrewer包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rcolorbrew介绍" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Rcolorbrew介绍<a href="r语言配色教程.html#rcolorbrew介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://cran.r-project.org/web/packages/RColorBrewer/">CRAN库:CRAN: Package RColorBrewer (r-project.org)</a></p>
+<p>调用网站https://colorbrewer2.org/上的配色方案,使用人数众多,整体比较中规中矩</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="r语言配色教程.html#cb95-1" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
 </div>
-<div id="保存结果" class="section level3 hasAnchor" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> 保存结果<a href="scitb-快速生成基线表一.html#保存结果" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="scitb-快速生成基线表一.html#cb74-1" tabindex="-1"></a><span class="fu">write.csv</span>(tab0,<span class="at">file=</span> <span class="st">&quot;01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">data.csv&quot;</span>,<span class="at">row.names =</span> F, </span>
-<span id="cb74-2"><a href="scitb-快速生成基线表一.html#cb74-2" tabindex="-1"></a>    <span class="at">fileEncoding =</span> <span class="st">&quot;gbk&quot;</span>)</span></code></pre></div>
-<p>保存出来是下图，复制到word改改就能用</p>
-<p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410211052806.png" /></p>
+<div id="查看配色盘选择3颜色区分色" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> 查看配色盘，选择3颜色，区分色<a href="r语言配色教程.html#查看配色盘选择3颜色区分色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>先display配色,查看目标色数和色型</li>
+<li>选择合适的调色盘,在ggplot中使用 <code>scale_*_brewer</code>调用</li>
+</ol>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="r语言配色教程.html#cb96-1" tabindex="-1"></a><span class="fu">display.brewer.all</span>(<span class="dv">3</span>, <span class="at">type =</span> <span class="st">&#39;div&#39;</span>)</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="ggplot2建立柱状图可视化" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> ggplot2建立柱状图可视化<a href="r语言配色教程.html#ggplot2建立柱状图可视化" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="r语言配色教程.html#cb97-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb97-2"><a href="r语言配色教程.html#cb97-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb97-3"><a href="r语言配色教程.html#cb97-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb97-4"><a href="r语言配色教程.html#cb97-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb97-5"><a href="r语言配色教程.html#cb97-5" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Spectral&quot;</span>)</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 </div>
-<div id="总结" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> 总结<a href="scitb-快速生成基线表一.html#总结" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>使用体验：自定义度，结果展示等不如comparegroups，但是胜在参数简单，在期刊没那么高要求和平时展示可以用</p>
+<div id="使用ggsci包设置颜色" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> 使用ggsci包设置颜色<a href="r语言配色教程.html#使用ggsci包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r包介绍-4" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> R包介绍<a href="r语言配色教程.html#r包介绍-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ggsci包含期刊或软件的经典配色,投稿时调用快,效果好,顺手就用上了我用该包配色最多</p>
+<p>CRAN库:<a href="https://cran.r-project.org/web/packages/ggsci/">CRAN: Package ggsci (r-project.org)</a></p>
+<p>教程:<a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html">Scientific Journal and Sci-Fi Themed Color Palettes for ggplot2 (r-project.org)</a></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="r语言配色教程.html#cb98-1" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span></code></pre></div>
+</div>
+<div id="配色方案" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> 配色方案<a href="r语言配色教程.html#配色方案" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="18%" />
+<col width="69%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Scales</th>
+<th>Palette Types</th>
+<th>Palette Generator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NPG</td>
+<td><code>scale_color_npg()</code> <code>scale_fill_npg()</code></td>
+<td><code>"nrc"</code></td>
+<td><code>pal_npg()</code></td>
+</tr>
+<tr class="even">
+<td>AAAS</td>
+<td><code>scale_color_aaas()</code> <code>scale_fill_aaas()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_aaas()</code></td>
+</tr>
+<tr class="odd">
+<td>NEJM</td>
+<td><code>scale_color_nejm()</code> <code>scale_fill_nejm()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_nejm()</code></td>
+</tr>
+<tr class="even">
+<td>Lancet</td>
+<td><code>scale_color_lancet()</code> <code>scale_fill_lancet()</code></td>
+<td><code>"lanonc"</code></td>
+<td><code>pal_lancet()</code></td>
+</tr>
+<tr class="odd">
+<td>JAMA</td>
+<td><code>scale_color_jama()</code> <code>scale_fill_jama()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_jama()</code></td>
+</tr>
+<tr class="even">
+<td>BMJ</td>
+<td><code>scale_color_bmj()</code> <code>scale_fill_bmj()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_bmj()</code></td>
+</tr>
+<tr class="odd">
+<td>JCO</td>
+<td><code>scale_color_jco()</code> <code>scale_fill_jco()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_jco()</code></td>
+</tr>
+<tr class="even">
+<td>UCSCGB</td>
+<td><code>scale_color_ucscgb()</code> <code>scale_fill_ucscgb()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_ucscgb()</code></td>
+</tr>
+<tr class="odd">
+<td>D3</td>
+<td><code>scale_color_d3()``scale_fill_d3()</code></td>
+<td><code>"category10"</code> <code>"category20"</code> <code>"category20b"</code> <code>"category20c"</code></td>
+<td><code>pal_d3()</code></td>
+</tr>
+<tr class="even">
+<td>Observable</td>
+<td><code>scale_color_observable()</code> <code>scale_fill_observable()</code></td>
+<td><code>"observable10"</code></td>
+<td><code>pal_observable()</code></td>
+</tr>
+<tr class="odd">
+<td>LocusZoom</td>
+<td><code>scale_color_locuszoom()</code> <code>scale_fill_locuszoom()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_locuszoom()</code></td>
+</tr>
+<tr class="even">
+<td>IGV</td>
+<td><code>scale_color_igv()</code> <code>scale_fill_igv()</code></td>
+<td><code>"default"``"alternating"</code></td>
+<td><code>pal_igv()</code></td>
+</tr>
+<tr class="odd">
+<td>COSMIC</td>
+<td><code>scale_color_cosmic()</code> <code>scale_fill_cosmic()</code></td>
+<td><code>"hallmarks_light"``"hallmarks_dark"``"signature_substitutions"</code></td>
+<td><code>pal_cosmic()</code></td>
+</tr>
+<tr class="even">
+<td>UChicago</td>
+<td><code>scale_color_uchicago()</code> <code>scale_fill_uchicago()</code></td>
+<td><code>"default"``"light"``"dark"</code></td>
+<td><code>pal_uchicago()</code></td>
+</tr>
+<tr class="odd">
+<td>Star Trek</td>
+<td><code>scale_color_startrek()</code> <code>scale_fill_startrek()</code></td>
+<td><code>"uniform"</code></td>
+<td><code>pal_startrek()</code></td>
+</tr>
+<tr class="even">
+<td>Tron Legacy</td>
+<td><code>scale_color_tron()</code> <code>scale_fill_tron()</code></td>
+<td><code>"legacy"</code></td>
+<td><code>pal_tron()</code></td>
+</tr>
+<tr class="odd">
+<td>Futurama</td>
+<td><code>scale_color_futurama()</code> <code>scale_fill_futurama()</code></td>
+<td><code>"planetexpress"</code></td>
+<td><code>pal_futurama()</code></td>
+</tr>
+<tr class="even">
+<td>Rick and Morty</td>
+<td><code>scale_color_rickandmorty()</code> <code>scale_fill_rickandmorty()</code></td>
+<td><code>"schwifty"</code></td>
+<td><code>pal_rickandmorty()</code></td>
+</tr>
+<tr class="odd">
+<td>The Simpsons</td>
+<td><code>scale_color_simpsons()</code> <code>scale_fill_simpsons()</code></td>
+<td><code>"springfield"</code></td>
+<td><code>pal_simpsons()</code></td>
+</tr>
+<tr class="even">
+<td>Flat UI</td>
+<td><code>scale_color_flatui()</code> <code>scale_fill_flatui()</code></td>
+<td><code>"default"</code> <code>"flattastic"</code> <code>"aussie"</code></td>
+<td><code>pal_flatui()</code></td>
+</tr>
+<tr class="odd">
+<td>Frontiers</td>
+<td><code>scale_color_frontiers()</code> <code>scale_fill_frontiers()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_frontiers()</code></td>
+</tr>
+<tr class="even">
+<td>GSEA</td>
+<td><code>scale_color_gsea()</code> <code>scale_fill_gsea()</code></td>
+<td><code>"default"</code></td>
+<td><code>pal_gsea()</code></td>
+</tr>
+<tr class="odd">
+<td>Bootstrap 5</td>
+<td><code>scale_color_bs5()</code> <code>scale_fill_bs5()</code></td>
+<td><code>"blue"</code> <code>"indigo"``"purple"</code> <code>"pink"``"red"</code> <code>"orange"``"yellow"</code> <code>"green"``"teal"</code> <code>"cyan"``"gray"</code></td>
+<td><code>pal_bs5()</code></td>
+</tr>
+<tr class="even">
+<td>Material Design</td>
+<td><code>scale_color_material()</code> <code>scale_fill_material()</code></td>
+<td><code>"red"</code> <code>"pink"``"purple"</code> <code>"deep-purple"``"indigo"</code> <code>"blue"``"light-blue"</code> <code>"cyan"``"teal"</code> <code>"green"``"light-green"</code> <code>"lime"``"yellow"</code> <code>"amber"``"orange"</code> <code>"deep-orange"``"brown"</code> <code>"grey"``"blue-grey"</code></td>
+<td><code>pal_material()</code></td>
+</tr>
+<tr class="odd">
+<td>Tailwind CSS</td>
+<td><code>scale_color_tw3()</code> <code>scale_fill_tw3()</code></td>
+<td><code>"slate"</code> <code>"gray"``"zinc"</code> <code>"neutral"``"stone"</code> <code>"red"``"orange"</code> <code>"amber"``"yellow"</code> <code>"lime"``"green"</code> <code>"emerald"``"teal"</code> <code>"cyan"``"sky"</code> <code>"blue"``"indigo"</code> <code>"violet"``"purple"</code> <code>"fuchsia"``"pink"</code> <code>"rose"</code></td>
+<td><code>pal_tw3()</code></td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://vip.123pan.cn/1813062489//7%20pic/202410190948181.png" /></p>
+</div>
+<div id="柳叶刀配色" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> 柳叶刀配色<a href="r语言配色教程.html#柳叶刀配色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="r语言配色教程.html#cb99-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb99-2"><a href="r语言配色教程.html#cb99-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-3"><a href="r语言配色教程.html#cb99-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-4"><a href="r语言配色教程.html#cb99-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb99-5"><a href="r语言配色教程.html#cb99-5" tabindex="-1"></a>  <span class="fu">scale_fill_lancet</span>()</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+</div>
+<div id="其它实用r包" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> 其它实用r包<a href="r语言配色教程.html#其它实用r包" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="viridis-colorblind-friendly-color-maps-for-r" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> viridis: Colorblind-Friendly Color Maps for R<a href="r语言配色教程.html#viridis-colorblind-friendly-color-maps-for-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="介绍" class="section level4 hasAnchor" number="7.4.1.1">
+<h4><span class="header-section-number">7.4.1.1</span> 介绍<a href="r语言配色教程.html#介绍" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>官方仓库:<a href="https://cran.r-project.org/web/packages/viridis/">CRAN: Package viridis (r-project.org)</a></p>
+<p>教程:<a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">Introduction to the viridis color maps (r-project.org)</a></p>
+<p>多用于连续渐变色</p>
+</div>
+<div id="使用效果" class="section level4 hasAnchor" number="7.4.1.2">
+<h4><span class="header-section-number">7.4.1.2</span> 使用效果<a href="r语言配色教程.html#使用效果" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>色盘</p>
+<p><img src="https://vip.123pan.cn/1813062489//7%20pic/202410190953713.png" /></p>
+<p>使用方案参考</p>
+<p><img src="https://vip.123pan.cn/1813062489//7%20pic/202410190953450.png" /></p>
+</div>
+</div>
+<div id="使用metbrewer包设置颜色" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> 使用MetBrewer包设置颜色<a href="r语言配色教程.html#使用metbrewer包设置颜色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="r包介绍-5" class="section level4 hasAnchor" number="7.4.2.1">
+<h4><span class="header-section-number">7.4.2.1</span> r包介绍<a href="r语言配色教程.html#r包介绍-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>官方CRAN库:<a href="https://cran.r-project.org/web/packages/MetBrewer/">CRAN: Package MetBrewer (r-project.org)</a></p>
+<p>配色方案参考纽约大都会艺术博物馆,艺术感爆表一起来看看</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="r语言配色教程.html#cb100-1" tabindex="-1"></a><span class="fu">library</span>(MetBrewer)</span></code></pre></div>
+</div>
+<div id="查看配色盘选择3颜色区分色-1" class="section level4 hasAnchor" number="7.4.2.2">
+<h4><span class="header-section-number">7.4.2.2</span> 查看配色盘，选择3颜色，区分色<a href="r语言配色教程.html#查看配色盘选择3颜色区分色-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="r语言配色教程.html#cb101-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb101-2"><a href="r语言配色教程.html#cb101-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb101-3"><a href="r语言配色教程.html#cb101-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb101-4"><a href="r语言配色教程.html#cb101-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb101-5"><a href="r语言配色教程.html#cb101-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Austria&quot;</span>))</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="r语言配色教程.html#cb102-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb102-2"><a href="r语言配色教程.html#cb102-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb102-3"><a href="r语言配色教程.html#cb102-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length by Species&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sepal Length&quot;</span>) <span class="sc">+</span></span>
+<span id="cb102-4"><a href="r语言配色教程.html#cb102-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb102-5"><a href="r语言配色教程.html#cb102-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Degas&quot;</span>))</span></code></pre></div>
+<p><img src="2011-viscolor_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>最后看看好看
+<img src="https://vip.123pan.cn/1813062489//7%20pic/202410191013574.png" /></p>
 
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -655,8 +677,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="comparegroups-描述性表一快速生成.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="purrr-函数式编程彻底摆脱for循环.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="purrr-函数式编程彻底摆脱for循环.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="patchwork拒绝psr内实现多图拼接.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

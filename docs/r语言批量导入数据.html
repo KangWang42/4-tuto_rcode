@@ -326,7 +326,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.1" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#数据准备"><i class="fa fa-check"></i><b>10.3.1</b> 数据准备</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#总绘图绘图代码"><i class="fa fa-check"></i><b>10.4</b> 总绘图绘图代码</a></li>
-<li class="chapter" data-level="10.5" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#绘图代码拆解"><i class="fa fa-check"></i><b>10.5</b> 绘图代码拆解</a></li>
+<li class="chapter" data-level="10.5" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#绘图代码拆解"><i class="fa fa-check"></i><b>10.5</b> 绘图代码拆解</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#第一步我们先把sankeyedge做出来就是中间的流量"><i class="fa fa-check"></i><b>10.5.1</b> 第一步我们先把sankeyedge做出来，就是中间的流量</a></li>
+<li class="chapter" data-level="10.5.2" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#很好下一部我们把node给加上就是各个小方块"><i class="fa fa-check"></i><b>10.5.2</b> 很好，下一部我们把node给加上，就是各个小方块</a></li>
+<li class="chapter" data-level="10.5.3" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#然后我们添加文字到图形里"><i class="fa fa-check"></i><b>10.5.3</b> 然后我们添加文字到图形里</a></li>
+<li class="chapter" data-level="10.5.4" data-path="r语言桑基图绘制.html"><a href="r语言桑基图绘制.html#最后阶段我们修改一下图例改改主题"><i class="fa fa-check"></i><b>10.5.4</b> 最后阶段我们修改一下图例，改改主题</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R实用操作合集</b></span></li>
 <li class="chapter" data-level="11" data-path="r语言批量导入数据.html"><a href="r语言批量导入数据.html"><i class="fa fa-check"></i><b>11</b> R语言批量导入数据</a>
@@ -371,18 +377,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220949048.webp" /></p>
 <div id="载入包" class="section level3 hasAnchor" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> 载入包<a href="r语言批量导入数据.html#载入包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="r语言批量导入数据.html#cb136-1" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span>
-<span id="cb136-2"><a href="r语言批量导入数据.html#cb136-2" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb136-3"><a href="r语言批量导入数据.html#cb136-3" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="r语言批量导入数据.html#cb135-1" tabindex="-1"></a><span class="fu">library</span>(bruceR)</span>
+<span id="cb135-2"><a href="r语言批量导入数据.html#cb135-2" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb135-3"><a href="r语言批量导入数据.html#cb135-3" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
 </div>
 <div id="第一步提取文件名" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> 第一步:提取文件名<a href="r语言批量导入数据.html#第一步提取文件名" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="r语言批量导入数据.html#cb137-1" tabindex="-1"></a>files <span class="ot">&lt;-</span> </span>
-<span id="cb137-2"><a href="r语言批量导入数据.html#cb137-2" tabindex="-1"></a>    fs<span class="sc">::</span><span class="fu">dir_ls</span>(<span class="st">&quot;D:</span><span class="sc">\\</span><span class="st">0 zotero笔记</span><span class="sc">\\</span><span class="st">06-其它</span><span class="sc">\\</span><span class="st">3 公众号</span><span class="sc">\\</span><span class="st">1 blogpost-r</span><span class="sc">\\</span><span class="st">01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">CHARLS&quot;</span>, </span>
-<span id="cb137-3"><a href="r语言批量导入数据.html#cb137-3" tabindex="-1"></a>                   <span class="at">recurse =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb137-4"><a href="r语言批量导入数据.html#cb137-4" tabindex="-1"></a>                    <span class="at">glob =</span> <span class="st">&quot;*.dta&quot;</span>)</span>
-<span id="cb137-5"><a href="r语言批量导入数据.html#cb137-5" tabindex="-1"></a></span>
-<span id="cb137-6"><a href="r语言批量导入数据.html#cb137-6" tabindex="-1"></a><span class="fu">print</span>(files)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="r语言批量导入数据.html#cb136-1" tabindex="-1"></a>files <span class="ot">&lt;-</span> </span>
+<span id="cb136-2"><a href="r语言批量导入数据.html#cb136-2" tabindex="-1"></a>    fs<span class="sc">::</span><span class="fu">dir_ls</span>(<span class="st">&quot;D:</span><span class="sc">\\</span><span class="st">0 zotero笔记</span><span class="sc">\\</span><span class="st">06-其它</span><span class="sc">\\</span><span class="st">3 公众号</span><span class="sc">\\</span><span class="st">1 blogpost-r</span><span class="sc">\\</span><span class="st">01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">CHARLS&quot;</span>, </span>
+<span id="cb136-3"><a href="r语言批量导入数据.html#cb136-3" tabindex="-1"></a>                   <span class="at">recurse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb136-4"><a href="r语言批量导入数据.html#cb136-4" tabindex="-1"></a>                    <span class="at">glob =</span> <span class="st">&quot;*.dta&quot;</span>)</span>
+<span id="cb136-5"><a href="r语言批量导入数据.html#cb136-5" tabindex="-1"></a></span>
+<span id="cb136-6"><a href="r语言批量导入数据.html#cb136-6" tabindex="-1"></a><span class="fu">print</span>(files)</span></code></pre></div>
 <pre><code>## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/COVID_Module.dta
 ## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Demographic_Background.dta
 ## D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/Exit_Module.dta
@@ -396,21 +402,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="第二步批量导入" class="section level3 hasAnchor" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> 第二步:批量导入<a href="r语言批量导入数据.html#第二步批量导入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="r语言批量导入数据.html#cb139-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> files <span class="sc">|&gt;</span> </span>
-<span id="cb139-2"><a href="r语言批量导入数据.html#cb139-2" tabindex="-1"></a>    <span class="fu">map</span>(\(filename)</span>
-<span id="cb139-3"><a href="r语言批量导入数据.html#cb139-3" tabindex="-1"></a>    {<span class="fu">import</span>(<span class="at">file=</span>filename)})</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="r语言批量导入数据.html#cb138-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> files <span class="sc">|&gt;</span> </span>
+<span id="cb138-2"><a href="r语言批量导入数据.html#cb138-2" tabindex="-1"></a>    <span class="fu">map</span>(\(filename)</span>
+<span id="cb138-3"><a href="r语言批量导入数据.html#cb138-3" tabindex="-1"></a>    {<span class="fu">import</span>(<span class="at">file=</span>filename)})</span></code></pre></div>
 <p>可以看到已经导入成功
 <img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410220957711.webp" /></p>
 </div>
 <div id="接下来美化一下" class="section level3 hasAnchor" number="11.1.4">
 <h3><span class="header-section-number">11.1.4</span> 接下来美化一下<a href="r语言批量导入数据.html#接下来美化一下" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="r语言批量导入数据.html#cb140-1" tabindex="-1"></a>data_list_neat <span class="ot">&lt;-</span> <span class="fu">set_names</span>(</span>
-<span id="cb140-2"><a href="r语言批量导入数据.html#cb140-2" tabindex="-1"></a>    data_list,</span>
-<span id="cb140-3"><a href="r语言批量导入数据.html#cb140-3" tabindex="-1"></a>    files <span class="sc">|&gt;</span> </span>
-<span id="cb140-4"><a href="r语言批量导入数据.html#cb140-4" tabindex="-1"></a>        <span class="fu">map</span>(\(str)</span>
-<span id="cb140-5"><a href="r语言批量导入数据.html#cb140-5" tabindex="-1"></a>        {<span class="fu">str_remove</span>(str, </span>
-<span id="cb140-6"><a href="r语言批量导入数据.html#cb140-6" tabindex="-1"></a>        <span class="st">&quot;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/&quot;</span>)})</span>
-<span id="cb140-7"><a href="r语言批量导入数据.html#cb140-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="r语言批量导入数据.html#cb139-1" tabindex="-1"></a>data_list_neat <span class="ot">&lt;-</span> <span class="fu">set_names</span>(</span>
+<span id="cb139-2"><a href="r语言批量导入数据.html#cb139-2" tabindex="-1"></a>    data_list,</span>
+<span id="cb139-3"><a href="r语言批量导入数据.html#cb139-3" tabindex="-1"></a>    files <span class="sc">|&gt;</span> </span>
+<span id="cb139-4"><a href="r语言批量导入数据.html#cb139-4" tabindex="-1"></a>        <span class="fu">map</span>(\(str)</span>
+<span id="cb139-5"><a href="r语言批量导入数据.html#cb139-5" tabindex="-1"></a>        {<span class="fu">str_remove</span>(str, </span>
+<span id="cb139-6"><a href="r语言批量导入数据.html#cb139-6" tabindex="-1"></a>        <span class="st">&quot;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/&quot;</span>)})</span>
+<span id="cb139-7"><a href="r语言批量导入数据.html#cb139-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>可以看到列表每个元素名也规范了</p>
 <p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410221002367.webp" /></p>
 </div>
@@ -421,30 +427,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410221031909.webp" /></p>
 <div id="第一步提取sheet名" class="section level3 hasAnchor" number="11.2.1">
 <h3><span class="header-section-number">11.2.1</span> 第一步:提取sheet名<a href="r语言批量导入数据.html#第一步提取sheet名" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="r语言批量导入数据.html#cb141-1" tabindex="-1"></a>sheet_names <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">excel_sheets</span>(</span>
-<span id="cb141-2"><a href="r语言批量导入数据.html#cb141-2" tabindex="-1"></a>    <span class="st">&quot;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx&quot;</span></span>
-<span id="cb141-3"><a href="r语言批量导入数据.html#cb141-3" tabindex="-1"></a>)</span>
-<span id="cb141-4"><a href="r语言批量导入数据.html#cb141-4" tabindex="-1"></a></span>
-<span id="cb141-5"><a href="r语言批量导入数据.html#cb141-5" tabindex="-1"></a>sheet_names</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="r语言批量导入数据.html#cb140-1" tabindex="-1"></a>sheet_names <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">excel_sheets</span>(</span>
+<span id="cb140-2"><a href="r语言批量导入数据.html#cb140-2" tabindex="-1"></a>    <span class="st">&quot;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx&quot;</span></span>
+<span id="cb140-3"><a href="r语言批量导入数据.html#cb140-3" tabindex="-1"></a>)</span>
+<span id="cb140-4"><a href="r语言批量导入数据.html#cb140-4" tabindex="-1"></a></span>
+<span id="cb140-5"><a href="r语言批量导入数据.html#cb140-5" tabindex="-1"></a>sheet_names</span></code></pre></div>
 <pre><code>## [1] &quot;gong&quot; &quot;bo&quot;   &quot;hong&quot; &quot;wan&quot;  &quot;he&quot;</code></pre>
 </div>
 <div id="第二步批量导入-1" class="section level3 hasAnchor" number="11.2.2">
 <h3><span class="header-section-number">11.2.2</span> 第二步:批量导入<a href="r语言批量导入数据.html#第二步批量导入-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="r语言批量导入数据.html#cb143-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> </span>
-<span id="cb143-2"><a href="r语言批量导入数据.html#cb143-2" tabindex="-1"></a>    sheet_names <span class="sc">|&gt;</span></span>
-<span id="cb143-3"><a href="r语言批量导入数据.html#cb143-3" tabindex="-1"></a>    <span class="fu">map</span>(\(var)</span>
-<span id="cb143-4"><a href="r语言批量导入数据.html#cb143-4" tabindex="-1"></a>        {<span class="fu">import</span>(</span>
-<span id="cb143-5"><a href="r语言批量导入数据.html#cb143-5" tabindex="-1"></a>        <span class="at">file=</span><span class="st">&#39;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx&#39;</span>,</span>
-<span id="cb143-6"><a href="r语言批量导入数据.html#cb143-6" tabindex="-1"></a>        <span class="at">sheet =</span> var) </span>
-<span id="cb143-7"><a href="r语言批量导入数据.html#cb143-7" tabindex="-1"></a>    }) <span class="sc">|&gt;</span> </span>
-<span id="cb143-8"><a href="r语言批量导入数据.html#cb143-8" tabindex="-1"></a>    <span class="fu">set_names</span>(sheet_names)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="r语言批量导入数据.html#cb142-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> </span>
+<span id="cb142-2"><a href="r语言批量导入数据.html#cb142-2" tabindex="-1"></a>    sheet_names <span class="sc">|&gt;</span></span>
+<span id="cb142-3"><a href="r语言批量导入数据.html#cb142-3" tabindex="-1"></a>    <span class="fu">map</span>(\(var)</span>
+<span id="cb142-4"><a href="r语言批量导入数据.html#cb142-4" tabindex="-1"></a>        {<span class="fu">import</span>(</span>
+<span id="cb142-5"><a href="r语言批量导入数据.html#cb142-5" tabindex="-1"></a>        <span class="at">file=</span><span class="st">&#39;D:/0 zotero笔记/06-其它/3 公众号/1 blogpost-r/01-attch/10/CHARLS/data.xlsx&#39;</span>,</span>
+<span id="cb142-6"><a href="r语言批量导入数据.html#cb142-6" tabindex="-1"></a>        <span class="at">sheet =</span> var) </span>
+<span id="cb142-7"><a href="r语言批量导入数据.html#cb142-7" tabindex="-1"></a>    }) <span class="sc">|&gt;</span> </span>
+<span id="cb142-8"><a href="r语言批量导入数据.html#cb142-8" tabindex="-1"></a>    <span class="fu">set_names</span>(sheet_names)</span></code></pre></div>
 <pre><code>## New names:
 ## New names:
 ## New names:
 ## New names:
 ## New names:
 ## • `` -&gt; `...1`</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="r语言批量导入数据.html#cb145-1" tabindex="-1"></a><span class="fu">str</span>(data_list)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="r语言批量导入数据.html#cb144-1" tabindex="-1"></a><span class="fu">str</span>(data_list)</span></code></pre></div>
 <pre><code>## List of 5
 ##  $ gong:&#39;data.frame&#39;:    12 obs. of  9 variables:
 ##   ..$ ...1: num [1:12] 1 2 3 4 5 6 7 8 9 10 ...

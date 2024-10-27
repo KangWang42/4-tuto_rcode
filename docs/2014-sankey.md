@@ -1,8 +1,8 @@
-# R语言桑基图绘制
+# R语言绘制桑基图详细教程
 
 
 
-> 本期主要介绍常用桑基图（流量图）绘制包和相关代码教程
+> 本期主要介绍常用桑基图（流量图）绘制包ggsankeyfier和相关代码教程
 > 
 > 桑基图也叫流量图，主要用来处理多个分类变量的分布情况。可视化展示占比比例等，美观容易
 
@@ -74,7 +74,7 @@ head(data_neat, 5)
 ## 5 Cultural        0.0127       3 from      Land-based         activity_realm
 ```
 
-## 总绘图绘图代码
+## 总绘图代码
 
 
 ``` r
@@ -122,19 +122,11 @@ data_neat |>
   ) 
 ```
 
-```
-## Warning: The `<scale>` argument of `guides()` cannot be `FALSE`. Use "none" instead as
-## of ggplot2 3.3.4.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.
-```
-
 <img src="2014-sankey_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 ## 绘图代码拆解
 
-接下来我们拆解上边一大段代码，一步步的跑出来就会感觉好很多啦。数据的预先准备至关重要，这个就不讲了
+接下来我们拆解上边一大段代码，一步步的跑出来就会感觉会好很多。数据的预先准备至关重要，看数据准备部分的代码就行了
 
 ### 第一步我们先把sankeyedge做出来，就是中间的流量
 
@@ -143,7 +135,6 @@ data_neat |>
 
 
 ``` r
-############# 修改填充颜色美观
 data_neat |>
   ggplot(
     mapping = aes(

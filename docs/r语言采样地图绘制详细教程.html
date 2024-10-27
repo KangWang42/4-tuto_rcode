@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 purrr: 函数式编程,彻底摆脱for循环 | 科研学帮帮</title>
+  <title>11 R语言采样地图绘制详细教程 | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 purrr: 函数式编程,彻底摆脱for循环 | 科研学帮帮" />
+  <meta property="og:title" content="11 R语言采样地图绘制详细教程 | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 purrr: 函数式编程,彻底摆脱for循环 | 科研学帮帮" />
+  <meta name="twitter:title" content="11 R语言采样地图绘制详细教程 | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="scitb-快速生成基线表一.html"/>
-<link rel="next" href="r语言配色教程.html"/>
+<link rel="prev" href="r语言绘制桑基图详细教程.html"/>
+<link rel="next" href="r语言批量导入数据.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -388,154 +388,215 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="purrr-函数式编程彻底摆脱for循环" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> purrr: 函数式编程,彻底摆脱for循环<a href="purrr-函数式编程彻底摆脱for循环.html#purrr-函数式编程彻底摆脱for循环" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r包介绍-3" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> R包介绍<a href="purrr-函数式编程彻底摆脱for循环.html#r包介绍-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>purrr 通过提供一套完整且一致的用于处理函数和向量的工具来增强 <strong>R 的函数式编程 (FP) 工具包</strong>。如果您以前从未听说过 FP，那么最好的起点是map()函数系列，它允许您用更简洁、更易于阅读的代码替换许多 for 循环。</p>
-<p>听起来有点复杂，但更简单来说，就是用嵌套函数来<strong>替代for循环的冗长的框架结构</strong>。让输入输出更简单。</p>
-<p>相关教程：<a href="https://purrr.tidyverse.org/">官网网站</a></p>
+<div id="r语言采样地图绘制详细教程" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> R语言采样地图绘制详细教程<a href="r语言采样地图绘制详细教程.html#r语言采样地图绘制详细教程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>本期主要介绍如何绘制采样地图和国内区域地图，并自定义相关内容</p>
+</blockquote>
+<div id="r包介绍-8" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> R包介绍<a href="r语言采样地图绘制详细教程.html#r包介绍-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://cran.r-project.org/web/packages/ggspatial/index.html">ggspatial教程</a></p>
 </div>
-<div id="r包安装-3" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> R包安装<a href="purrr-函数式编程彻底摆脱for循环.html#r包安装-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb75-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;purrr&quot;</span>)</span></code></pre></div>
+<div id="r包安装-6" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> R包安装<a href="r语言采样地图绘制详细教程.html#r包安装-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="r语言采样地图绘制详细教程.html#cb134-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggspatial&quot;</span>)</span>
+<span id="cb134-2"><a href="r语言采样地图绘制详细教程.html#cb134-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
 </div>
-<div id="语法" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> 语法<a href="purrr-函数式编程彻底摆脱for循环.html#语法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>purrr系列函数都以<strong>map，map2和pmap作为大类，搭配更多的后缀来设定输出类型</strong>。</p>
-<ul>
-<li>map(.x, .f)：输入一个向量(.x)，以该向量为输入进行循环(.f函数循环)</li>
-<li>map(.x, .f)：输入两个向量</li>
-<li>map3(.x, .f)：输入n（大于2）向量</li>
-</ul>
-<p>这里边的向量是比较广的向量，包含<strong>向量，列表，字符串，数据框（可以看作向量的向量），只要有这种顺序结构的都可以作为map的输入</strong></p>
+<div id="基础绘图代码" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> 基础绘图代码<a href="r语言采样地图绘制详细教程.html#基础绘图代码" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="导入地图json数据" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> 导入地图json数据<a href="r语言采样地图绘制详细教程.html#导入地图json数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>进入从<a href="http://datav.aliyun.com/portal/school/atlas/area_selector">阿里云DataV可视化网站</a>（可选择其他平台）下载格式为.json的地图数据：</p>
+<p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410270835984.webp" /></p>
 </div>
-<div id="举个栗子" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> 举个栗子<a href="purrr-函数式编程彻底摆脱for循环.html#举个栗子" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="加载数据" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> 加载数据<a href="purrr-函数式编程彻底摆脱for循环.html#加载数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb76-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb76-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb76-2" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code></pre></div>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb77-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb77-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb77-2" tabindex="-1"></a></span>
-<span id="cb77-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb77-3" tabindex="-1"></a><span class="fu">head</span>(data, <span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
+<div id="数据导入" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> 数据导入<a href="r语言采样地图绘制详细教程.html#数据导入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="r语言采样地图绘制详细教程.html#cb135-1" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb135-2"><a href="r语言采样地图绘制详细教程.html#cb135-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.11.2, GDAL 3.8.2, PROJ 9.3.1; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="r语言采样地图绘制详细教程.html#cb137-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb137-2"><a href="r语言采样地图绘制详细教程.html#cb137-2" tabindex="-1"></a></span>
+<span id="cb137-3"><a href="r语言采样地图绘制详细教程.html#cb137-3" tabindex="-1"></a><span class="co"># 导入地图json数据</span></span>
+<span id="cb137-4"><a href="r语言采样地图绘制详细教程.html#cb137-4" tabindex="-1"></a>map <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;01-attch</span><span class="sc">\\</span><span class="st">10</span><span class="sc">\\</span><span class="st">广州市.json&quot;</span>)</span></code></pre></div>
+<pre><code>## Reading layer `广州市&#39; from data source 
+##   `D:\0 zotero笔记\06-其它\3 公众号\1 blogpost-r\01-attch\10\广州市.json&#39; 
+##   using driver `GeoJSON&#39;
+## Simple feature collection with 11 features and 9 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 112.9585 ymin: 22.51436 xmax: 114.06 ymax: 23.93292
+## Geodetic CRS:  WGS 84</code></pre>
 </div>
-<div id="使用tidyverse结构和purrr来划分数据分别做回归" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> 使用tidyverse结构和purrr来划分数据分别做回归<a href="purrr-函数式编程彻底摆脱for循环.html#使用tidyverse结构和purrr来划分数据分别做回归" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>我们现在想根据cyl对数据框进行划分，在分出来的数据框中做回归，然后把回归结果放到一个数字向量里</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb79-1" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
-<span id="cb79-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb79-2" tabindex="-1"></a>  <span class="fu">split</span>(data<span class="sc">$</span>cyl) <span class="sc">|&gt;</span>  <span class="co"># 划分数据</span></span>
-<span id="cb79-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb79-3" tabindex="-1"></a>  <span class="fu">map</span>(\(df) <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> df)) <span class="sc">|&gt;</span> <span class="co">#分别做循环</span></span>
-<span id="cb79-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb79-4" tabindex="-1"></a>  <span class="fu">map</span>(summary) <span class="sc">%&gt;%</span>  <span class="co">#对结果做summary</span></span>
-<span id="cb79-5"><a href="purrr-函数式编程彻底摆脱for循环.html#cb79-5" tabindex="-1"></a>  <span class="fu">map_dbl</span>(<span class="st">&quot;r.squared&quot;</span>)</span></code></pre></div>
-<pre><code>##         4         6         8 
-## 0.5086326 0.4645102 0.4229655</code></pre>
-<p>查看以下代码，发现了什么？</p>
-<ul>
-<li>purrr循环的第一个参数始终是数据，因此 purrr 可以自然地与管道配合使用。</li>
-<li>map_xxx（map的后缀相当于自定义了输出类型）</li>
-</ul>
+<div id="开始绘制" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> 开始绘制<a href="r语言采样地图绘制详细教程.html#开始绘制" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="添加省份区边框" class="section level4 hasAnchor" number="11.3.3.1">
+<h4><span class="header-section-number">11.3.3.1</span> 添加省份区边框<a href="r语言采样地图绘制详细教程.html#添加省份区边框" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="r语言采样地图绘制详细教程.html#cb139-1" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb139-2"><a href="r语言采样地图绘制详细教程.html#cb139-2" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Guangzhou&quot;</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb139-3"><a href="r语言采样地图绘制详细教程.html#cb139-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map, <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;#f0eedf&quot;</span>), <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="常规方法来做这个模型" class="section level3 hasAnchor" number="6.4.3">
-<h3><span class="header-section-number">6.4.3</span> 常规方法来做这个模型<a href="purrr-函数式编程彻底摆脱for循环.html#常规方法来做这个模型" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-1" tabindex="-1"></a>var <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>)</span>
-<span id="cb81-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-2" tabindex="-1"></a></span>
-<span id="cb81-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-3" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">split</span>(data, mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb81-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-4" tabindex="-1"></a></span>
-<span id="cb81-5"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-5" tabindex="-1"></a>vec_result <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb81-6"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-6" tabindex="-1"></a><span class="cf">for</span> (temp_data <span class="cf">in</span> data_list) {</span>
-<span id="cb81-7"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-7" tabindex="-1"></a>    model <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> temp_data)</span>
-<span id="cb81-8"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-8" tabindex="-1"></a>    model_summary <span class="ot">=</span> <span class="fu">summary</span>(model)</span>
-<span id="cb81-9"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-9" tabindex="-1"></a>    r2 <span class="ot">=</span> model_summary<span class="sc">$</span><span class="st">&quot;r.squared&quot;</span></span>
-<span id="cb81-10"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-10" tabindex="-1"></a>    vec_result <span class="ot">=</span> <span class="fu">c</span>(vec_result, r2)</span>
-<span id="cb81-11"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-11" tabindex="-1"></a>}</span>
-<span id="cb81-12"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-12" tabindex="-1"></a></span>
-<span id="cb81-13"><a href="purrr-函数式编程彻底摆脱for循环.html#cb81-13" tabindex="-1"></a><span class="fu">print</span>(vec_result)</span></code></pre></div>
-<pre><code>## [1] 0.5086326 0.4645102 0.4229655</code></pre>
-<p>发现了什么</p>
-<ol style="list-style-type: decimal">
-<li>代码行数多了很多</li>
-<li>多了一些中间变量</li>
-<li>代码可读性差，很不优雅</li>
-</ol>
+<div id="添加指南针annotation" class="section level4 hasAnchor" number="11.3.3.2">
+<h4><span class="header-section-number">11.3.3.2</span> 添加指南针annotation<a href="r语言采样地图绘制详细教程.html#添加指南针annotation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="r语言采样地图绘制详细教程.html#cb140-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb140-2"><a href="r语言采样地图绘制详细教程.html#cb140-2" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Guangzhou&quot;</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb140-3"><a href="r语言采样地图绘制详细教程.html#cb140-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map, <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;#f0eedf&quot;</span>), <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># 设置比例尺</span></span>
+<span id="cb140-4"><a href="r语言采样地图绘制详细教程.html#cb140-4" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(</span>
+<span id="cb140-5"><a href="r语言采样地图绘制详细教程.html#cb140-5" tabindex="-1"></a>    <span class="at">location =</span> <span class="st">&quot;tl&quot;</span>,</span>
+<span id="cb140-6"><a href="r语言采样地图绘制详细教程.html#cb140-6" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">north_arrow_nautical</span>(</span>
+<span id="cb140-7"><a href="r语言采样地图绘制详细教程.html#cb140-7" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>),</span>
+<span id="cb140-8"><a href="r语言采样地图绘制详细教程.html#cb140-8" tabindex="-1"></a>      <span class="at">line_col =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb140-9"><a href="r语言采样地图绘制详细教程.html#cb140-9" tabindex="-1"></a>    )</span>
+<span id="cb140-10"><a href="r语言采样地图绘制详细教程.html#cb140-10" tabindex="-1"></a>  )</span>
+<span id="cb140-11"><a href="r语言采样地图绘制详细教程.html#cb140-11" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 </div>
-<div id="多变量索引循环" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> 多变量索引循环<a href="purrr-函数式编程彻底摆脱for循环.html#多变量索引循环" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>如果是想用多个向量来索引循环，输入多个向量，我们要怎么做呢。举一个简单的例子就知道了。</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb83-1" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>)</span>
-<span id="cb83-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb83-2" tabindex="-1"></a>var2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;wt&quot;</span>, <span class="st">&quot;qsec&quot;</span>, <span class="st">&quot;vs&quot;</span>)</span>
-<span id="cb83-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb83-3" tabindex="-1"></a>var_add <span class="ot">&lt;-</span> <span class="fu">map2</span>(var1, var2, \(x, y) <span class="fu">paste0</span>(x, <span class="st">&quot;+&quot;</span>, y))</span>
-<span id="cb83-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb83-4" tabindex="-1"></a><span class="fu">print</span>(var_add)</span></code></pre></div>
-<pre><code>## [[1]]
-## [1] &quot;disp+wt&quot;
-## 
-## [[2]]
-## [1] &quot;hp+qsec&quot;
-## 
-## [[3]]
-## [1] &quot;drat+vs&quot;</code></pre>
-<p>再举个例子</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-1" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb85-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-2" tabindex="-1"></a>sds <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb85-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2020</span>)</span>
-<span id="cb85-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-4" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">map2</span>(means, sds, \(mean, sds){<span class="fu">rnorm</span>(mean, sds, <span class="at">n =</span> <span class="dv">5</span>)})</span>
-<span id="cb85-5"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-5" tabindex="-1"></a></span>
-<span id="cb85-6"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-6" tabindex="-1"></a><span class="co">#这里也可以写为，如下，不过有时候想要更复杂的操作就不要用这种简化的写法</span></span>
-<span id="cb85-7"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-7" tabindex="-1"></a><span class="co">#samples &lt;- map2(means, sds, rnorm, n = 5)</span></span>
-<span id="cb85-8"><a href="purrr-函数式编程彻底摆脱for循环.html#cb85-8" tabindex="-1"></a><span class="fu">str</span>(samples)</span></code></pre></div>
-<pre><code>## List of 4
-##  $ : num [1:5] 1.377 1.302 -0.098 -0.13 -1.797
-##  $ : num [1:5] 3.44 3.88 1.54 5.52 2.23
-##  $ : num [1:5] 0.441 5.728 6.589 1.885 2.63
-##  $ : num [1:5] 11.2 10.82 -8.16 -5.16 4.23</code></pre>
-<p>如果输入的是多个向量可以参考如下</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-1" tabindex="-1"></a>var3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>)</span>
-<span id="cb87-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-2" tabindex="-1"></a></span>
-<span id="cb87-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-3" tabindex="-1"></a>var4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;wt&quot;</span>, <span class="st">&quot;qsec&quot;</span>, <span class="st">&quot;vs&quot;</span>)</span>
-<span id="cb87-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-4" tabindex="-1"></a></span>
-<span id="cb87-5"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-5" tabindex="-1"></a><span class="co">#使用pmap的时候，把多个向量放到list框里作为第一个参数</span></span>
-<span id="cb87-6"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-6" tabindex="-1"></a>pvar_add <span class="ot">&lt;-</span> <span class="fu">pmap</span>(<span class="fu">list</span>(var1, var2, var3, var4), </span>
-<span id="cb87-7"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-7" tabindex="-1"></a>            \(x, y, z, p) </span>
-<span id="cb87-8"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-8" tabindex="-1"></a>            <span class="fu">paste0</span>(x, <span class="st">&quot;+&quot;</span>, y, <span class="st">&quot;+&quot;</span>, z, <span class="st">&quot;+&quot;</span>, <span class="st">&quot;p&quot;</span>))</span>
-<span id="cb87-9"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-9" tabindex="-1"></a></span>
-<span id="cb87-10"><a href="purrr-函数式编程彻底摆脱for循环.html#cb87-10" tabindex="-1"></a><span class="fu">print</span>(pvar_add)</span></code></pre></div>
-<pre><code>## [[1]]
-## [1] &quot;disp+wt+disp+p&quot;
-## 
-## [[2]]
-## [1] &quot;hp+qsec+hp+p&quot;
-## 
-## [[3]]
-## [1] &quot;drat+vs+drat+p&quot;</code></pre>
-<p>注意：这里用的都是简单的字符向量，但我们使用的时候可以自由拓展到数据框和列表等复杂向量结构，就能感觉到purrr循环的魅力了</p>
 </div>
-<div id="嵌套循环" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> 嵌套循环<a href="purrr-函数式编程彻底摆脱for循环.html#嵌套循环" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>如果是嵌套结构我们怎么用purrr来做呢，其实也很简单。我们现在来算一下1：10分别乘以10:20然后放到一个数字向量里怎么实现吧</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="purrr-函数式编程彻底摆脱for循环.html#cb89-1" tabindex="-1"></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, </span>
-<span id="cb89-2"><a href="purrr-函数式编程彻底摆脱for循环.html#cb89-2" tabindex="-1"></a>        \(x){<span class="fu">map</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">20</span>, </span>
-<span id="cb89-3"><a href="purrr-函数式编程彻底摆脱for循环.html#cb89-3" tabindex="-1"></a>        \(y){x<span class="sc">*</span>y})}) <span class="sc">|&gt;</span> </span>
-<span id="cb89-4"><a href="purrr-函数式编程彻底摆脱for循环.html#cb89-4" tabindex="-1"></a>    <span class="fu">unlist</span>()</span></code></pre></div>
-<pre><code>##   [1]  10  11  12  13  14  15  16  17  18  19  20  20  22  24  26  28  30  32
-##  [19]  34  36  38  40  30  33  36  39  42  45  48  51  54  57  60  40  44  48
-##  [37]  52  56  60  64  68  72  76  80  50  55  60  65  70  75  80  85  90  95
-##  [55] 100  60  66  72  78  84  90  96 102 108 114 120  70  77  84  91  98 105
-##  [73] 112 119 126 133 140  80  88  96 104 112 120 128 136 144 152 160  90  99
-##  [91] 108 117 126 135 144 153 162 171 180 100 110 120 130 140 150 160 170 180
-## [109] 190 200</code></pre>
-<p>举得例子比较没有意义，但是可以在此基础上一窥嵌套循环的实现。</p>
+<div id="我们来自定义绘图内容" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> 我们来自定义绘图内容<a href="r语言采样地图绘制详细教程.html#我们来自定义绘图内容" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="设置白云区天河区突出显示" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> 设置白云区天河区突出显示<a href="r语言采样地图绘制详细教程.html#设置白云区天河区突出显示" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>我们新加一个图层就可以，然后fill填充亮色</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="r语言采样地图绘制详细教程.html#cb141-1" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_sf</span>(</span>
+<span id="cb141-2"><a href="r语言采样地图绘制详细教程.html#cb141-2" tabindex="-1"></a>  <span class="at">data =</span> map <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;天河区&quot;</span>, <span class="st">&quot;白云区&quot;</span>, <span class="st">&quot;番禺区&quot;</span>)),</span>
+<span id="cb141-3"><a href="r语言采样地图绘制详细教程.html#cb141-3" tabindex="-1"></a>  <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;#c98c50&quot;</span>),</span>
+<span id="cb141-4"><a href="r语言采样地图绘制详细教程.html#cb141-4" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb141-5"><a href="r语言采样地图绘制详细教程.html#cb141-5" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb141-6"><a href="r语言采样地图绘制详细教程.html#cb141-6" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
-<div id="更多" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> 更多<a href="purrr-函数式编程彻底摆脱for循环.html#更多" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>purrr可以快捷实现很多高级操作，比如批量导入数据，批量绘图以及批量建模等，后续分开写吧。这一期写得很宽泛，大家可以自己去探索更多操作。</p>
+<div id="设置text" class="section level3 hasAnchor" number="11.4.2">
+<h3><span class="header-section-number">11.4.2</span> 设置text<a href="r语言采样地图绘制详细教程.html#设置text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>接下来我们要在图里标注部分区名</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="r语言采样地图绘制详细教程.html#cb142-1" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb142-2"><a href="r语言采样地图绘制详细教程.html#cb142-2" tabindex="-1"></a>showtext<span class="sc">::</span><span class="fu">showtext_auto</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="r语言采样地图绘制详细教程.html#cb143-1" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_sf</span>(</span>
+<span id="cb143-2"><a href="r语言采样地图绘制详细教程.html#cb143-2" tabindex="-1"></a>  <span class="at">data =</span> map <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;天河区&quot;</span>, <span class="st">&quot;白云区&quot;</span>, <span class="st">&quot;番禺区&quot;</span>)),</span>
+<span id="cb143-3"><a href="r语言采样地图绘制详细教程.html#cb143-3" tabindex="-1"></a>  <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;#c98c50&quot;</span>),</span>
+<span id="cb143-4"><a href="r语言采样地图绘制详细教程.html#cb143-4" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb143-5"><a href="r语言采样地图绘制详细教程.html#cb143-5" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb143-6"><a href="r语言采样地图绘制详细教程.html#cb143-6" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb143-7"><a href="r语言采样地图绘制详细教程.html#cb143-7" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(</span>
+<span id="cb143-8"><a href="r语言采样地图绘制详细教程.html#cb143-8" tabindex="-1"></a>    <span class="at">data =</span> map <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;天河区&quot;</span>, <span class="st">&quot;白云区&quot;</span>, <span class="st">&quot;番禺区&quot;</span>)),</span>
+<span id="cb143-9"><a href="r语言采样地图绘制详细教程.html#cb143-9" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> name),</span>
+<span id="cb143-10"><a href="r语言采样地图绘制详细教程.html#cb143-10" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb143-11"><a href="r语言采样地图绘制详细教程.html#cb143-11" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb143-12"><a href="r语言采样地图绘制详细教程.html#cb143-12" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span></span>
+<span id="cb143-13"><a href="r语言采样地图绘制详细教程.html#cb143-13" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="设置一个合适的主题" class="section level3 hasAnchor" number="11.4.3">
+<h3><span class="header-section-number">11.4.3</span> 设置一个合适的主题<a href="r语言采样地图绘制详细教程.html#设置一个合适的主题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="r语言采样地图绘制详细教程.html#cb144-1" tabindex="-1"></a>p2 <span class="ot">&lt;-</span></span>
+<span id="cb144-2"><a href="r语言采样地图绘制详细教程.html#cb144-2" tabindex="-1"></a>  p <span class="sc">+</span> <span class="fu">geom_sf</span>(</span>
+<span id="cb144-3"><a href="r语言采样地图绘制详细教程.html#cb144-3" tabindex="-1"></a>    <span class="at">data =</span> map <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;天河区&quot;</span>, <span class="st">&quot;白云区&quot;</span>, <span class="st">&quot;番禺区&quot;</span>)),</span>
+<span id="cb144-4"><a href="r语言采样地图绘制详细教程.html#cb144-4" tabindex="-1"></a>    <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;#c98c50&quot;</span>),</span>
+<span id="cb144-5"><a href="r语言采样地图绘制详细教程.html#cb144-5" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb144-6"><a href="r语言采样地图绘制详细教程.html#cb144-6" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb144-7"><a href="r语言采样地图绘制详细教程.html#cb144-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb144-8"><a href="r语言采样地图绘制详细教程.html#cb144-8" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(</span>
+<span id="cb144-9"><a href="r语言采样地图绘制详细教程.html#cb144-9" tabindex="-1"></a>    <span class="at">data =</span> map <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;天河区&quot;</span>, <span class="st">&quot;白云区&quot;</span>, <span class="st">&quot;番禺区&quot;</span>)),</span>
+<span id="cb144-10"><a href="r语言采样地图绘制详细教程.html#cb144-10" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> name),</span>
+<span id="cb144-11"><a href="r语言采样地图绘制详细教程.html#cb144-11" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb144-12"><a href="r语言采样地图绘制详细教程.html#cb144-12" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb144-13"><a href="r语言采样地图绘制详细教程.html#cb144-13" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span></span>
+<span id="cb144-14"><a href="r语言采样地图绘制详细教程.html#cb144-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb144-15"><a href="r语言采样地图绘制详细教程.html#cb144-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb144-16"><a href="r语言采样地图绘制详细教程.html#cb144-16" tabindex="-1"></a></span>
+<span id="cb144-17"><a href="r语言采样地图绘制详细教程.html#cb144-17" tabindex="-1"></a>p2</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="设置根据数值变量对各区的fill进行映射" class="section level3 hasAnchor" number="11.4.4">
+<h3><span class="header-section-number">11.4.4</span> 设置根据数值变量对各区的fill进行映射<a href="r语言采样地图绘制详细教程.html#设置根据数值变量对各区的fill进行映射" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="r语言采样地图绘制详细教程.html#cb145-1" tabindex="-1"></a><span class="co"># 先生成一个随机变量</span></span>
+<span id="cb145-2"><a href="r语言采样地图绘制详细教程.html#cb145-2" tabindex="-1"></a>map_neat_1 <span class="ot">&lt;-</span></span>
+<span id="cb145-3"><a href="r语言采样地图绘制详细教程.html#cb145-3" tabindex="-1"></a>  map <span class="sc">|&gt;</span></span>
+<span id="cb145-4"><a href="r语言采样地图绘制详细教程.html#cb145-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb145-5"><a href="r语言采样地图绘制详细教程.html#cb145-5" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="fu">nrow</span>(map), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb145-6"><a href="r语言采样地图绘制详细教程.html#cb145-6" tabindex="-1"></a>  )</span>
+<span id="cb145-7"><a href="r语言采样地图绘制详细教程.html#cb145-7" tabindex="-1"></a></span>
+<span id="cb145-8"><a href="r语言采样地图绘制详细教程.html#cb145-8" tabindex="-1"></a></span>
+<span id="cb145-9"><a href="r语言采样地图绘制详细教程.html#cb145-9" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb145-10"><a href="r语言采样地图绘制详细教程.html#cb145-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;map_neat_1&quot;</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb145-11"><a href="r语言采样地图绘制详细教程.html#cb145-11" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map_neat_1, <span class="fu">aes</span>(<span class="at">fill =</span> value), <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># 设置比例尺</span></span>
+<span id="cb145-12"><a href="r语言采样地图绘制详细教程.html#cb145-12" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(</span>
+<span id="cb145-13"><a href="r语言采样地图绘制详细教程.html#cb145-13" tabindex="-1"></a>    <span class="at">location =</span> <span class="st">&quot;tl&quot;</span>,</span>
+<span id="cb145-14"><a href="r语言采样地图绘制详细教程.html#cb145-14" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">north_arrow_nautical</span>(</span>
+<span id="cb145-15"><a href="r语言采样地图绘制详细教程.html#cb145-15" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>),</span>
+<span id="cb145-16"><a href="r语言采样地图绘制详细教程.html#cb145-16" tabindex="-1"></a>      <span class="at">line_col =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb145-17"><a href="r语言采样地图绘制详细教程.html#cb145-17" tabindex="-1"></a>    )</span>
+<span id="cb145-18"><a href="r语言采样地图绘制详细教程.html#cb145-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb145-19"><a href="r语言采样地图绘制详细教程.html#cb145-19" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(</span>
+<span id="cb145-20"><a href="r语言采样地图绘制详细教程.html#cb145-20" tabindex="-1"></a>    <span class="at">data =</span> map,</span>
+<span id="cb145-21"><a href="r语言采样地图绘制详细教程.html#cb145-21" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> name),</span>
+<span id="cb145-22"><a href="r语言采样地图绘制详细教程.html#cb145-22" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb145-23"><a href="r语言采样地图绘制详细教程.html#cb145-23" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb145-24"><a href="r语言采样地图绘制详细教程.html#cb145-24" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span></span>
+<span id="cb145-25"><a href="r语言采样地图绘制详细教程.html#cb145-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb145-26"><a href="r语言采样地图绘制详细教程.html#cb145-26" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="根据分类变量对区进行fill映射" class="section level3 hasAnchor" number="11.4.5">
+<h3><span class="header-section-number">11.4.5</span> 根据分类变量对区进行fill映射<a href="r语言采样地图绘制详细教程.html#根据分类变量对区进行fill映射" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="r语言采样地图绘制详细教程.html#cb146-1" tabindex="-1"></a><span class="fu">library</span>(MetBrewer)</span>
+<span id="cb146-2"><a href="r语言采样地图绘制详细教程.html#cb146-2" tabindex="-1"></a></span>
+<span id="cb146-3"><a href="r语言采样地图绘制详细教程.html#cb146-3" tabindex="-1"></a>map_neat_2 <span class="ot">&lt;-</span></span>
+<span id="cb146-4"><a href="r语言采样地图绘制详细教程.html#cb146-4" tabindex="-1"></a>  map <span class="sc">|&gt;</span></span>
+<span id="cb146-5"><a href="r语言采样地图绘制详细教程.html#cb146-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb146-6"><a href="r语言采样地图绘制详细教程.html#cb146-6" tabindex="-1"></a>    <span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="fu">nrow</span>(map), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb146-7"><a href="r语言采样地图绘制详细教程.html#cb146-7" tabindex="-1"></a>  )</span>
+<span id="cb146-8"><a href="r语言采样地图绘制详细教程.html#cb146-8" tabindex="-1"></a></span>
+<span id="cb146-9"><a href="r语言采样地图绘制详细教程.html#cb146-9" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb146-10"><a href="r语言采样地图绘制详细教程.html#cb146-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;map_neat_2&quot;</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb146-11"><a href="r语言采样地图绘制详细教程.html#cb146-11" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map_neat_2, <span class="fu">aes</span>(<span class="at">fill =</span> group), <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># 设置比例尺</span></span>
+<span id="cb146-12"><a href="r语言采样地图绘制详细教程.html#cb146-12" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(</span>
+<span id="cb146-13"><a href="r语言采样地图绘制详细教程.html#cb146-13" tabindex="-1"></a>    <span class="at">location =</span> <span class="st">&quot;tl&quot;</span>,</span>
+<span id="cb146-14"><a href="r语言采样地图绘制详细教程.html#cb146-14" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">north_arrow_nautical</span>(</span>
+<span id="cb146-15"><a href="r语言采样地图绘制详细教程.html#cb146-15" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>),</span>
+<span id="cb146-16"><a href="r语言采样地图绘制详细教程.html#cb146-16" tabindex="-1"></a>      <span class="at">line_col =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb146-17"><a href="r语言采样地图绘制详细教程.html#cb146-17" tabindex="-1"></a>    )</span>
+<span id="cb146-18"><a href="r语言采样地图绘制详细教程.html#cb146-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb146-19"><a href="r语言采样地图绘制详细教程.html#cb146-19" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(</span>
+<span id="cb146-20"><a href="r语言采样地图绘制详细教程.html#cb146-20" tabindex="-1"></a>    <span class="at">data =</span> map,</span>
+<span id="cb146-21"><a href="r语言采样地图绘制详细教程.html#cb146-21" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> name),</span>
+<span id="cb146-22"><a href="r语言采样地图绘制详细教程.html#cb146-22" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb146-23"><a href="r语言采样地图绘制详细教程.html#cb146-23" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb146-24"><a href="r语言采样地图绘制详细教程.html#cb146-24" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span></span>
+<span id="cb146-25"><a href="r语言采样地图绘制详细教程.html#cb146-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb146-26"><a href="r语言采样地图绘制详细教程.html#cb146-26" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb146-27"><a href="r语言采样地图绘制详细教程.html#cb146-27" tabindex="-1"></a>  <span class="fu">scale_fill_met_d</span>(<span class="st">&quot;Cassatt1&quot;</span>)</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="添加采样点" class="section level3 hasAnchor" number="11.4.6">
+<h3><span class="header-section-number">11.4.6</span> 添加采样点<a href="r语言采样地图绘制详细教程.html#添加采样点" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="r语言采样地图绘制详细教程.html#cb147-1" tabindex="-1"></a>data_sample <span class="ot">&lt;-</span></span>
+<span id="cb147-2"><a href="r语言采样地图绘制详细教程.html#cb147-2" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb147-3"><a href="r语言采样地图绘制详细教程.html#cb147-3" tabindex="-1"></a>    <span class="at">lon =</span> <span class="fu">c</span>(<span class="fl">113.292333</span>, <span class="fl">113.412333</span>, <span class="fl">113.532333</span>),</span>
+<span id="cb147-4"><a href="r语言采样地图绘制详细教程.html#cb147-4" tabindex="-1"></a>    <span class="at">lat =</span> <span class="fu">c</span>(<span class="fl">23.191944</span>, <span class="fl">23.331944</span>, <span class="fl">22.931944</span>),</span>
+<span id="cb147-5"><a href="r语言采样地图绘制详细教程.html#cb147-5" tabindex="-1"></a>    <span class="at">point =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>),</span>
+<span id="cb147-6"><a href="r语言采样地图绘制详细教程.html#cb147-6" tabindex="-1"></a>  )</span>
+<span id="cb147-7"><a href="r语言采样地图绘制详细教程.html#cb147-7" tabindex="-1"></a></span>
+<span id="cb147-8"><a href="r语言采样地图绘制详细教程.html#cb147-8" tabindex="-1"></a>p2 <span class="sc">+</span></span>
+<span id="cb147-9"><a href="r语言采样地图绘制详细教程.html#cb147-9" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb147-10"><a href="r语言采样地图绘制详细教程.html#cb147-10" tabindex="-1"></a>    <span class="at">data =</span> data_sample,</span>
+<span id="cb147-11"><a href="r语言采样地图绘制详细教程.html#cb147-11" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat),</span>
+<span id="cb147-12"><a href="r语言采样地图绘制详细教程.html#cb147-12" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>,</span>
+<span id="cb147-13"><a href="r语言采样地图绘制详细教程.html#cb147-13" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#1647a3&quot;</span></span>
+<span id="cb147-14"><a href="r语言采样地图绘制详细教程.html#cb147-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb147-15"><a href="r语言采样地图绘制详细教程.html#cb147-15" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb147-16"><a href="r语言采样地图绘制详细教程.html#cb147-16" tabindex="-1"></a>    <span class="at">data =</span> data_sample,</span>
+<span id="cb147-17"><a href="r语言采样地图绘制详细教程.html#cb147-17" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat, <span class="at">label =</span> point),</span>
+<span id="cb147-18"><a href="r语言采样地图绘制详细教程.html#cb147-18" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb147-19"><a href="r语言采样地图绘制详细教程.html#cb147-19" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#000000&quot;</span>,</span>
+<span id="cb147-20"><a href="r语言采样地图绘制详细教程.html#cb147-20" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>,</span>
+<span id="cb147-21"><a href="r语言采样地图绘制详细教程.html#cb147-21" tabindex="-1"></a>    <span class="at">nudge_y =</span> <span class="fl">0.05</span></span>
+<span id="cb147-22"><a href="r语言采样地图绘制详细教程.html#cb147-22" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb147-23"><a href="r语言采样地图绘制详细教程.html#cb147-23" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;广州市&quot;</span>)<span class="sc">+</span></span>
+<span id="cb147-24"><a href="r语言采样地图绘制详细教程.html#cb147-24" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="2015-map_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
 
@@ -546,8 +607,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="scitb-快速生成基线表一.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="r语言配色教程.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r语言绘制桑基图详细教程.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r语言批量导入数据.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

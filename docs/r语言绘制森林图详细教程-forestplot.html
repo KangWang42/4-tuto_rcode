@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>科研学帮帮</title>
+  <title>12 R语言绘制森林图详细教程-forestplot | 科研学帮帮</title>
   <meta name="description" content="这是科研学棒棒的r语言教程." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="科研学帮帮" />
+  <meta property="og:title" content="12 R语言绘制森林图详细教程-forestplot | 科研学帮帮" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是科研学棒棒的r语言教程." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="科研学帮帮" />
+  <meta name="twitter:title" content="12 R语言绘制森林图详细教程-forestplot | 科研学帮帮" />
   
   <meta name="twitter:description" content="这是科研学棒棒的r语言教程." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="r语言学习路径和资料.html"/>
+<link rel="prev" href="r语言采样地图绘制详细教程.html"/>
+<link rel="next" href="r语言批量导入数据.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -406,33 +406,234 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">科研学帮帮</h1>
-<p class="author"><em>wang</em></p>
-<p class="date"><em>2024.10.19</em></p>
+<div id="r语言绘制森林图详细教程-forestplot" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> R语言绘制森林图详细教程-forestplot<a href="r语言绘制森林图详细教程-forestplot.html#r语言绘制森林图详细教程-forestplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>本期主要介绍如何使用forestplot包绘制森林图，常用于meta分析的可视化/
+根据我的教程书写体验来看forestplot包<strong>还很不好用</strong>，基于gpar包来设置样式，使用体验极不好，不过写都写了，发一点东西
+根据实际体验来看还是<strong>forestploter包绘制森林图更好看</strong>，代码更合理，样式也更好看，之后会介绍
+这期不建议看，这个<strong>包也不建议用</strong>，连教程文档很多都跑不动</p>
+</blockquote>
+<div id="r包介绍-9" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> R包介绍<a href="r语言绘制森林图详细教程-forestplot.html#r包介绍-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>forestplot包是R语言中用于绘制森林图的包，其主要功能是将数据整理成适合绘制森林图的格式，并提供了丰富的绘图选项，使得用户可以轻松地绘制出各种类型的森林图。</p>
+<p><a href="https://cran.r-project.org/web//packages/forestplot/vignettes/forestplot.html">更多教程</a></p>
 </div>
-<div id="简介" class="section level1 unnumbered hasAnchor">
-<h1>简介<a href="index.html#简介" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>欢迎参观博客：<a href="https://wk8686.top/" class="uri">https://wk8686.top/</a></p>
-<p>我的主页：<a href="https://intro.wk8686.top/" class="uri">https://intro.wk8686.top/</a></p>
-<p align="center" class="tiltdavid">
-<p><br>
-<samp>
-Hello there! I’m <b><a rel="nofollow noopener noreferrer" target="_blank" href="https://wk8686.top/intro/">Wang</a></b>.
-<br><br></p>
-<p></samp></p>
-<p><img src="https://vip.123pan.cn/1813062489//7%20pic/202410191634051.gif" width="200"/></p>
-</p>
-<p>⭐️ From <a href="https://github.com/KangWang42">KangWang42</a></p>
-<hr />
-<p>欢迎参观我的<a href="https://wk8686.top/">blog</a></p>
-<p align="center">
-<p><img src="https://vip.123pan.cn/1813062489//7%20pic/202410191634108.png" width="200"/></p>
-<p align="center">
-<b><font size ='1.5'>扫码关注我的公众号</font></b>
-</p>
-</p>
+<div id="r包安装-7" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> R包安装<a href="r语言绘制森林图详细教程-forestplot.html#r包安装-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb148-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;forestplot&quot;</span>)</span></code></pre></div>
+</div>
+<div id="r包教程" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> R包教程<a href="r语言绘制森林图详细教程-forestplot.html#r包教程" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="载入包" class="section level3 hasAnchor" number="12.3.1">
+<h3><span class="header-section-number">12.3.1</span> 载入包<a href="r语言绘制森林图详细教程-forestplot.html#载入包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb149-1" tabindex="-1"></a><span class="fu">library</span>(forestplot)</span>
+<span id="cb149-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb149-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+</div>
+<div id="导入数据" class="section level3 hasAnchor" number="12.3.2">
+<h3><span class="header-section-number">12.3.2</span> 导入数据<a href="r语言绘制森林图详细教程-forestplot.html#导入数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>mean: OR区间的平均值</li>
+<li>lower/upper：置信区间上下限</li>
+<li>study：标签</li>
+</ul>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb150-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-2" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">c</span>(<span class="fl">0.578</span>, <span class="fl">0.165</span>, <span class="fl">0.246</span>, <span class="fl">0.700</span>, <span class="fl">0.348</span>, <span class="fl">0.139</span>, <span class="fl">1.017</span>),</span>
+<span id="cb150-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-3" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">c</span>(<span class="fl">0.372</span>, <span class="fl">0.018</span>, <span class="fl">0.072</span>, <span class="fl">0.333</span>, <span class="fl">0.083</span>, <span class="fl">0.016</span>, <span class="fl">0.365</span>),</span>
+<span id="cb150-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-4" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">c</span>(<span class="fl">0.898</span>, <span class="fl">1.517</span>, <span class="fl">0.833</span>, <span class="fl">1.474</span>, <span class="fl">1.455</span>, <span class="fl">1.209</span>, <span class="fl">2.831</span>),</span>
+<span id="cb150-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-5" tabindex="-1"></a>  <span class="at">study =</span> <span class="fu">c</span>(</span>
+<span id="cb150-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-6" tabindex="-1"></a>    <span class="st">&quot;Auckland&quot;</span>, <span class="st">&quot;Block&quot;</span>, <span class="st">&quot;Doran&quot;</span>, <span class="st">&quot;Gamsu&quot;</span>,</span>
+<span id="cb150-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-7" tabindex="-1"></a>    <span class="st">&quot;Morrison&quot;</span>, <span class="st">&quot;Papageorgiou&quot;</span>, <span class="st">&quot;Tauesch&quot;</span></span>
+<span id="cb150-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-8" tabindex="-1"></a>  ),</span>
+<span id="cb150-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-9" tabindex="-1"></a>  <span class="at">deaths_steroid =</span> <span class="fu">c</span>(<span class="st">&quot;36&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;14&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;8&quot;</span>),</span>
+<span id="cb150-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-10" tabindex="-1"></a>  <span class="at">deaths_placebo =</span> <span class="fu">c</span>(<span class="st">&quot;60&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;11&quot;</span>, <span class="st">&quot;20&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;10&quot;</span>),</span>
+<span id="cb150-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-11" tabindex="-1"></a>  <span class="at">OR =</span> <span class="fu">c</span>(<span class="st">&quot;0.58&quot;</span>, <span class="st">&quot;0.16&quot;</span>, <span class="st">&quot;0.25&quot;</span>, <span class="st">&quot;0.70&quot;</span>, <span class="st">&quot;0.35&quot;</span>, <span class="st">&quot;0.14&quot;</span>, <span class="st">&quot;1.02&quot;</span>)</span>
+<span id="cb150-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb150-12" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="基础绘图" class="section level3 hasAnchor" number="12.3.3">
+<h3><span class="header-section-number">12.3.3</span> 基础绘图<a href="r语言绘制森林图详细教程-forestplot.html#基础绘图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>可以看出forestplot包绘制森林图主体为<code>forestplot</code>函数，后续增加<code>fp_xxx</code>函数来完善内容</p>
+<ul>
+<li>fp_set_style：设置样式</li>
+<li>fp_add_header：添加表头</li>
+<li>fp_append_row：额外添加行</li>
+</ul>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-1" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb151-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-2" tabindex="-1"></a>  <span class="fu">forestplot</span>(</span>
+<span id="cb151-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-3" tabindex="-1"></a>    <span class="at">labeltext =</span> <span class="fu">c</span>(study, deaths_steroid, deaths_placebo, OR),</span>
+<span id="cb151-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-4" tabindex="-1"></a>    <span class="at">clip =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">2.5</span>),</span>
+<span id="cb151-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-5" tabindex="-1"></a>    <span class="at">xlog =</span> <span class="cn">TRUE</span></span>
+<span id="cb151-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-6" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb151-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-7" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(</span>
+<span id="cb151-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-8" tabindex="-1"></a>    <span class="at">box =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb151-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-9" tabindex="-1"></a>    <span class="at">line =</span> <span class="st">&quot;darkblue&quot;</span>,</span>
+<span id="cb151-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-10" tabindex="-1"></a>    <span class="at">summary =</span> <span class="st">&quot;royalblue&quot;</span></span>
+<span id="cb151-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-11" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb151-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-12" tabindex="-1"></a>  <span class="fu">fp_add_header</span>(</span>
+<span id="cb151-13"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-13" tabindex="-1"></a>    <span class="at">study =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Study&quot;</span>),</span>
+<span id="cb151-14"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-14" tabindex="-1"></a>    <span class="at">deaths_steroid =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(steroid)&quot;</span>),</span>
+<span id="cb151-15"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-15" tabindex="-1"></a>    <span class="at">deaths_placebo =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(placebo)&quot;</span>),</span>
+<span id="cb151-16"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-16" tabindex="-1"></a>    <span class="at">OR =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;OR&quot;</span>)</span>
+<span id="cb151-17"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-17" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb151-18"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-18" tabindex="-1"></a>  <span class="fu">fp_append_row</span>(</span>
+<span id="cb151-19"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-19" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fl">0.531</span>,</span>
+<span id="cb151-20"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-20" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fl">0.386</span>,</span>
+<span id="cb151-21"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-21" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fl">0.731</span>,</span>
+<span id="cb151-22"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-22" tabindex="-1"></a>    <span class="at">study =</span> <span class="st">&quot;Summary&quot;</span>,</span>
+<span id="cb151-23"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-23" tabindex="-1"></a>    <span class="at">OR =</span> <span class="st">&quot;0.53&quot;</span>,</span>
+<span id="cb151-24"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-24" tabindex="-1"></a>    <span class="at">is.summary =</span> <span class="cn">TRUE</span></span>
+<span id="cb151-25"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-25" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb151-26"><a href="r语言绘制森林图详细教程-forestplot.html#cb151-26" tabindex="-1"></a>  <span class="fu">fp_set_zebra_style</span>(<span class="st">&quot;#EFEFEF&quot;</span>)</span></code></pre></div>
+<p><img src="2016-forestplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="样式美化" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> 样式美化<a href="r语言绘制森林图详细教程-forestplot.html#样式美化" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="修改样式" class="section level3 hasAnchor" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> 修改样式<a href="r语言绘制森林图详细教程-forestplot.html#修改样式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>使用<code>fp_set_style</code>来修改各内容的样式</li>
+<li>使用<code>fp_add_lines</code>来添加线条</li>
+<li>更多参数大家需要多看help文档</li>
+</ul>
+<p><img src="https://pic-go-42.oss-cn-guangzhou.aliyuncs.com/img/202410280846517.webp" /></p>
+<p>主要参考的是设置是<code>gpar</code>包样式</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-1" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb152-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-2" tabindex="-1"></a>  <span class="fu">forestplot</span>(</span>
+<span id="cb152-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-3" tabindex="-1"></a>    <span class="at">labeltext =</span> <span class="fu">c</span>(study, deaths_steroid, deaths_placebo, OR),</span>
+<span id="cb152-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-4" tabindex="-1"></a>    <span class="at">clip =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">2.5</span>),</span>
+<span id="cb152-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-5" tabindex="-1"></a>    <span class="at">xlog =</span> <span class="cn">TRUE</span></span>
+<span id="cb152-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-6" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb152-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-7" tabindex="-1"></a>  <span class="fu">fp_add_lines</span>() <span class="sc">|&gt;</span></span>
+<span id="cb152-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-8" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(</span>
+<span id="cb152-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-9" tabindex="-1"></a>    <span class="at">box =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb152-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-10" tabindex="-1"></a>    <span class="at">line =</span> <span class="st">&quot;darkblue&quot;</span>,</span>
+<span id="cb152-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-11" tabindex="-1"></a>    <span class="at">summary =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb152-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-12" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&quot;lrrr&quot;</span>,</span>
+<span id="cb152-13"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-13" tabindex="-1"></a>    <span class="at">hrz_lines =</span> <span class="st">&quot;#999999&quot;</span></span>
+<span id="cb152-14"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-14" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb152-15"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-15" tabindex="-1"></a>  <span class="fu">fp_add_header</span>(</span>
+<span id="cb152-16"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-16" tabindex="-1"></a>    <span class="at">study =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Study&quot;</span>),</span>
+<span id="cb152-17"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-17" tabindex="-1"></a>    <span class="at">deaths_steroid =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(steroid)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb152-18"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-18" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb152-19"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-19" tabindex="-1"></a>    <span class="at">deaths_placebo =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(placebo)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb152-20"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-20" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb152-21"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-21" tabindex="-1"></a>    <span class="at">OR =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="fu">fp_align_center</span>(<span class="st">&quot;OR&quot;</span>))</span>
+<span id="cb152-22"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-22" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb152-23"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-23" tabindex="-1"></a>  <span class="fu">fp_append_row</span>(</span>
+<span id="cb152-24"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-24" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fl">0.531</span>,</span>
+<span id="cb152-25"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-25" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fl">0.386</span>,</span>
+<span id="cb152-26"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-26" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fl">0.731</span>,</span>
+<span id="cb152-27"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-27" tabindex="-1"></a>    <span class="at">study =</span> <span class="st">&quot;Summary&quot;</span>,</span>
+<span id="cb152-28"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-28" tabindex="-1"></a>    <span class="at">OR =</span> <span class="st">&quot;0.53&quot;</span>,</span>
+<span id="cb152-29"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-29" tabindex="-1"></a>    <span class="at">is.summary =</span> <span class="cn">TRUE</span></span>
+<span id="cb152-30"><a href="r语言绘制森林图详细教程-forestplot.html#cb152-30" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2016-forestplot_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="对线条自定义" class="section level3 hasAnchor" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> 对线条自定义<a href="r语言绘制森林图详细教程-forestplot.html#对线条自定义" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用fp_add_lines来添加辅助线，lty是线形，lwd是线宽，col是颜色</p>
+<p>f_n代表对第几列添加线条，columns设置线条有多宽</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-1" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb153-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-2" tabindex="-1"></a>  <span class="fu">forestplot</span>(</span>
+<span id="cb153-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-3" tabindex="-1"></a>    <span class="at">labeltext =</span> <span class="fu">c</span>(study, deaths_steroid, deaths_placebo, OR),</span>
+<span id="cb153-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-4" tabindex="-1"></a>    <span class="at">clip =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">2.5</span>),</span>
+<span id="cb153-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-5" tabindex="-1"></a>    <span class="at">vertices =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb153-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-6" tabindex="-1"></a>    <span class="at">xlog =</span> <span class="cn">TRUE</span></span>
+<span id="cb153-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-7" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb153-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-8" tabindex="-1"></a>  <span class="fu">fp_add_lines</span>(</span>
+<span id="cb153-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-9" tabindex="-1"></a>    <span class="at">h_3 =</span> <span class="fu">gpar</span>(<span class="at">lty =</span> <span class="dv">2</span>),</span>
+<span id="cb153-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-10" tabindex="-1"></a>    <span class="at">h_11 =</span> <span class="fu">gpar</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col =</span> <span class="st">&quot;#000044&quot;</span>)</span>
+<span id="cb153-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-11" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb153-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-12" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(</span>
+<span id="cb153-13"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-13" tabindex="-1"></a>    <span class="at">box =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb153-14"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-14" tabindex="-1"></a>    <span class="at">line =</span> <span class="st">&quot;darkblue&quot;</span>,</span>
+<span id="cb153-15"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-15" tabindex="-1"></a>    <span class="at">summary =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb153-16"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-16" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&quot;lrrr&quot;</span>,</span>
+<span id="cb153-17"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-17" tabindex="-1"></a>    <span class="at">hrz_lines =</span> <span class="st">&quot;#999999&quot;</span></span>
+<span id="cb153-18"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-18" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb153-19"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-19" tabindex="-1"></a>  <span class="fu">fp_add_header</span>(</span>
+<span id="cb153-20"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-20" tabindex="-1"></a>    <span class="at">study =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Study&quot;</span>),</span>
+<span id="cb153-21"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-21" tabindex="-1"></a>    <span class="at">deaths_steroid =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(steroid)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb153-22"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-22" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb153-23"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-23" tabindex="-1"></a>    <span class="at">deaths_placebo =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(placebo)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb153-24"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-24" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb153-25"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-25" tabindex="-1"></a>    <span class="at">OR =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="fu">fp_align_center</span>(<span class="st">&quot;OR&quot;</span>))</span>
+<span id="cb153-26"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-26" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb153-27"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-27" tabindex="-1"></a>  <span class="fu">fp_append_row</span>(</span>
+<span id="cb153-28"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-28" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fl">0.531</span>,</span>
+<span id="cb153-29"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-29" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fl">0.386</span>,</span>
+<span id="cb153-30"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-30" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fl">0.731</span>,</span>
+<span id="cb153-31"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-31" tabindex="-1"></a>    <span class="at">study =</span> <span class="st">&quot;Summary&quot;</span>,</span>
+<span id="cb153-32"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-32" tabindex="-1"></a>    <span class="at">OR =</span> <span class="st">&quot;0.53&quot;</span>,</span>
+<span id="cb153-33"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-33" tabindex="-1"></a>    <span class="at">is.summary =</span> <span class="cn">TRUE</span></span>
+<span id="cb153-34"><a href="r语言绘制森林图详细教程-forestplot.html#cb153-34" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2016-forestplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="减小固定box就是平均值的那个盒子大小" class="section level3 hasAnchor" number="12.4.3">
+<h3><span class="header-section-number">12.4.3</span> 减小固定box（就是平均值的那个盒子）大小<a href="r语言绘制森林图详细教程-forestplot.html#减小固定box就是平均值的那个盒子大小" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>强制boxsize的大小，使用函数forestplot的参数<code>boxsize</code>,但是设置之后大小也不会随着OR增大而增大</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-1" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb154-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-2" tabindex="-1"></a>  <span class="fu">forestplot</span>(</span>
+<span id="cb154-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-3" tabindex="-1"></a>    <span class="at">labeltext =</span> <span class="fu">c</span>(study, deaths_steroid, deaths_placebo, OR),</span>
+<span id="cb154-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-4" tabindex="-1"></a>    <span class="at">clip =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">2.5</span>),</span>
+<span id="cb154-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-5" tabindex="-1"></a>    <span class="at">vertices =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb154-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-6" tabindex="-1"></a>    <span class="at">boxsize =</span> <span class="fl">0.2</span>,</span>
+<span id="cb154-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-7" tabindex="-1"></a>    <span class="at">xlog =</span> <span class="cn">TRUE</span></span>
+<span id="cb154-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-8" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb154-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-9" tabindex="-1"></a>  <span class="fu">fp_add_lines</span>(</span>
+<span id="cb154-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-10" tabindex="-1"></a>    <span class="at">h_3 =</span> <span class="fu">gpar</span>(<span class="at">lty =</span> <span class="dv">2</span>),</span>
+<span id="cb154-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-11" tabindex="-1"></a>    <span class="at">h_11 =</span> <span class="fu">gpar</span>(<span class="at">lwd =</span> <span class="dv">1</span>, <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col =</span> <span class="st">&quot;#000044&quot;</span>)</span>
+<span id="cb154-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-12" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb154-13"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-13" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(</span>
+<span id="cb154-14"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-14" tabindex="-1"></a>    <span class="at">box =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb154-15"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-15" tabindex="-1"></a>    <span class="at">line =</span> <span class="st">&quot;darkblue&quot;</span>,</span>
+<span id="cb154-16"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-16" tabindex="-1"></a>    <span class="at">summary =</span> <span class="st">&quot;royalblue&quot;</span>,</span>
+<span id="cb154-17"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-17" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&quot;lrrr&quot;</span>,</span>
+<span id="cb154-18"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-18" tabindex="-1"></a>    <span class="at">hrz_lines =</span> <span class="st">&quot;#999999&quot;</span></span>
+<span id="cb154-19"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-19" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb154-20"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-20" tabindex="-1"></a>  <span class="fu">fp_add_header</span>(</span>
+<span id="cb154-21"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-21" tabindex="-1"></a>    <span class="at">study =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Study&quot;</span>),</span>
+<span id="cb154-22"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-22" tabindex="-1"></a>    <span class="at">deaths_steroid =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(steroid)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb154-23"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-23" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb154-24"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-24" tabindex="-1"></a>    <span class="at">deaths_placebo =</span> <span class="fu">c</span>(<span class="st">&quot;Deaths&quot;</span>, <span class="st">&quot;(placebo)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb154-25"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-25" tabindex="-1"></a>      <span class="fu">fp_align_center</span>(),</span>
+<span id="cb154-26"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-26" tabindex="-1"></a>    <span class="at">OR =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="fu">fp_align_center</span>(<span class="st">&quot;OR&quot;</span>))</span>
+<span id="cb154-27"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-27" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb154-28"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-28" tabindex="-1"></a>  <span class="fu">fp_append_row</span>(</span>
+<span id="cb154-29"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-29" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fl">0.531</span>,</span>
+<span id="cb154-30"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-30" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fl">0.386</span>,</span>
+<span id="cb154-31"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-31" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fl">0.731</span>,</span>
+<span id="cb154-32"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-32" tabindex="-1"></a>    <span class="at">study =</span> <span class="st">&quot;Summary&quot;</span>,</span>
+<span id="cb154-33"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-33" tabindex="-1"></a>    <span class="at">OR =</span> <span class="st">&quot;0.53&quot;</span>,</span>
+<span id="cb154-34"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-34" tabindex="-1"></a>    <span class="at">is.summary =</span> <span class="cn">TRUE</span></span>
+<span id="cb154-35"><a href="r语言绘制森林图详细教程-forestplot.html#cb154-35" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="2016-forestplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="分组or" class="section level3 hasAnchor" number="12.4.4">
+<h3><span class="header-section-number">12.4.4</span> 分组OR<a href="r语言绘制森林图详细教程-forestplot.html#分组or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>垃圾包，已经跑不了分组了，应该是groupby更新后没适配上。浪费我一个小时</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-1" tabindex="-1"></a><span class="fu">data</span>(dfHRQoL)</span>
+<span id="cb155-2"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-2" tabindex="-1"></a></span>
+<span id="cb155-3"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-3" tabindex="-1"></a>dfHRQoL  <span class="sc">|&gt;</span> <span class="fu">group_by</span>(group)<span class="sc">|&gt;</span></span>
+<span id="cb155-4"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-4" tabindex="-1"></a>  <span class="fu">forestplot</span>(</span>
+<span id="cb155-5"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-5" tabindex="-1"></a>    <span class="at">labeltext =</span> <span class="fu">c</span>(labeltext),</span>
+<span id="cb155-6"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-6" tabindex="-1"></a>    <span class="at">boxsize =</span> <span class="fl">0.1</span>,</span>
+<span id="cb155-7"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-7" tabindex="-1"></a>    <span class="at">lineheight =</span> <span class="st">&quot;lines&quot;</span>,</span>
+<span id="cb155-8"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-8" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;EQ-5D index&quot;</span></span>
+<span id="cb155-9"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-9" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb155-10"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-10" tabindex="-1"></a>  <span class="fu">fp_add_lines</span>(<span class="st">&quot;steelblue&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb155-11"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-11" tabindex="-1"></a>  <span class="fu">fp_add_header</span>(<span class="st">&quot;Variable&quot;</span>) </span>
+<span id="cb155-12"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-12" tabindex="-1"></a></span>
+<span id="cb155-13"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-13" tabindex="-1"></a>  <span class="sc">|&gt;</span></span>
+<span id="cb155-14"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-14" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(</span>
+<span id="cb155-15"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-15" tabindex="-1"></a>    <span class="at">box =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;darkred&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb155-16"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-16" tabindex="-1"></a>      <span class="fu">lapply</span>(<span class="cf">function</span>(x) <span class="fu">gpar</span>(<span class="at">fill =</span> x, <span class="at">col =</span> <span class="st">&quot;#555555&quot;</span>)),</span>
+<span id="cb155-17"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-17" tabindex="-1"></a>    <span class="at">default =</span> <span class="fu">gpar</span>(<span class="at">vertices =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb155-18"><a href="r语言绘制森林图详细教程-forestplot.html#cb155-18" tabindex="-1"></a>  )</span></code></pre></div>
 
+</div>
+</div>
 </div>
 
 
@@ -442,8 +643,8 @@ Hello there! I’m <b><a rel="nofollow noopener noreferrer" target="_blank" href
           </div>
         </div>
       </div>
-
-<a href="r语言学习路径和资料.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r语言采样地图绘制详细教程.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r语言批量导入数据.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

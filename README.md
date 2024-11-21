@@ -20,3 +20,6 @@
 - [R可视化教程](https://rtuto.wk8686.top/r%E8%AF%AD%E8%A8%80%E9%85%8D%E8%89%B2%E6%95%99%E7%A8%8B.html)
 - [R实用操作合集](https://rtuto.wk8686.top/r%E8%AF%AD%E8%A8%80%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE.html)
 
+## 教程截图
+![教程截图](public\pic\1732192623575.png)
+
